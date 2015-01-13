@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>01global_arrangements</name>
+    <events>
+        <comment>Eventos Globais</comment>
+        <variable constant="0" name="fuzileiros" sid="4042998849929856" static="0" type="number">0</variable>
+        <variable constant="0" name="medicos" sid="842205000528449" static="0" type="number">0</variable>
+        <variable constant="0" name="tempo_total" sid="2436281162956913" static="0" type="number">0</variable>
+        <variable constant="0" name="robos" sid="2913778578999171" static="0" type="number">0</variable>
+        <variable constant="0" name="move_layout" sid="7376981779755066" static="0" type="number">0</variable>
+        <variable comment="variação pra montagem do mapa" constant="0" name="random_var" sid="6362215638111569" static="0" type="number">0</variable>
+        <variable constant="0" name="on_touch" sid="735917836844667" static="0" type="number">0</variable>
+        <variable constant="0" name="loop_aux" sid="968654898575712" static="0" type="number">0</variable>
+        <variable constant="0" name="zoom_var" sid="3887454708989682" static="0" type="number">1.5</variable>
+        <variable constant="0" name="cam_in_units" sid="5860782108523236" static="0" type="number">0</variable>
+        <variable constant="0" name="lock_cam" sid="9112105029336017" static="0" type="number">0</variable>
+        <comment>Seguimentos</comment>
+        <include>02initial_cleaning</include>
+        <include>03map_generator</include>
+        <include>04tower_generator</include>
+        <include>05block_generator</include>
+        <include>06layer_sets</include>
+        <include>07uptower_generator</include>
+        <include>08level_generator</include>
+        <include>09regular_actions</include>
+        <include>10input_tests</include>
+        <include>11only_once_events</include>
+        <include>12unit_sets</include>
+        <include>13move_units</include>
+        <include>14unit_anim</include>
+        <include>15stealth_mode_marines</include>
+        <include>16damage_units</include>
+        <include>17robot_unit</include>
+        <include>18medic_unit</include>
+        <include>19marine_unit</include>
+        <include>20turret_comportament</include>
+        <include>21objective</include>
+        <include>22FX</include>
+        <include>23controls</include>
+        <include>24zoom</include>
+        <include>25cam_lock</include>
+    </events>
+</c2eventsheet>

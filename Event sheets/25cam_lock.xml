@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>25cam_lock</name>
+    <events>
+        <comment>travar camera</comment>
+        <event-block sid="8213654183476056">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4424032101622217" type="System">
+                    <param id="0" name="Variable">zoom_var</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7848706696731843" type="System">
+                    <param id="0" name="Variable">cam_in_units</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="3366832335888227">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="3782820039201776" type="System">
+                            <param id="0" name="Interval (seconds)">0.1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3341506497876366">
+                            <conditions>
+                                <condition id="-33" name="Pick by comparison" sid="5928314009591078" type="System">
+                                    <param id="0" name="Object">unidade</param>
+                                    <param id="1" name="Expression">unidade.selecionado</param>
+                                    <param id="2" name="Comparison">0</param>
+                                    <param id="3" name="Value">1</param>
+                                </condition>
+                                <condition id="-33" name="Pick by comparison" sid="6588282356568321" type="System">
+                                    <param id="0" name="Object">unidade</param>
+                                    <param id="1" name="Expression">unidade.vida</param>
+                                    <param id="2" name="Comparison">4</param>
+                                    <param id="3" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Set position" sid="8834376008780703" type="campoint">
+                                    <param id="0" name="X">unidade.ImagePointX(1)</param>
+                                    <param id="1" name="Y">unidade.ImagePointY(1)</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="3577641493718552" type="campoint">
+                                    <param id="0" name="Pin to">unidade</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="9962258346564397">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="9519710347328779" type="teclado">
+                            <param id="0" name="Key">16 (Shift)</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="6395288597179202" type="System">
+                            <param id="0" name="Variable">lock_cam</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6989979034235461">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="2650297138329162" type="System">
+                                    <param id="0" name="First value">zoom_var</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1.5</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5842525990834388">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="5427359692611505" type="System">
+                                            <param id="0" name="First value">round(scrolly*zoom_var)</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Second value">round(Layoutheight/2)</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="1280520728109403" type="System">
+                                            <param id="0" name="First value">scrolly</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">round((LayoutHeight/2)*1.289)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-6" name="Scroll to Y" sid="8034334084146304" type="System">
+                                            <param id="0" name="Y">(campoint.Y+cursor2.Y)/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6239012451110612">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="1634220694652756" type="System">
+                                            <param id="0" name="First value">round(scrollx*zoom_var)</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Second value">round(Layoutwidth/2)</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="9136796252648785" type="System">
+                                            <param id="0" name="First value">scrollx</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">round((LayoutWidth/2)*1.333)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-5" name="Scroll to X" sid="5990029706932218" type="System">
+                                            <param id="0" name="X">(campoint.X+cursor2.X)/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="2958591366138725">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6321124022665621" type="System">
+                                    <param id="0" name="First value">zoom_var</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="4183036838089144">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="4798201064629438" type="System">
+                                            <param id="0" name="First value">round(scrolly*zoom_var)</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Second value">round(Layoutheight/2)</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="1963281227732544" type="System">
+                                            <param id="0" name="First value">scrollx</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">round((LayoutWidth/2)*1.5)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-6" name="Scroll to Y" sid="1699844957641933" type="System">
+                                            <param id="0" name="Y">(campoint.Y+cursor2.Y)/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1336969563624113">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="5046759297389889" type="System">
+                                            <param id="0" name="First value">round(scrollx*zoom_var)</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Second value">round(Layoutwidth/2)</param>
+                                        </condition>
+                                        <condition id="-8" name="Compare two values" sid="7640616834706572" type="System">
+                                            <param id="0" name="First value">scrolly</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">round((LayoutHeight/2)*1.43)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-5" name="Scroll to X" sid="4223973583787584" type="System">
+                                            <param id="0" name="X">(campoint.X+cursor2.X)/2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="1155385871987122">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6525135079711694" type="System">
+                                    <param id="0" name="First value">round(scrollx*zoom_var)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">round(Layoutwidth/2)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Scroll to X" sid="2469541951685097" type="System">
+                                    <param id="0" name="X">round(round(Layoutwidth/2)/zoom_var)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="6794588983232699">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="2420627558119756" type="System">
+                                    <param id="0" name="First value">round(scrolly*zoom_var)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">round(Layoutheight/2)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Scroll to Y" sid="8439578451136038" type="System">
+                                    <param id="0" name="Y">round(round(Layoutheight/2)/zoom_var)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7957427083931677">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="8883168879539669" type="System">
+                                    <param id="0" name="First value">zoom_var</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1.5</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3961908335345285">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="452561948737494" type="System">
+                                            <param id="0" name="First value">scrollx</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">round((LayoutWidth/2)*1.333)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-5" name="Scroll to X" sid="6249156021680822" type="System">
+                                            <param id="0" name="X">round((LayoutWidth/2)*1.333)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="656175605645099">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="8963075928254568" type="System">
+                                            <param id="0" name="First value">scrolly</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">round((LayoutHeight/2)*1.289)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-6" name="Scroll to Y" sid="9392551934122928" type="System">
+                                            <param id="0" name="Y">round((LayoutHeight/2)*1.289)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="6592318510972811">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="8634084775089754" type="System">
+                                    <param id="0" name="First value">zoom_var</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3221112776422303">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="9974844492778792" type="System">
+                                            <param id="0" name="First value">scrollx</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">round((LayoutWidth/2)*1.5)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-5" name="Scroll to X" sid="5798592655118949" type="System">
+                                            <param id="0" name="X">round((LayoutWidth/2)*1.5)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8842073969395662">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="8116917015971723" type="System">
+                                            <param id="0" name="First value">scrolly</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Second value">round((LayoutHeight/2)*1.43)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-6" name="Scroll to Y" sid="6342510936460749" type="System">
+                                            <param id="0" name="Y">round((LayoutHeight/2)*1.43)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7222014288134488">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="45643782592213" type="teclado">
+                    <param id="0" name="Key">17 (Ctrl)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="5018150600774084" type="System">
+                    <param id="0" name="Variable">lock_cam</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="5098793294994315" type="System">
+                    <param id="0" name="Variable">cam_in_units</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="3728173888836876" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-9" name="Set value" sid="2978167511482833" type="System">
+                    <param id="0" name="Variable">lock_cam</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8717757392508061">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="9903609043445405" type="teclado">
+                    <param id="0" name="Key">17 (Ctrl)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1224344859625284" type="System">
+                    <param id="0" name="Variable">lock_cam</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="2338184408852785" type="System">
+                    <param id="0" name="Variable">cam_in_units</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="2959649922742628" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="-9" name="Set value" sid="6584308553446444" type="System">
+                    <param id="0" name="Variable">lock_cam</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6166647019152397">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2523460386861968" type="System">
+                    <param id="0" name="Variable">cam_in_units</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="8195893576745684" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="3642124475773677" type="System">
+                    <param id="0" name="Variable">lock_cam</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>17robot_unit</name>
+    <events>
+        <comment>robo</comment>
+        <event-block sid="5109021466983823">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="9390655675029454" type="System">
+                    <param id="0" name="First value">d_area.Opacity</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Second value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4088043538599964" type="d_area" />
+            </actions>
+        </event-block>
+        <event-block sid="2254508386396725">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="2742684086278512" type="d_area">
+                    <param id="0" name="Object">torre</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="302088759450161" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4269574744260133">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="7584886965148159" type="c_visao">
+                            <param id="0" name="Object">torre</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="7645592937674028" type="c_visao">
+                            <param id="0" name="Instance variable">id_torre</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">torre.UID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="6391874913365944" type="torre">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="3088437018323867" type="torre">
+                            <param id="0" name="Instance variable">alerta_disable</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="6963877598881785" type="c_visao">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6413779084680035" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="2500754728112009" type="c_visao">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="4488863964905116" type="torre">
+                            <param id="0" name="Instance variable">alerta_disable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

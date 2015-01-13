@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>24zoom</name>
+    <events>
+        <comment>zoom_var e seu impetuoso princípio...</comment>
+        <event-block sid="9461077842706326">
+            <conditions>
+                <condition id="3" name="On touched object" sid="6099994118037817" type="Touch">
+                    <param id="0" name="Object">hud_zoom_in</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8515782284825057" type="System">
+                    <param id="0" name="Variable">zoom_var</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="3413416892460109" type="Audio">
+                    <param id="0" name="Audio file">Menu Click 3</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="1111667229277134">
+                    <conditions />
+                    <actions>
+                        <action id="-10" name="Add to" sid="3942910099128233" type="System">
+                            <param id="0" name="Variable">zoom_var</param>
+                            <param id="1" name="Value">0.05</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="1223849593623542" type="System">
+                            <param id="0" name="Layer">0</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="1851302193644868" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="2799584139263856" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="8591720553889417" type="System">
+                            <param id="0" name="Variable">zoom_var</param>
+                            <param id="1" name="Value">0.10</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="5384733703149313" type="System">
+                            <param id="0" name="Layer">0</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="6037563149754541" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6195804974988218" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="8761764157310896" type="System">
+                            <param id="0" name="Variable">zoom_var</param>
+                            <param id="1" name="Value">0.15</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="3051564666521621" type="System">
+                            <param id="0" name="Layer">0</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="4071256998650227" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="6063181670675186" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="7916297158792641" type="System">
+                            <param id="0" name="Variable">zoom_var</param>
+                            <param id="1" name="Value">0.15</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="5405167419357605" type="System">
+                            <param id="0" name="Layer">0</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="2324066262180361" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="8846859032229985" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="6653481069074156" type="System">
+                            <param id="0" name="Variable">zoom_var</param>
+                            <param id="1" name="Value">0.05</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="449579084605407" type="System">
+                            <param id="0" name="Layer">0</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="6487830619471703" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6898782501749037">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8005032385193092" type="Touch">
+                    <param id="0" name="Object">hud_zoom_out</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="3723560618209808" type="System">
+                    <param id="0" name="Variable">zoom_var</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="8743780236276615" type="Audio">
+                    <param id="0" name="Audio file">Menu Click 3</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="7542330318243969">
+                    <conditions />
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="8688565165520957" type="System">
+                            <param id="0" name="Variable">zoom_var</param>
+                            <param id="1" name="Value">0.05</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="4238903966989956" type="System">
+                            <param id="0" name="Layer">0</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="3995335651124878" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="9825658425300821" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="3554811426928304" type="System">
+                            <param id="0" name="Variable">zoom_var</param>
+                            <param id="1" name="Value">0.10</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="4205451147673624" type="System">
+                            <param id="0" name="Layer">0</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="9547867558913137" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="1736663459035321" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="7172105233848141" type="System">
+                            <param id="0" name="Variable">zoom_var</param>
+                            <param id="1" name="Value">0.15</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="8404629899417867" type="System">
+                            <param id="0" name="Layer">0</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="6140254157528235" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="1562191536600861" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="8421292234076882" type="System">
+                            <param id="0" name="Variable">zoom_var</param>
+                            <param id="1" name="Value">0.15</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="9602752796672547" type="System">
+                            <param id="0" name="Layer">0</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="700659378829267" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="5678799057047137" type="System">
+                            <param id="0" name="Seconds">0.01</param>
+                        </action>
+                        <action id="-11" name="Subtract from" sid="2845252916010014" type="System">
+                            <param id="0" name="Variable">zoom_var</param>
+                            <param id="1" name="Value">0.05</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="6106057401893558" type="System">
+                            <param id="0" name="Layer">0</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                        <action id="-17" name="Set layer scale" sid="3492119947622848" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Scale">zoom_var</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block disabled="1" sid="8208849542057315">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4515411855868104" type="System">
+                    <param id="0" name="Variable">zoom_var</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9059615534215929" type="System">
+                    <param id="0" name="Variable">lock_cam</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="9776716496338681" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="6878784697576084" type="hud_scroll">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9585084388191267">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="1376273042917408" type="System">
+                    <param id="0" name="Variable">zoom_var</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="7039703712053788" type="System" />
+            </conditions>
+            <actions>
+                <action disabled="1" id="-15" name="Set visible" sid="4566269073880795" type="hud_scroll">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-7" name="Scroll to position" sid="2478921837187775" type="System">
+                    <param id="0" name="X">round(LayoutWidth/2)</param>
+                    <param id="1" name="Y">round(LayoutHeight/2)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3387604077048366">
+            <conditions>
+                <condition disabled="1" id="-14" name="Compare variable" sid="5098896449556872" type="System">
+                    <param id="0" name="Variable">zoom_var</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="2" name="Is in touch" sid="8821227463460198" type="Touch" />
+                <condition id="4" inverted="1" name="Is touching object" sid="4950981429874055" type="Touch">
+                    <param id="0" name="Object">hud_analogic</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="9468798829459588">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="9395464445824243" type="System">
+                            <param id="0" name="Variable">lock_cam</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9634099022169386">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="9837171312558947" type="Touch">
+                                    <param id="0" name="Object">hud_left_scroll</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Scroll to X" sid="2766946892540558" type="System">
+                                    <param id="0" name="X">round(scrollx-5)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="7617136765847917">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="3804964889980685" type="Touch">
+                                    <param id="0" name="Object">hud_right_scroll</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Scroll to X" sid="8090368207134765" type="System">
+                                    <param id="0" name="X">round(scrollx+5)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9372015297795735">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="1566981767776935" type="Touch">
+                                    <param id="0" name="Object">hud_top_scroll</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Scroll to Y" sid="2451579644638984" type="System">
+                                    <param id="0" name="Y">round(scrolly-5)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2965962724284399">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="6898064744195458" type="Touch">
+                                    <param id="0" name="Object">hud_bot_scroll</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Scroll to Y" sid="6956103158528109" type="System">
+                                    <param id="0" name="Y">round(scrolly+5)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="6827888097026638">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="6167909808558764" type="System">
+                            <param id="0" name="First value">round(scrollx*zoom_var)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">round(Layoutwidth/2)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Scroll to X" sid="2414166416620837" type="System">
+                            <param id="0" name="X">round(round(Layoutwidth/2)/zoom_var)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="9717613742192466">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="8350025086941418" type="System">
+                            <param id="0" name="First value">round(scrolly*zoom_var)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">round(Layoutheight/2)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-6" name="Scroll to Y" sid="7493660648794552" type="System">
+                            <param id="0" name="Y">round(round(Layoutheight/2)/zoom_var)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="4506253966571709">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="641744063802542" type="System">
+                            <param id="0" name="First value">zoom_var</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="6024770422548915" type="System">
+                            <param id="0" name="First value">zoom_var</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">1.5</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5434824647468395">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="5080771645729793" type="System">
+                                    <param id="0" name="First value">scrollx</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">round((LayoutWidth/2)*1.333)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Scroll to X" sid="9916232924404599" type="System">
+                                    <param id="0" name="X">round((LayoutWidth/2)*1.333)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2008597368106669">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6170730514779665" type="System">
+                                    <param id="0" name="First value">scrolly</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">round((LayoutHeight/2)*1.289)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Scroll to Y" sid="6394644708297756" type="System">
+                                    <param id="0" name="Y">round((LayoutHeight/2)*1.289)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="5521457882696813">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="871436368781122" type="System">
+                            <param id="0" name="First value">zoom_var</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">1.5</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="5282324475286675" type="System">
+                            <param id="0" name="First value">zoom_var</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6809434816037498">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="3805677469494148" type="System">
+                                    <param id="0" name="First value">scrollx</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">round((LayoutWidth/2)*1.5)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-5" name="Scroll to X" sid="8619706709526089" type="System">
+                                    <param id="0" name="X">round((LayoutWidth/2)*1.5)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3532412530305546">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="3014390936463965" type="System">
+                                    <param id="0" name="First value">scrolly</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">round((LayoutHeight/2)*1.43)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Scroll to Y" sid="7509425865956964" type="System">
+                                    <param id="0" name="Y">round((LayoutHeight/2)*1.43)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>Debug</comment>
+        <event-block disabled="1" sid="4527354175039489">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="3988701771685247" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+    </events>
+</c2eventsheet>

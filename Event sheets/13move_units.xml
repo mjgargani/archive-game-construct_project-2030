@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>13move_units</name>
+    <events>
+        <comment>selecionar unidades/mover unidades</comment>
+        <event-block sid="4765692206169476">
+            <conditions>
+                <condition id="7" inverted="1" name="Cursor is over object" sid="2366196459975483" type="mouse">
+                    <param id="0" name="Object">unidade</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="738463705992201" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="7555717292427101" type="mouse">
+                    <param id="0" name="Cursor style">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2337283772939161">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="2835614245232029" type="Touch">
+                    <param id="0" name="Object">hud_analogic</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="105400946209137" type="System">
+                    <param id="0" name="Variable">on_touch</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1877956062344593">
+            <conditions>
+                <condition id="2" inverted="1" name="Is in touch" sid="8663323876939514" type="Touch" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="9482119799304012" type="System">
+                    <param id="0" name="Variable">on_touch</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1527457941781366">
+            <conditions>
+                <condition id="-11" name="For Each" sid="2710923433743589" type="System">
+                    <param id="0" name="Object">unidade</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="7277798795812881" type="unidade">
+                    <param id="0" name="Instance variable">selecionado</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1170225742606972">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="5152483698231146" type="teclado">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="3050559656613304" type="unidade">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="685650191704093">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="5598184831772934" type="teclado">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="9351753359894917" type="unidade">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7042401933046676">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="4608969636258001" type="teclado">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="32068076364056" type="unidade">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8195483194802628">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="7536780257385115" type="teclado">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="6996778392861522" type="unidade">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>controle touch</comment>
+                <event-block sid="7014637507535717">
+                    <conditions>
+                        <condition id="4" inverted="1" name="Is touching object" sid="603940888208741" type="Touch">
+                            <param id="0" name="Object">hud_deadzone</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="2955532912701303" type="System">
+                            <param id="0" name="Variable">on_touch</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <comment>frente</comment>
+                        <event-block sid="9522461031117052">
+                            <conditions>
+                                <condition id="-13" name="Is between angles" sid="9428818882392815" type="analogic">
+                                    <param id="0" name="First angle">337.5</param>
+                                    <param id="1" name="Second angle">22.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="9956338972512196" type="unidade">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>frente-baixo</comment>
+                        <event-block sid="497127386814619">
+                            <conditions>
+                                <condition id="-13" name="Is between angles" sid="7324079236677418" type="analogic">
+                                    <param id="0" name="First angle">22.5</param>
+                                    <param id="1" name="Second angle">67.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="3976996216809478" type="unidade">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="5624762302224801" type="unidade">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>baixo</comment>
+                        <event-block sid="1325380456301424">
+                            <conditions>
+                                <condition id="-13" name="Is between angles" sid="6742222647658677" type="analogic">
+                                    <param id="0" name="First angle">67.5</param>
+                                    <param id="1" name="Second angle">112.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="6767032746864338" type="unidade">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>baixo-esquerda</comment>
+                        <event-block sid="6766047741418882">
+                            <conditions>
+                                <condition id="-13" name="Is between angles" sid="1522460606849318" type="analogic">
+                                    <param id="0" name="First angle">112.5</param>
+                                    <param id="1" name="Second angle">157.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="5237973978807967" type="unidade">
+                                    <param id="0" name="Control">3</param>
+                                </action>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="389825199352982" type="unidade">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>esquerda</comment>
+                        <event-block sid="108815944529049">
+                            <conditions>
+                                <condition id="-13" name="Is between angles" sid="6516211039764264" type="analogic">
+                                    <param id="0" name="First angle">157.5</param>
+                                    <param id="1" name="Second angle">202.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="6907769511272962" type="unidade">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>esquerda-cima</comment>
+                        <event-block sid="7210919060709919">
+                            <conditions>
+                                <condition id="-13" name="Is between angles" sid="2356731074833563" type="analogic">
+                                    <param id="0" name="First angle">202.5</param>
+                                    <param id="1" name="Second angle">247.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="2330778603424788" type="unidade">
+                                    <param id="0" name="Control">0</param>
+                                </action>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="8341209613651011" type="unidade">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>cima</comment>
+                        <event-block sid="3466223343312313">
+                            <conditions>
+                                <condition id="-13" name="Is between angles" sid="8731204592958105" type="analogic">
+                                    <param id="0" name="First angle">247.5</param>
+                                    <param id="1" name="Second angle">292.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="4065063046964252" type="unidade">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <comment>cima-direita</comment>
+                        <event-block sid="540056963878421">
+                            <conditions>
+                                <condition id="-13" name="Is between angles" sid="162399394099269" type="analogic">
+                                    <param id="0" name="First angle">292.5</param>
+                                    <param id="1" name="Second angle">337.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="9622925429336526" type="unidade">
+                                    <param id="0" name="Control">2</param>
+                                </action>
+                                <action behavior="8Direction" id="7" name="Simulate control" sid="5414756793335375" type="unidade">
+                                    <param id="0" name="Control">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1749826912497932">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="7760195342860715" type="System">
+                    <param id="0" name="Variable">on_touch</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="2" name="Is in touch" sid="6564722310344238" type="Touch" />
+                <condition id="12" name="Has Nth touch" sid="5497026642668995" type="Touch">
+                    <param id="0" name="Touch number">0</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="1278862293315255" type="System">
+                    <param id="0" name="First value">variaveis.safe_units</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Second value">variaveis.unit_count</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="6367431308174635" type="variaveis">
+                    <param id="0" name="Instance variable">timer</param>
+                    <param id="1" name="Value">2</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="3204366727077535">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="2276809904846202" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="8761342107785611" type="seletor">
+                            <param id="0" name="X">cursor.X</param>
+                            <param id="1" name="Y">cursor.Y</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="6478076556191486" type="seletor">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="0" name="Set cursor style" sid="837962344383718" type="mouse">
+                            <param id="0" name="Cursor style">4</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="3461215014536835" type="s_unit" />
+                    </actions>
+                </event-block>
+                <event-block sid="6976799452357698">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3058823491304558" type="variaveis">
+                            <param id="0" name="Instance variable">timer</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="6917830799316622" type="seletor">
+                            <param id="0" name="Width">cursor.X - seletor.X</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="6265963145073728" type="seletor">
+                            <param id="0" name="Height">cursor.Y - seletor.y</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="4530162007354219" type="seletor" />
+                        <action id="-24" name="Move to top" sid="3053016554273954" type="hud_background" />
+                        <action id="-24" name="Move to top" sid="9775746662142816" type="hud_shadow2" />
+                        <action id="-24" name="Move to top" sid="7620990490100691" type="hud_shadow3" />
+                        <action id="-24" name="Move to top" sid="6388817620552449" type="hud_tempo" />
+                        <action id="-24" name="Move to top" sid="4850886122197705" type="hud_unidades" />
+                        <action id="-24" name="Move to top" sid="7442814887127021" type="hud_restart" />
+                        <action id="-24" name="Move to top" sid="338990601971212" type="hud_zoom_in" />
+                        <action id="-24" name="Move to top" sid="4315357269884357" type="hud_zoom_out" />
+                        <action id="-24" name="Move to top" sid="2008308485448196" type="debug_txt" />
+                        <action id="-24" name="Move to top" sid="5498953351472385" type="hud_txt_contador" />
+                        <action id="-24" name="Move to top" sid="397149998195161" type="hud_txt_unidades" />
+                        <action id="-24" name="Move to top" sid="5432387727544306" type="cursor" />
+                        <action id="0" name="Call function" sid="6501656192482215" type="funções">
+                            <param id="0" name="Name">&quot;selecionar_unidades&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8266352793200497">
+            <conditions>
+                <condition id="2" inverted="1" name="Is in touch" sid="273828678838526" type="Touch" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="8856298535922476">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="3928193641179676" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="5405445746179407" type="seletor">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="870104621065132" type="seletor">
+                            <param id="0" name="Width">0</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="8313898176582633" type="seletor">
+                            <param id="0" name="Height">0</param>
+                        </action>
+                        <action id="-3" name="Set position" sid="6236776456991297" type="seletor">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                        <action id="0" name="Set cursor style" sid="667677411029208" type="mouse">
+                            <param id="0" name="Cursor style">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6076892948226628">
+            <conditions>
+                <condition id="0" name="On function" sid="5986452914514483" type="funções">
+                    <param id="0" name="Name">&quot;selecionar_unidades&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="5251036019986261" type="s_unit" />
+                <action id="-9" name="Destroy" sid="7517260050404654" type="txt_vida_unidade" />
+            </actions>
+            <sub-events>
+                <event-block sid="3415966916302795">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="805059360959801" type="System">
+                            <param id="0" name="Object">unidade</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2187222539875685">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="897316064311345" type="unidade">
+                                    <param id="0" name="Instance variable">selecionado</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="938473576450283" type="System">
+                                    <param id="0" name="Object to create">s_unit</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="X">unidade.X</param>
+                                    <param id="3" name="Y">unidade.Y</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="8776375756641451" type="s_unit">
+                                    <param id="0" name="Pin to">unidade</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="3039859282217721" type="s_unit">
+                                    <param id="0" name="Instance variable">id_unit</param>
+                                    <param id="1" name="Value">unidade.UID</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="6937646736856671" type="System">
+                                    <param id="0" name="Object to create">txt_vida_unidade</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">unidade.X+8</param>
+                                    <param id="3" name="Y">unidade.Y+24</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="4621614674510089" type="txt_vida_unidade">
+                                    <param id="0" name="Pin to">unidade</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="7883335910919247" type="txt_vida_unidade">
+                                    <param id="0" name="Instance variable">id_unit</param>
+                                    <param id="1" name="Value">unidade.UID</param>
+                                </action>
+                                <action id="-24" name="Move to top" sid="5657840687745723" type="unidade" />
+                                <action id="0" name="Set text" sid="7210244147606062" type="txt_vida_unidade">
+                                    <param id="0" name="Text">unidade.vida</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="2400893150640726">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="8963278306321273" type="unidade">
+                                    <param id="0" name="Object">seletor</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="7183549492619529" type="unidade">
+                                    <param id="0" name="Instance variable">selecionado</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9640549774797319">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8473989815045039" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="2347272988698364" type="unidade">
+                                    <param id="0" name="Instance variable">selecionado</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

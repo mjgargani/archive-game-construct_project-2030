@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>07uptower_generator</name>
+    <events>
+        <event-block sid="5519492679170602">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="3473294213550731" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>criar torres</comment>
+                <event-block sid="597910763883466">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="4628358539636904" type="System">
+                            <param id="0" name="Object">torre_base</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="959372077511625" type="System">
+                            <param id="0" name="Object to create">c_visao</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">torre_base.ImagePointX(1)</param>
+                            <param id="3" name="Y">torre_base.ImagePointY(1)</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="9864166522992962" type="System">
+                            <param id="0" name="Object to create">torre</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">torre_base.ImagePointX(1)</param>
+                            <param id="3" name="Y">torre_base.ImagePointY(1)</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="9968527354466131" type="c_visao">
+                            <param id="0" name="Pin to">torre</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="9911849548160814" type="c_visao" />
+                        <action id="-10" name="Set value" sid="580096873206964" type="c_visao">
+                            <param id="0" name="Instance variable">id_torre</param>
+                            <param id="1" name="Value">torre.UID</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="5920752151419702" type="torre_base" />
+                        <action id="-10" name="Set value" sid="2763248708721185" type="torre_base">
+                            <param id="0" name="Instance variable">id_torre</param>
+                            <param id="1" name="Value">torre.UID</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="563464213767988" type="torre" />
+                        <action id="-22" name="Set angle toward position" sid="4444706038214275" type="torre">
+                            <param id="0" name="X">fuz_gen_point.X</param>
+                            <param id="1" name="Y">fuz_gen_point.Y</param>
+                        </action>
+                        <action behavior="LineOfSight" id="2" name="Add obstacle" sid="2394115250908696" type="torre">
+                            <param id="0" name="Obstacle">area_block</param>
+                        </action>
+                        <action behavior="LineOfSight" id="2" name="Add obstacle" sid="753140446024584" type="torre">
+                            <param id="0" name="Obstacle">start_zone</param>
+                        </action>
+                        <action behavior="LineOfSight" id="2" name="Add obstacle" sid="2300853321166989" type="torre">
+                            <param id="0" name="Obstacle">safe_zone</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="7068973639912326" type="c_visao">
+                            <param id="0" name="Instance variable">shadow_id</param>
+                            <param id="1" name="Value">torre_base.shadow_id</param>
+                        </action>
+                        <action behavior="Sine" id="5" name="Set cycle position" sid="2037786569992759" type="torre">
+                            <param id="0" name="Cycle position">random(1)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

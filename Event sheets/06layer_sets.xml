@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>06layer_sets</name>
+    <events>
+        <event-block sid="7888246812971628">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4766550857360283" type="System" />
+            </conditions>
+            <actions>
+                <action id="-18" name="Set layer opacity" sid="5048149063025238" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Opacity">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="27376265354654" type="System">
+                    <param id="0" name="Variable">zoom_var</param>
+                    <param id="1" name="Value">1.5</param>
+                </action>
+                <action id="-17" name="Set layer scale" sid="15352954346797" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Scale">zoom_var</param>
+                </action>
+                <action id="-17" name="Set layer scale" sid="4068149643477646" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Scale">zoom_var</param>
+                </action>
+                <action id="-5" name="Scroll to X" sid="5969994445206104" type="System">
+                    <param id="0" name="X">round(round(Layoutwidth/2)/zoom_var)</param>
+                </action>
+                <action id="-6" name="Scroll to Y" sid="7000470766406977" type="System">
+                    <param id="0" name="Y">fuz_gen_point.Y</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="619837776276906">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="1332086608988522" type="System">
+                            <param id="0" name="First value">round(scrolly*zoom_var)</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">round(Layoutheight/2)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-6" name="Scroll to Y" sid="2591578094080069" type="System">
+                            <param id="0" name="Y">round(round(Layoutheight/2)/zoom_var)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1726325948511745">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="7179627602596571" type="System">
+                            <param id="0" name="First value">zoom_var</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1.5</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6767413393658984">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="8291586155594964" type="System">
+                                    <param id="0" name="First value">scrolly</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">round((LayoutHeight/2)*1.289)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-6" name="Scroll to Y" sid="5272382626885082" type="System">
+                                    <param id="0" name="Y">round((LayoutHeight/2)*1.289)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

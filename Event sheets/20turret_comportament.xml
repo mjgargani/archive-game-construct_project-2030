@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>20turret_comportament</name>
+    <events>
+        <comment>comportamento_torre</comment>
+        <event-block sid="328461063319944">
+            <conditions>
+                <condition id="-11" name="For Each" sid="5330317769364755" type="System">
+                    <param id="0" name="Object">torre</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block any="1" sid="2723316269401258">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="3072512363039832" type="torre">
+                            <param id="0" name="Instance variable">alerta_disable</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="6832301303231401" type="torre">
+                            <param id="0" name="Instance variable">alerta_disable</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Turret" id="5" name="Set enabled" sid="6347741521114829" type="torre">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Sine" id="0" name="Set active" sid="5614291257565673" type="torre">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9785129893569474">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4287771607189006" type="torre">
+                            <param id="0" name="Instance variable">alerta_disable</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Turret" id="5" name="Set enabled" sid="9722899787136441" type="torre">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action behavior="Sine" id="0" name="Set active" sid="5783379184240242" type="torre">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3762754802984745">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5255617459367263" type="torre">
+                            <param id="0" name="Instance variable">alerta_disable</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="4811157769705236" type="c_visao">
+                            <param id="0" name="Object">torre</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="6257399279126934" type="c_visao">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3370566451643752">
+                            <conditions>
+                                <condition id="-20" inverted="1" name="Is on mobile device" sid="8327274632983469" type="System" />
+                                <condition id="1" name="Is overlapping another object" sid="69336482537573" type="a_visao">
+                                    <param id="0" name="Object">c_visao</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="4067800170854921" type="a_visao">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="714455552895154">
+                    <conditions>
+                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="9833582310459051" type="torre">
+                            <param id="0" name="Object">unidade</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9723458320670304">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="1194010945212134" type="System">
+                                    <param id="0" name="Object">unidade</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="966204728069776">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="4571901486809732" type="unidade">
+                                            <param id="0" name="Object">c_visao</param>
+                                        </condition>
+                                        <condition id="-10" name="Compare opacity" sid="5709475538012949" type="unidade">
+                                            <param id="0" name="Comparison">1</param>
+                                            <param id="1" name="Opacity">40</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="1968092930485021" type="unidade">
+                                            <param id="0" name="Instance variable">vida</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Turret" id="0" name="Acquire target" sid="9823759300508633" type="torre">
+                                            <param id="0" name="Target">unidade</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="1049056520009261">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="7670576462363333" type="torre">
+                                                    <param id="0" name="Instance variable">alerta_disable</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="8977752101587262">
+                                                    <conditions>
+                                                        <condition id="1" name="Is overlapping another object" sid="7719840473671539" type="a_visao">
+                                                            <param id="0" name="Object">c_visao</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="5" name="Set frame" sid="5737466821791284" type="a_visao">
+                                                            <param id="0" name="Frame number">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="9756208021243341">
+                                            <conditions>
+                                                <condition behavior="8Direction" id="0" name="Is moving" sid="9467516900184113" type="unidade" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="8645181715213283" type="torre">
+                                                    <param id="0" name="Instance variable">alerta_disable</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                            <sub-events>
+                                                <event-block sid="6762523030969403">
+                                                    <conditions>
+                                                        <condition id="1" name="Is overlapping another object" sid="1337039602247162" type="a_visao">
+                                                            <param id="0" name="Object">c_visao</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="5" name="Set frame" sid="886872236728606" type="a_visao">
+                                                            <param id="0" name="Frame number">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="1182093813794369">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="831384283741638" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Turret" id="3" name="Unacquire target" sid="7221689622344504" type="torre" />
+                                        <action id="-10" name="Set value" sid="5126729551944139" type="torre">
+                                            <param id="0" name="Instance variable">alerta_disable</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="3211614713076014" type="a_visao">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6173752125046379">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="3451541386060801" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="9527347412943876" type="torre">
+                            <param id="0" name="Instance variable">alerta_disable</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="2421918258748564" type="torre">
+                            <param id="0" name="Instance variable">alerta_disable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5964080442249346">
+            <conditions>
+                <condition behavior="Turret" id="1" name="On shoot" sid="8013244357329528" type="torre" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="589128929093689" type="torre">
+                    <param id="0" name="Object">bala1</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="0" name="Play" sid="9983989467671745" type="Audio">
+                    <param id="0" name="Audio file">Hit2</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;ac&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2103106853978945">
+            <conditions>
+                <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="7871065902411921" type="bala1">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Distance">torre.Turret.Range</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="7697403490235679" type="bala1" />
+            </actions>
+        </event-block>
+        <event-block sid="1284080916021549">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8391927951855638" type="bala3">
+                    <param id="0" name="Object">torre</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="4624065376183045" type="torre">
+                    <param id="0" name="Instance variable">vida</param>
+                    <param id="1" name="Value">25</param>
+                </action>
+                <action id="0" name="Play" sid="5361163470573438" type="Audio">
+                    <param id="0" name="Audio file">Oops3</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;dano_torre&quot;</param>
+                </action>
+                <action id="-9" name="Destroy" sid="6997068064752294" type="bala3" />
+            </actions>
+            <sub-events>
+                <event-block sid="8712325663966965">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="562624070008662" type="torre">
+                            <param id="0" name="Instance variable">alerta_disable</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="6372790273387373" type="torre">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="8429350696022573" type="torre">
+                            <param id="0" name="Instance variable">alerta_disable</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="4937530855937394" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9524972772517503" type="torre">
+                            <param id="0" name="Instance variable">alerta_disable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5256884095786471">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="9907310743851684" type="torre_base">
+                            <param id="0" name="Object">torre</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="5280039649020962" type="torre_base">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7057838090372838">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="3008653565937788" type="torre">
+                    <param id="0" name="Instance variable">vida</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4201706300707304">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="4829252976714593" type="torre_base">
+                            <param id="0" name="Object">torre</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="1358645171775487" type="torre_base">
+                            <param id="0" name="Instance variable">id_torre</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">torre.UID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9798246488045478" type="torre_base" />
+                    </actions>
+                </event-block>
+                <event-block sid="3674409060815291">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="9023524453933248" type="c_visao">
+                            <param id="0" name="Object">torre</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="6107842519648738" type="c_visao">
+                            <param id="0" name="Instance variable">id_torre</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">torre.UID</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2692176528995562" type="c_visao" />
+                    </actions>
+                </event-block>
+                <event-block sid="2342129037481116">
+                    <conditions />
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9913773322309875" type="torre" />
+                    </actions>
+                </event-block>
+                <event-block sid="7652509258610196">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="4702868134663368" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="9029355622251516" type="Audio">
+                            <param id="0" name="Audio file">RetroLaser3</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;aa&quot;</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4806437194829938" type="System">
+                            <param id="0" name="Object to create">explosion</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="X">torre.x</param>
+                            <param id="3" name="Y">torre.y</param>
+                        </action>
+                        <action id="-24" name="Move to top" sid="7902342453145891" type="explosion" />
+                        <action id="-8" name="Set angle" sid="229724499837843" type="explosion">
+                            <param id="0" name="Angle">round(random(360))</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
