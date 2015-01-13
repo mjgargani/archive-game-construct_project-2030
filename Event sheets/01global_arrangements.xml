@@ -9,7 +9,7 @@
         <variable constant="0" name="tempo_total" sid="2436281162956913" static="0" type="number">0</variable>
         <variable constant="0" name="robos" sid="2913778578999171" static="0" type="number">0</variable>
         <variable constant="0" name="move_layout" sid="7376981779755066" static="0" type="number">0</variable>
-        <variable comment="variação pra montagem do mapa" constant="0" name="random_var" sid="6362215638111569" static="0" type="number">0</variable>
+        <variable constant="0" name="random_var" sid="6362215638111569" static="0" type="number">0</variable>
         <variable constant="0" name="on_touch" sid="735917836844667" static="0" type="number">0</variable>
         <variable constant="0" name="loop_aux" sid="968654898575712" static="0" type="number">0</variable>
         <variable constant="0" name="zoom_var" sid="3887454708989682" static="0" type="number">1.5</variable>

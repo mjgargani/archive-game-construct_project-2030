@@ -1148,6 +1148,7 @@
         <layout>a1.xml</layout>
     </layout-folder>
     <event-folder>
+        <event-folder name="game_motor" />
         <event-sheet>01global_arrangements.xml</event-sheet>
         <event-sheet>02initial_cleaning.xml</event-sheet>
         <event-sheet>03map_generator.xml</event-sheet>
