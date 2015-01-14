@@ -1148,32 +1148,33 @@
         <layout>a1.xml</layout>
     </layout-folder>
     <event-folder>
-        <event-folder name="game_motor" />
-        <event-sheet>01global_arrangements.xml</event-sheet>
-        <event-sheet>02initial_cleaning.xml</event-sheet>
-        <event-sheet>03map_generator.xml</event-sheet>
-        <event-sheet>04tower_generator.xml</event-sheet>
-        <event-sheet>05block_generator.xml</event-sheet>
-        <event-sheet>06layer_sets.xml</event-sheet>
-        <event-sheet>07uptower_generator.xml</event-sheet>
-        <event-sheet>08level_generator.xml</event-sheet>
-        <event-sheet>09regular_actions.xml</event-sheet>
-        <event-sheet>10input_tests.xml</event-sheet>
-        <event-sheet>11only_once_events.xml</event-sheet>
-        <event-sheet>12unit_sets.xml</event-sheet>
-        <event-sheet>13move_units.xml</event-sheet>
-        <event-sheet>14unit_anim.xml</event-sheet>
-        <event-sheet>15stealth_mode_marines.xml</event-sheet>
-        <event-sheet>16damage_units.xml</event-sheet>
-        <event-sheet>17robot_unit.xml</event-sheet>
-        <event-sheet>18medic_unit.xml</event-sheet>
-        <event-sheet>19marine_unit.xml</event-sheet>
-        <event-sheet>20turret_comportament.xml</event-sheet>
-        <event-sheet>21objective.xml</event-sheet>
-        <event-sheet>22FX.xml</event-sheet>
-        <event-sheet>23controls.xml</event-sheet>
-        <event-sheet>24zoom.xml</event-sheet>
-        <event-sheet>25cam_lock.xml</event-sheet>
+        <event-folder name="game_motor">
+            <event-sheet>01global_arrangements.xml</event-sheet>
+            <event-sheet>02initial_cleaning.xml</event-sheet>
+            <event-sheet>03map_generator.xml</event-sheet>
+            <event-sheet>04tower_generator.xml</event-sheet>
+            <event-sheet>05block_generator.xml</event-sheet>
+            <event-sheet>06layer_sets.xml</event-sheet>
+            <event-sheet>07uptower_generator.xml</event-sheet>
+            <event-sheet>08level_generator.xml</event-sheet>
+            <event-sheet>09regular_actions.xml</event-sheet>
+            <event-sheet>10input_tests.xml</event-sheet>
+            <event-sheet>11only_once_events.xml</event-sheet>
+            <event-sheet>12unit_sets.xml</event-sheet>
+            <event-sheet>13move_units.xml</event-sheet>
+            <event-sheet>14unit_anim.xml</event-sheet>
+            <event-sheet>15stealth_mode_marines.xml</event-sheet>
+            <event-sheet>16damage_units.xml</event-sheet>
+            <event-sheet>17robot_unit.xml</event-sheet>
+            <event-sheet>18medic_unit.xml</event-sheet>
+            <event-sheet>19marine_unit.xml</event-sheet>
+            <event-sheet>20turret_comportament.xml</event-sheet>
+            <event-sheet>21objective.xml</event-sheet>
+            <event-sheet>22FX.xml</event-sheet>
+            <event-sheet>23controls.xml</event-sheet>
+            <event-sheet>24zoom.xml</event-sheet>
+            <event-sheet>25cam_lock.xml</event-sheet>
+        </event-folder>
     </event-folder>
     <global-instances>
         <global-instance type="mouse" uid="3" />
