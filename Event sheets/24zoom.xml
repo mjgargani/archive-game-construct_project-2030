@@ -202,9 +202,9 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block disabled="1" sid="8208849542057315">
+        <event-block sid="8208849542057315">
             <conditions>
-                <condition id="-14" name="Compare variable" sid="4515411855868104" type="System">
+                <condition disabled="1" id="-14" name="Compare variable" sid="4515411855868104" type="System">
                     <param id="0" name="Variable">zoom_var</param>
                     <param id="1" name="Comparison">4</param>
                     <param id="2" name="Value">1</param>
