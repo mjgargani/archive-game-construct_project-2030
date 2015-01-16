@@ -59,6 +59,7 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>cursor referencial do layout</comment>
                 <event-block sid="4622861382583953">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="2963192094922113" type="System">
@@ -68,9 +69,9 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-3" name="Set position" sid="2895705453672158" type="cursor2">
-                            <param id="0" name="X">cursor.X</param>
-                            <param id="1" name="Y">cursor.Y</param>
+                        <action id="-3" name="Set position" sid="6996825776775782" type="cursor2">
+                            <param id="0" name="X">(scrollx-424)+(cursor.X/zoom_var)</param>
+                            <param id="1" name="Y">(scrolly-240)+(cursor.y/zoom_var)</param>
                         </action>
                     </actions>
                 </event-block>

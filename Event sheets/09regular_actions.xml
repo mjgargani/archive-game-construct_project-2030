@@ -85,42 +85,31 @@
             </actions>
             <sub-events>
                 <comment>contagem de selecionados</comment>
-                <event-block sid="7739107285038809">
+                <event-block sid="6792245834819708">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="5733362067184572" type="System">
-                            <param id="0" name="Variable">zoom_var</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="-8" name="Is boolean instance variable set" sid="1855564413103874" type="unidade">
+                            <param id="0" name="Instance variable">selecionado</param>
                         </condition>
                     </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="6792245834819708">
-                            <conditions>
-                                <condition id="-8" name="Is boolean instance variable set" sid="1855564413103874" type="unidade">
-                                    <param id="0" name="Instance variable">selecionado</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="4863800087720367" type="variaveis">
-                                    <param id="0" name="Instance variable">unit_selected_count</param>
-                                    <param id="1" name="Value">unidade.PickedCount</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="4466240905472992">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="8150245330889553" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-10" name="Set value" sid="8091184343123668" type="variaveis">
-                                    <param id="0" name="Instance variable">unit_selected_count</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
+                    <actions>
+                        <action id="-10" name="Set value" sid="4863800087720367" type="variaveis">
+                            <param id="0" name="Instance variable">unit_selected_count</param>
+                            <param id="1" name="Value">unidade.PickedCount</param>
+                        </action>
+                    </actions>
                 </event-block>
+                <event-block sid="4466240905472992">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="8150245330889553" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="8091184343123668" type="variaveis">
+                            <param id="0" name="Instance variable">unit_selected_count</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>flag for cam focus in units</comment>
                 <event-block sid="8462429993690832">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="8193410552762482" type="variaveis">
