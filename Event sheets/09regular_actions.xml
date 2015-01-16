@@ -81,7 +81,7 @@
                     <param id="0" name="Instance variable">unit_count</param>
                     <param id="1" name="Value">unidade.Count</param>
                 </action>
-                <action id="-25" name="Move to bottom" sid="2571922841000901" type="TiledBackground2" />
+                <action id="-25" name="Move to bottom" sid="2571922841000901" type="scenario_bg" />
             </actions>
             <sub-events>
                 <comment>contagem de selecionados</comment>
@@ -525,101 +525,6 @@
                         </action>
                         <action id="5" name="Set frame" sid="2531357397726595" type="a_visao">
                             <param id="0" name="Frame number">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <comment>cursor</comment>
-                <event-block sid="6690181247960993">
-                    <conditions>
-                        <condition id="-20" name="Is on mobile device" sid="254444135229735" type="System" />
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="1841029722612232">
-                            <conditions>
-                                <condition id="12" name="Has Nth touch" sid="2312470951215491" type="Touch">
-                                    <param id="0" name="Touch number">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-16" name="Wait" sid="5961749700186421" type="System">
-                                    <param id="0" name="Seconds">0.05</param>
-                                </action>
-                                <action id="-3" name="Set position" sid="8454624709727713" type="cursor">
-                                    <param id="0" name="X">Touch.AbsoluteXAt(1)/(WindowWidth/LayoutWidth)</param>
-                                    <param id="1" name="Y">Touch.AbsoluteYAt(1)/(WindowWidth/LayoutWidth)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="3898061589939114">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="1037559280047602" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-16" name="Wait" sid="2369182034697449" type="System">
-                                    <param id="0" name="Seconds">0.05</param>
-                                </action>
-                                <action id="-3" name="Set position" sid="318783368257708" type="cursor">
-                                    <param id="0" name="X">Touch.AbsoluteX/(WindowWidth/LayoutWidth)</param>
-                                    <param id="1" name="Y">Touch.AbsoluteY/(WindowWidth/LayoutWidth)</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="254517731797731">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="1790018503841668" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Set position" sid="9878626021350714" type="cursor">
-                            <param id="0" name="X">mouse.AbsoluteX/(WindowWidth/LayoutWidth)</param>
-                            <param id="1" name="Y">mouse.AbsoluteY/(WindowWidth/LayoutWidth)</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="3913936182242457">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="1740886363627063" type="System">
-                            <param id="0" name="Variable">zoom_var</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Set position" sid="3511025893669993" type="cursor2">
-                            <param id="0" name="X">cursor.X</param>
-                            <param id="1" name="Y">cursor.Y</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="4861835125467311">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="1554608841373972" type="System">
-                            <param id="0" name="Variable">zoom_var</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1.5</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Set position" sid="502323082813692" type="cursor2">
-                            <param id="0" name="X">(scrollx-283)+(cursor.X/zoom_var)</param>
-                            <param id="1" name="Y">(scrolly-160)+(cursor.y/zoom_var)</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="1359527700714198">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="8882903955567111" type="System">
-                            <param id="0" name="Variable">zoom_var</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">2</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-3" name="Set position" sid="4101982775468338" type="cursor2">
-                            <param id="0" name="X">(scrollx-213)+(cursor.X/zoom_var)</param>
-                            <param id="1" name="Y">(scrolly-120)+(cursor.y/zoom_var)</param>
                         </action>
                     </actions>
                 </event-block>

@@ -24,6 +24,7 @@
         <include>07uptower_generator</include>
         <include>08level_generator</include>
         <include>09regular_actions</include>
+        <include>26cursor</include>
         <include>10input_tests</include>
         <include>11only_once_events</include>
         <include>12unit_sets</include>

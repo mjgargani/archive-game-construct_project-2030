@@ -12,7 +12,6 @@
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
-        <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="CJSAds" version="1">CocoonJS</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
@@ -986,7 +985,7 @@
             <plugin id="TiledBg" />
             <texture />
         </object-type>
-        <object-type name="TiledBackground" sid="6497961526822629">
+        <object-type name="loading_bg" sid="6497961526822629">
             <plugin id="TiledBg" />
             <texture />
         </object-type>
@@ -1113,20 +1112,11 @@
         <object-type name="Browser" sid="9164434406738505">
             <plugin id="Browser" />
         </object-type>
-        <object-type name="debug_btn_cvisao" sid="2467784890520433">
-            <plugin id="Button" />
-        </object-type>
-        <object-type name="debug_btn_tilemap" sid="3709635951599958">
-            <plugin id="Button" />
-        </object-type>
-        <object-type name="TiledBackground2" sid="7696458098377031">
+        <object-type name="scenario_bg" sid="7696458098377031">
             <plugin id="TiledBg" />
             <texture />
         </object-type>
-        <object-type name="Text" sid="9397739517193275">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="TiledBackground3" sid="4789754243595781">
+        <object-type name="layout_limit_bg" sid="4789754243595781">
             <plugin id="TiledBg" />
             <behaviors>
                 <behavior-type name="Solid" sid="7919987929798652">
@@ -1183,6 +1173,7 @@
             <event-sheet>23controls.xml</event-sheet>
             <event-sheet>24zoom.xml</event-sheet>
             <event-sheet>25cam_lock.xml</event-sheet>
+            <event-sheet>26cursor.xml</event-sheet>
         </event-folder>
     </event-folder>
     <global-instances>

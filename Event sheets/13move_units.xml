@@ -242,6 +242,7 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>manipulando a caixa seletora</comment>
         <event-block sid="1749826912497932">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="7760195342860715" type="System">
