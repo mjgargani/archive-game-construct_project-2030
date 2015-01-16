@@ -45,7 +45,7 @@
         <height>480</height>
     </window-size>
     <pixel-rounding>1</pixel-rounding>
-    <preview-effects>1</preview-effects>
+    <preview-effects>0</preview-effects>
     <first-layout>a1</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
@@ -60,7 +60,7 @@
         <prop name="Physics engine">CocoonJS native</prop>
         <prop name="Preview browser">Node-Webkit</prop>
         <prop name="Sampling">Linear</prop>
-        <prop name="Use high-DPI display">Yes</prop>
+        <prop name="Use high-DPI display">No</prop>
     </configuration-settings>
     <object-folder>
         <object-type name="unidade" sid="9344093847810649">
