@@ -40,6 +40,18 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="5850734345733402">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="5406368620635162" type="mouse">
+                    <param id="0" name="Object">hud_quality</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="3676304345757108" type="hud_quality">
+                    <param id="0" name="Opacity">66</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="7285815840830891">
             <conditions>
                 <condition id="7" name="Cursor is over object" sid="5704647626260621" type="mouse">

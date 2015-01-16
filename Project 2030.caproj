@@ -1127,6 +1127,16 @@
             </behaviors>
             <texture />
         </object-type>
+        <object-type name="hud_quality" sid="2343300440386016">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4480623434065904" speed="0">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="balas" plugin-id="Sprite" sid="9729375665077322">
@@ -1176,9 +1186,7 @@
             <event-sheet>24cam_n_zoom_control.xml</event-sheet>
             <event-sheet>25cam_lock.xml</event-sheet>
             <event-sheet>26cursor.xml</event-sheet>
-        </event-folder>
-        <event-folder name="video_options">
-            <event-sheet>video_motor.xml</event-sheet>
+            <event-sheet>27video_option.xml</event-sheet>
         </event-folder>
     </event-folder>
     <global-instances>

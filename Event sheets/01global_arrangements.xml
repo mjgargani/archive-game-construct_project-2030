@@ -3,8 +3,6 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>01global_arrangements</name>
     <events>
-        <comment>Opcionais</comment>
-        <include>video_motor</include>
         <comment>Eventos Globais</comment>
         <variable constant="0" name="fuzileiros" sid="4042998849929856" static="0" type="number">0</variable>
         <variable constant="0" name="medicos" sid="842205000528449" static="0" type="number">0</variable>
@@ -17,6 +15,7 @@
         <variable constant="0" name="zoom_var" sid="3887454708989682" static="0" type="number">1.5</variable>
         <variable constant="0" name="cam_in_units" sid="5860782108523236" static="0" type="number">0</variable>
         <variable constant="0" name="lock_cam" sid="9112105029336017" static="0" type="number">0</variable>
+        <variable constant="0" name="video_options" sid="9155398618449083" static="0" type="number">1</variable>
         <comment>Seguimentos</comment>
         <include>02initial_cleaning</include>
         <include>03map_generator</include>
@@ -43,5 +42,6 @@
         <include>23controls</include>
         <include>24cam_n_zoom_control</include>
         <include>25cam_lock</include>
+        <include>27video_option</include>
     </events>
 </c2eventsheet>

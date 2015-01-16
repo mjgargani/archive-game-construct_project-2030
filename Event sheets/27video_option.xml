@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>video_motor</name>
+    <name>27video_option</name>
     <events>
-        <variable constant="0" name="video_options" sid="9155398618449083" static="0" type="number">1</variable>
+        <comment>em 13move_units, o hud e ajustado para se manter acima de tudo</comment>
         <event-block sid="8625164651844297">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="5204308503097531" type="System" />
@@ -13,54 +13,59 @@
                     <param id="0" name="Min width">560</param>
                     <param id="1" name="Min height">317</param>
                 </action>
-                <action id="0" name="Call function" sid="3089399097203563" type="funções">
-                    <param id="0" name="Name">&quot;change_video&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
-                </action>
             </actions>
         </event-block>
         <comment>controle</comment>
         <event-block sid="6786831977794608">
             <conditions>
-                <condition id="0" name="On key pressed" sid="4766079016898391" type="teclado">
-                    <param id="0" name="Key">187 (=)</param>
+                <condition id="6" name="On object clicked" sid="4361251240380844" type="mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">hud_quality</param>
                 </condition>
-                <condition id="-14" name="Compare variable" sid="1417307002272694" type="System">
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="3531891754439978" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-10" name="Add to" sid="9023771670400343" type="System">
                     <param id="0" name="Variable">video_options</param>
-                    <param id="1" name="Comparison">2</param>
+                    <param id="1" name="Value">0.7</param>
+                </action>
+                <action id="0" name="Call function" sid="6628591379859161" type="funções">
+                    <param id="0" name="Name">&quot;change_video&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="0" name="Play" sid="6834934440839809" type="Audio">
+                    <param id="0" name="Audio file">Menu Click 3</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="5" name="Set frame" sid="9936639999200385" type="hud_quality">
+                    <param id="0" name="Frame number">hud_quality.AnimationFrame+1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2496931988307981">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2347179393694428" type="System">
+                    <param id="0" name="Variable">video_options</param>
+                    <param id="1" name="Comparison">4</param>
                     <param id="2" name="Value">2.4</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-10" name="Add to" sid="816368538255626" type="System">
+                <action id="-9" name="Set value" sid="95452764652764" type="System">
                     <param id="0" name="Variable">video_options</param>
-                    <param id="1" name="Value">0.7</param>
+                    <param id="1" name="Value">1</param>
                 </action>
-                <action id="0" name="Call function" sid="6254823160406743" type="funções">
+                <action id="0" name="Call function" sid="2915775936811574" type="funções">
                     <param id="0" name="Name">&quot;change_video&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-            </actions>
-        </event-block>
-        <event-block sid="839365525276814">
-            <conditions>
-                <condition id="0" name="On key pressed" sid="1764411378135968" type="teclado">
-                    <param id="0" name="Key">189 (-)</param>
-                </condition>
-                <condition id="-14" name="Compare variable" sid="7227797164462947" type="System">
-                    <param id="0" name="Variable">video_options</param>
-                    <param id="1" name="Comparison">4</param>
-                    <param id="2" name="Value">1</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-11" name="Subtract from" sid="9674809650876562" type="System">
-                    <param id="0" name="Variable">video_options</param>
-                    <param id="1" name="Value">0.7</param>
-                </action>
-                <action id="0" name="Call function" sid="6902168309389803" type="funções">
-                    <param id="0" name="Name">&quot;change_video&quot;</param>
-                    <param id="1" name="Parameter {n}"></param>
+                <action id="5" name="Set frame" sid="3265907340971391" type="hud_quality">
+                    <param id="0" name="Frame number">0</param>
                 </action>
             </actions>
         </event-block>

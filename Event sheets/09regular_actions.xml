@@ -162,6 +162,9 @@
                 <action id="-16" name="Set opacity" sid="8110102539913805" type="hud_zoom_in">
                     <param id="0" name="Opacity">100</param>
                 </action>
+                <action id="-16" name="Set opacity" sid="2559309309412583" type="hud_quality">
+                    <param id="0" name="Opacity">100</param>
+                </action>
                 <action id="-15" name="Set visible" sid="7721906803470464" type="a_visao">
                     <param id="0" name="Visibility">0</param>
                 </action>

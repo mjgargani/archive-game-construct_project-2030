@@ -285,6 +285,7 @@
                         <action id="-9" name="Destroy" sid="3461215014536835" type="s_unit" />
                     </actions>
                 </event-block>
+                <comment>ajustar hud para se manter acima</comment>
                 <event-block sid="6976799452357698">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="3058823491304558" type="variaveis">
@@ -309,6 +310,7 @@
                         <action id="-24" name="Move to top" sid="7442814887127021" type="hud_restart" />
                         <action id="-24" name="Move to top" sid="338990601971212" type="hud_zoom_in" />
                         <action id="-24" name="Move to top" sid="4315357269884357" type="hud_zoom_out" />
+                        <action id="-24" name="Move to top" sid="4366399605727564" type="hud_quality" />
                         <action id="-24" name="Move to top" sid="2008308485448196" type="debug_txt" />
                         <action id="-24" name="Move to top" sid="5498953351472385" type="hud_txt_contador" />
                         <action id="-24" name="Move to top" sid="397149998195161" type="hud_txt_unidades" />
