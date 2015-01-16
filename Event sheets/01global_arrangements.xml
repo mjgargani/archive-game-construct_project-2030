@@ -18,8 +18,8 @@
         <comment>Seguimentos</comment>
         <include>02initial_cleaning</include>
         <include>03map_generator</include>
-        <include>04tower_generator</include>
         <include>05block_generator</include>
+        <include>04tower_generator</include>
         <include>06layer_sets</include>
         <include>07uptower_generator</include>
         <include>08level_generator</include>
