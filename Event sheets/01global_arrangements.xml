@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>01global_arrangements</name>
     <events>
+        <comment>Opcionais</comment>
+        <include>video_motor</include>
         <comment>Eventos Globais</comment>
         <variable constant="0" name="fuzileiros" sid="4042998849929856" static="0" type="number">0</variable>
         <variable constant="0" name="medicos" sid="842205000528449" static="0" type="number">0</variable>

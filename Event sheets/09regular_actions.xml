@@ -11,7 +11,7 @@
             </conditions>
             <actions>
                 <action id="0" name="Set text" sid="5123325645124004" type="debug_txt">
-                    <param id="0" name="Text">&quot;FPS: &quot; &amp; str(fps) &amp; &quot; , CPU: &quot; &amp; str(round(cpuutilisation*100)) &amp; &quot;% , I.MEM: &quot;&amp; ImageMemoryUsage &amp; &quot; MB, O.C: &quot; &amp; str(objectcount)</param>
+                    <param id="0" name="Text">&quot;FPS:&quot; &amp; str(fps) &amp; &quot;|CPU:&quot; &amp; str(round(cpuutilisation*100)) &amp; &quot;%|I.M: &quot;&amp; ImageMemoryUsage &amp; &quot;MB|O.C:&quot; &amp; str(objectcount)</param>
                 </action>
             </actions>
             <sub-events>
@@ -154,6 +154,12 @@
                     <param id="1" name="Time scale">torre.timescale</param>
                 </action>
                 <action id="-16" name="Set opacity" sid="8318025723308883" type="hud_restart">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="9033188993722787" type="hud_zoom_out">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="8110102539913805" type="hud_zoom_in">
                     <param id="0" name="Opacity">100</param>
                 </action>
                 <action id="-15" name="Set visible" sid="7721906803470464" type="a_visao">

@@ -33,11 +33,11 @@
                         </action>
                         <action id="-17" name="Set layer scale" sid="1223849593623542" type="System">
                             <param id="0" name="Layer">0</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
                         <action id="-17" name="Set layer scale" sid="1851302193644868" type="System">
                             <param id="0" name="Layer">1</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
                         <action id="-16" name="Wait" sid="2799584139263856" type="System">
                             <param id="0" name="Seconds">0.01</param>
@@ -46,13 +46,13 @@
                             <param id="0" name="Variable">zoom_var</param>
                             <param id="1" name="Value">0.10</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="5384733703149313" type="System">
+                        <action id="-17" name="Set layer scale" sid="702926136466441" type="System">
                             <param id="0" name="Layer">0</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="6037563149754541" type="System">
+                        <action id="-17" name="Set layer scale" sid="932037428012807" type="System">
                             <param id="0" name="Layer">1</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
                         <action id="-16" name="Wait" sid="6195804974988218" type="System">
                             <param id="0" name="Seconds">0.01</param>
@@ -61,13 +61,13 @@
                             <param id="0" name="Variable">zoom_var</param>
                             <param id="1" name="Value">0.15</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="3051564666521621" type="System">
+                        <action id="-17" name="Set layer scale" sid="9747492808358665" type="System">
                             <param id="0" name="Layer">0</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="4071256998650227" type="System">
+                        <action id="-17" name="Set layer scale" sid="3511592835905043" type="System">
                             <param id="0" name="Layer">1</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
                         <action id="-16" name="Wait" sid="6063181670675186" type="System">
                             <param id="0" name="Seconds">0.01</param>
@@ -76,13 +76,13 @@
                             <param id="0" name="Variable">zoom_var</param>
                             <param id="1" name="Value">0.15</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="5405167419357605" type="System">
+                        <action id="-17" name="Set layer scale" sid="950414393579326" type="System">
                             <param id="0" name="Layer">0</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="2324066262180361" type="System">
+                        <action id="-17" name="Set layer scale" sid="9111437936860157" type="System">
                             <param id="0" name="Layer">1</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
                         <action id="-16" name="Wait" sid="8846859032229985" type="System">
                             <param id="0" name="Seconds">0.01</param>
@@ -91,13 +91,13 @@
                             <param id="0" name="Variable">zoom_var</param>
                             <param id="1" name="Value">0.05</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="449579084605407" type="System">
+                        <action id="-17" name="Set layer scale" sid="3196056745486847" type="System">
                             <param id="0" name="Layer">0</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="6487830619471703" type="System">
+                        <action id="-17" name="Set layer scale" sid="602545309263139" type="System">
                             <param id="0" name="Layer">1</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
                     </actions>
                 </event-block>
@@ -130,13 +130,13 @@
                             <param id="0" name="Variable">zoom_var</param>
                             <param id="1" name="Value">0.05</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="4238903966989956" type="System">
+                        <action id="-17" name="Set layer scale" sid="6056803330076845" type="System">
                             <param id="0" name="Layer">0</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="3995335651124878" type="System">
+                        <action id="-17" name="Set layer scale" sid="828419818284576" type="System">
                             <param id="0" name="Layer">1</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
                         <action id="-16" name="Wait" sid="9825658425300821" type="System">
                             <param id="0" name="Seconds">0.01</param>
@@ -145,13 +145,13 @@
                             <param id="0" name="Variable">zoom_var</param>
                             <param id="1" name="Value">0.10</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="4205451147673624" type="System">
+                        <action id="-17" name="Set layer scale" sid="2857095713303264" type="System">
                             <param id="0" name="Layer">0</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="9547867558913137" type="System">
+                        <action id="-17" name="Set layer scale" sid="3910556402630827" type="System">
                             <param id="0" name="Layer">1</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
                         <action id="-16" name="Wait" sid="1736663459035321" type="System">
                             <param id="0" name="Seconds">0.01</param>
@@ -160,13 +160,13 @@
                             <param id="0" name="Variable">zoom_var</param>
                             <param id="1" name="Value">0.15</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="8404629899417867" type="System">
+                        <action id="-17" name="Set layer scale" sid="1077721703103522" type="System">
                             <param id="0" name="Layer">0</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="6140254157528235" type="System">
+                        <action id="-17" name="Set layer scale" sid="1088692255166892" type="System">
                             <param id="0" name="Layer">1</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
                         <action id="-16" name="Wait" sid="1562191536600861" type="System">
                             <param id="0" name="Seconds">0.01</param>
@@ -175,13 +175,13 @@
                             <param id="0" name="Variable">zoom_var</param>
                             <param id="1" name="Value">0.15</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="9602752796672547" type="System">
+                        <action id="-17" name="Set layer scale" sid="8808162115879388" type="System">
                             <param id="0" name="Layer">0</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="700659378829267" type="System">
+                        <action id="-17" name="Set layer scale" sid="1370858246490339" type="System">
                             <param id="0" name="Layer">1</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
                         <action id="-16" name="Wait" sid="5678799057047137" type="System">
                             <param id="0" name="Seconds">0.01</param>
@@ -190,13 +190,13 @@
                             <param id="0" name="Variable">zoom_var</param>
                             <param id="1" name="Value">0.05</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="6106057401893558" type="System">
+                        <action id="-17" name="Set layer scale" sid="108894800169734" type="System">
                             <param id="0" name="Layer">0</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
-                        <action id="-17" name="Set layer scale" sid="3492119947622848" type="System">
+                        <action id="-17" name="Set layer scale" sid="5643247995008531" type="System">
                             <param id="0" name="Layer">1</param>
-                            <param id="1" name="Scale">zoom_var</param>
+                            <param id="1" name="Scale">zoom_var/video_options</param>
                         </action>
                     </actions>
                 </event-block>

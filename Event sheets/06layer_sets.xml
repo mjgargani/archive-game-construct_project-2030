@@ -19,11 +19,11 @@
                 </action>
                 <action id="-17" name="Set layer scale" sid="15352954346797" type="System">
                     <param id="0" name="Layer">0</param>
-                    <param id="1" name="Scale">zoom_var</param>
+                    <param id="1" name="Scale">zoom_var/video_options</param>
                 </action>
                 <action id="-17" name="Set layer scale" sid="4068149643477646" type="System">
                     <param id="0" name="Layer">1</param>
-                    <param id="1" name="Scale">zoom_var</param>
+                    <param id="1" name="Scale">zoom_var/video_options</param>
                 </action>
                 <action id="-8" name="Scroll to object" sid="7924446050404106" type="System">
                     <param id="0" name="Object">fuz_gen_point</param>
@@ -31,7 +31,7 @@
             </actions>
             <sub-events>
                 <comment>music manipulation - to do</comment>
-                <event-block sid="2384477137191656">
+                <event-block disabled="1" sid="2384477137191656">
                     <conditions>
                         <condition id="5" inverted="1" name="Is tag playing" sid="8317386626839625" type="Audio">
                             <param id="0" name="Tag">&quot;ba&quot;</param>

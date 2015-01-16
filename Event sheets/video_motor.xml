@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>video_motor</name>
+    <events>
+        <variable constant="0" name="video_options" sid="9155398618449083" static="0" type="number">1</variable>
+        <event-block sid="8625164651844297">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5204308503097531" type="System" />
+            </conditions>
+            <actions>
+                <action id="23" name="Set minimum size" sid="422358743714649" type="NodeWebkit">
+                    <param id="0" name="Min width">560</param>
+                    <param id="1" name="Min height">317</param>
+                </action>
+                <action id="0" name="Call function" sid="3089399097203563" type="funções">
+                    <param id="0" name="Name">&quot;change_video&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>controle</comment>
+        <event-block sid="6786831977794608">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="4766079016898391" type="teclado">
+                    <param id="0" name="Key">187 (=)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1417307002272694" type="System">
+                    <param id="0" name="Variable">video_options</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">2.4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="816368538255626" type="System">
+                    <param id="0" name="Variable">video_options</param>
+                    <param id="1" name="Value">0.7</param>
+                </action>
+                <action id="0" name="Call function" sid="6254823160406743" type="funções">
+                    <param id="0" name="Name">&quot;change_video&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="839365525276814">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="1764411378135968" type="teclado">
+                    <param id="0" name="Key">189 (-)</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7227797164462947" type="System">
+                    <param id="0" name="Variable">video_options</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="9674809650876562" type="System">
+                    <param id="0" name="Variable">video_options</param>
+                    <param id="1" name="Value">0.7</param>
+                </action>
+                <action id="0" name="Call function" sid="6902168309389803" type="funções">
+                    <param id="0" name="Name">&quot;change_video&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>motor</comment>
+        <event-block sid="4622377937166646">
+            <conditions>
+                <condition id="0" name="On function" sid="3691850457951262" type="funções">
+                    <param id="0" name="Name">&quot;change_video&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-28" name="Set canvas size" sid="7975876513627201" type="System">
+                    <param id="0" name="Width">848/video_options</param>
+                    <param id="1" name="Height">480/video_options</param>
+                </action>
+                <action id="-17" name="Set layer scale" sid="7632849004639918" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Scale">zoom_var/video_options</param>
+                </action>
+                <action id="-17" name="Set layer scale" sid="516851804339654" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Scale">zoom_var/video_options</param>
+                </action>
+                <action id="-17" name="Set layer scale" sid="9908190009122338" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Scale">1/video_options</param>
+                </action>
+                <action id="-17" name="Set layer scale" sid="7094036584737383" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Scale">1/video_options</param>
+                </action>
+                <action id="-17" name="Set layer scale" sid="5584695785172276" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Scale">1/video_options</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

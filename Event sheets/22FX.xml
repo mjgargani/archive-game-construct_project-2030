@@ -12,7 +12,31 @@
             </conditions>
             <actions>
                 <action id="-16" name="Set opacity" sid="5656464072010283" type="hud_restart">
-                    <param id="0" name="Opacity">50</param>
+                    <param id="0" name="Opacity">66</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1233357031925082">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="625592872675742" type="mouse">
+                    <param id="0" name="Object">hud_zoom_out</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="5338655110739787" type="hud_zoom_out">
+                    <param id="0" name="Opacity">66</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9610977179252778">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="4166682294595552" type="mouse">
+                    <param id="0" name="Object">hud_zoom_in</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="550659119478601" type="hud_zoom_in">
+                    <param id="0" name="Opacity">66</param>
                 </action>
             </actions>
         </event-block>

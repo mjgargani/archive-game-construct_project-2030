@@ -644,7 +644,7 @@
         </object-type>
         <object-type name="hud_txt_contador" sid="9431182702184587">
             <plugin id="Spritefont2" />
-            <texture />
+            <texture original-source="D:\Bibliotecas\Dropbox\Construct 2\projeto_17-5-14\SpriteFont_LilyUPC_Normal_(34)_[0,0,0]_21x23.png" />
         </object-type>
         <object-type name="hud_unidades" sid="5241574805281112">
             <plugin id="Sprite" />
@@ -663,7 +663,7 @@
         </object-type>
         <object-type name="hud_txt_unidades" sid="7734939578440216">
             <plugin id="Spritefont2" />
-            <texture />
+            <texture original-source="D:\Bibliotecas\Dropbox\Construct 2\projeto_17-5-14\SpriteFont_LilyUPC_Normal_(34)_[0,0,0]_21x23.png" />
         </object-type>
         <object-type name="Audio" sid="6461622882629555">
             <plugin id="Audio" />
@@ -769,16 +769,16 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9777755268251696" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52">
                         <collision-poly>
                             <point x="0" y="0" />
-                            <point x="0.5" y="0" />
+                            <point x="0.6" y="0" />
                             <point x="1" y="0" />
-                            <point x="1" y="0.5" />
+                            <point x="1" y="0.6" />
                             <point x="1" y="1" />
-                            <point x="0.5" y="1" />
+                            <point x="0.6" y="1" />
                             <point x="0" y="1" />
-                            <point x="0" y="0.5" />
+                            <point x="0" y="0.6" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -1176,6 +1176,9 @@
             <event-sheet>24cam_n_zoom_control.xml</event-sheet>
             <event-sheet>25cam_lock.xml</event-sheet>
             <event-sheet>26cursor.xml</event-sheet>
+        </event-folder>
+        <event-folder name="video_options">
+            <event-sheet>video_motor.xml</event-sheet>
         </event-folder>
     </event-folder>
     <global-instances>
