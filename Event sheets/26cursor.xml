@@ -54,8 +54,8 @@
                     </conditions>
                     <actions>
                         <action id="-3" name="Set position" sid="3261848262211811" type="cursor">
-                            <param id="0" name="X">mouse.AbsoluteX/(WindowHeight/OriginalWindowHeight)</param>
-                            <param id="1" name="Y">mouse.AbsoluteY/(WindowWidth/OriginalWindowWidth)</param>
+                            <param id="0" name="X">(mouse.AbsoluteX/(WindowHeight/OriginalWindowHeight))*video_options</param>
+                            <param id="1" name="Y">(mouse.AbsoluteY/(WindowWidth/OriginalWindowWidth))*video_options</param>
                         </action>
                     </actions>
                 </event-block>
