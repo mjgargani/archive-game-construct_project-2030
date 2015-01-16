@@ -10,6 +10,7 @@
             <actions />
             <sub-events>
                 <comment>easy_map</comment>
+                <comment>clear</comment>
                 <event-block sid="7496037011268397">
                     <conditions>
                         <condition id="-10" name="For" sid="1103171476690437" type="System">
@@ -51,6 +52,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <comment>gen</comment>
                 <event-block sid="9869619615364479">
                     <conditions>
                         <condition id="-10" name="For" sid="8101932184225067" type="System">
@@ -207,6 +209,39 @@
                                     <param id="3" name="State">0</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <comment>setando limites de camera pro 24cam_n_zoom_control</comment>
+                                <event-block sid="4653525898692936">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5936892465171881" type="variaveis">
+                                            <param id="0" name="Instance variable">cam_up_scenario_limit</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">random_var</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="1414279340143918" type="variaveis">
+                                            <param id="0" name="Instance variable">cam_up_scenario_limit</param>
+                                            <param id="1" name="Value">random_var</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="1643663089024708">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5384126001457881" type="variaveis">
+                                            <param id="0" name="Instance variable">cam_down_scenario_limit</param>
+                                            <param id="1" name="Comparison">2</param>
+                                            <param id="2" name="Value">random_var</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="8564803146481232" type="variaveis">
+                                            <param id="0" name="Instance variable">cam_down_scenario_limit</param>
+                                            <param id="1" name="Value">random_var</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

@@ -607,6 +607,8 @@
                 <instance-variable comment="Variação de modelo" name="unidade_anim_var" sid="4464222888435418" type="number" />
                 <instance-variable name="timer" sid="7275340391821209" type="number" />
                 <instance-variable name="unit_selected_count" sid="3051358751737344" type="number" />
+                <instance-variable name="cam_up_scenario_limit" sid="5102769353959352" type="number" />
+                <instance-variable name="cam_down_scenario_limit" sid="4848909545511126" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="6392306970321336" speed="0">
@@ -1171,7 +1173,7 @@
             <event-sheet>21objective.xml</event-sheet>
             <event-sheet>22FX.xml</event-sheet>
             <event-sheet>23controls.xml</event-sheet>
-            <event-sheet>24zoom.xml</event-sheet>
+            <event-sheet>24cam_n_zoom_control.xml</event-sheet>
             <event-sheet>25cam_lock.xml</event-sheet>
             <event-sheet>26cursor.xml</event-sheet>
         </event-folder>

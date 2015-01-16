@@ -39,7 +39,7 @@
         <include>21objective</include>
         <include>22FX</include>
         <include>23controls</include>
-        <include>24zoom</include>
+        <include>24cam_n_zoom_control</include>
         <include>25cam_lock</include>
     </events>
 </c2eventsheet>

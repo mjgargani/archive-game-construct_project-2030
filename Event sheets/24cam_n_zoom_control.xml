@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>24zoom</name>
+    <name>24cam_n_zoom_control</name>
     <events>
         <comment>zoom_var e seu impetuoso princípio...</comment>
         <event-block sid="9461077842706326">
@@ -265,6 +265,11 @@
                                 <condition id="4" name="Is touching object" sid="1566981767776935" type="Touch">
                                     <param id="0" name="Object">hud_top_scroll</param>
                                 </condition>
+                                <condition id="-8" name="Compare two values" sid="5655561467919303" type="System">
+                                    <param id="0" name="First value">ViewportTop(0)</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">(variaveis.cam_up_scenario_limit*16)-150</param>
+                                </condition>
                             </conditions>
                             <actions>
                                 <action id="-6" name="Scroll to Y" sid="2451579644638984" type="System">
@@ -276,6 +281,11 @@
                             <conditions>
                                 <condition id="4" name="Is touching object" sid="6898064744195458" type="Touch">
                                     <param id="0" name="Object">hud_bot_scroll</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="8678317660043216" type="System">
+                                    <param id="0" name="First value">ViewportBottom(0)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">(variaveis.cam_down_scenario_limit*16)+150</param>
                                 </condition>
                             </conditions>
                             <actions>
