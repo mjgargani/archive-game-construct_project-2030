@@ -1126,6 +1126,15 @@
         <object-type name="Text" sid="9397739517193275">
             <plugin id="Text" />
         </object-type>
+        <object-type name="TiledBackground3" sid="4789754243595781">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="7919987929798652">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
     </object-folder>
     <families>
         <family name="balas" plugin-id="Sprite" sid="9729375665077322">
