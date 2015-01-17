@@ -12,7 +12,6 @@
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
-        <plugin author="Scirra" id="CJSAds" version="1">CocoonJS</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
@@ -57,7 +56,7 @@
         <prop name="Loader style">Percentage text</prop>
         <prop name="Orientations">Landscape</prop>
         <prop name="Pause on unfocus">Yes</prop>
-        <prop name="Physics engine">CocoonJS native</prop>
+        <prop name="Physics engine">Box2D web</prop>
         <prop name="Preview browser">Node-Webkit</prop>
         <prop name="Sampling">Linear</prop>
         <prop name="Use high-DPI display">No</prop>
@@ -972,9 +971,6 @@
         <object-type name="debug_txt" sid="7839188765371182">
             <plugin id="Text" />
         </object-type>
-        <object-type name="CocoonJS" sid="4438805611794315">
-            <plugin id="CJSAds" />
-        </object-type>
         <object-type name="hud_shadow1" sid="9550026426961318">
             <plugin id="TiledBg" />
             <texture />
@@ -1215,12 +1211,6 @@
             </properties>
         </global-instance>
         <global-instance type="NodeWebkit" uid="19" />
-        <global-instance type="CocoonJS" uid="8">
-            <properties>
-                <store-mode>Managed</store-mode>
-                <store-sandbox>Enabled</store-sandbox>
-            </properties>
-        </global-instance>
         <global-instance type="Gamepad" uid="50">
             <properties>
                 <analog-deadzone>25</analog-deadzone>
