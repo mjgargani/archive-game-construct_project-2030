@@ -629,7 +629,15 @@
         <object-type name="hud_tempo" sid="7354709453419127">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6492946519853411" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6492946519853411" speed="0">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
                     <frame duration="1" hotspotX="0.52" hotspotY="0.52">
                         <collision-poly>
                             <point x="1" y="1" />
@@ -1045,7 +1053,8 @@
         <object-type name="hud_zoom_in" sid="3927317433981466">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1211214773539478" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1211214773539478" speed="0">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
                     <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
                 </animation>
             </animation-folder>
@@ -1053,7 +1062,8 @@
         <object-type name="hud_zoom_out" sid="2218668181361148">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1825390224049771" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1825390224049771" speed="0">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
                     <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
                 </animation>
             </animation-folder>
@@ -1133,6 +1143,26 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="hud_music" sid="6403535123053574">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5616500929988371" speed="0">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="hud_sfx" sid="7856749411252157">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9768070927907694" speed="0">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="balas" plugin-id="Sprite" sid="9729375665077322">
@@ -1150,6 +1180,16 @@
                 <member>hud_top_scroll</member>
             </members>
         </family>
+        <family name="hud_btns" plugin-id="Sprite" sid="9225336949778546">
+            <members>
+                <member>hud_music</member>
+                <member>hud_quality</member>
+                <member>hud_restart</member>
+                <member>hud_sfx</member>
+                <member>hud_zoom_in</member>
+                <member>hud_zoom_out</member>
+            </members>
+        </family>
     </families>
     <layout-folder>
         <layout>a1.xml</layout>
@@ -1161,11 +1201,11 @@
             <event-sheet>03map_generator.xml</event-sheet>
             <event-sheet>04tower_generator.xml</event-sheet>
             <event-sheet>05block_generator.xml</event-sheet>
-            <event-sheet>06layer_sets.xml</event-sheet>
+            <event-sheet>06layer_sets_n_bgm.xml</event-sheet>
             <event-sheet>07uptower_generator.xml</event-sheet>
             <event-sheet>08level_generator.xml</event-sheet>
             <event-sheet>09regular_actions.xml</event-sheet>
-            <event-sheet>10input_tests.xml</event-sheet>
+            <event-sheet>10input_tests_options.xml</event-sheet>
             <event-sheet>11only_once_events.xml</event-sheet>
             <event-sheet>12unit_sets.xml</event-sheet>
             <event-sheet>13move_units.xml</event-sheet>

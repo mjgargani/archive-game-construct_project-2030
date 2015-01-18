@@ -35,16 +35,29 @@
                     <param id="0" name="Name">&quot;change_video&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
                 </action>
-                <action id="0" name="Play" sid="6834934440839809" type="Audio">
-                    <param id="0" name="Audio file">Menu Click 3</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                </action>
                 <action id="5" name="Set frame" sid="9936639999200385" type="hud_quality">
                     <param id="0" name="Frame number">hud_quality.AnimationFrame+1</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="3466450134900947">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8657743025519555" type="System">
+                            <param id="0" name="Variable">sfx_vol</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">-20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="6834934440839809" type="Audio">
+                            <param id="0" name="Audio file">Menu Click 3</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">sfx_vol</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="2496931988307981">
             <conditions>

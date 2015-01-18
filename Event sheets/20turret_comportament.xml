@@ -217,13 +217,26 @@
                     <param id="1" name="Layer">0</param>
                     <param id="2" name="Image point">1</param>
                 </action>
-                <action id="0" name="Play" sid="9983989467671745" type="Audio">
-                    <param id="0" name="Audio file">Hit2</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;ac&quot;</param>
-                </action>
             </actions>
+            <sub-events>
+                <event-block sid="4920928086897653">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3137554109572468" type="System">
+                            <param id="0" name="Variable">sfx_vol</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">-20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="9983989467671745" type="Audio">
+                            <param id="0" name="Audio file">Hit2</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">sfx_vol</param>
+                            <param id="1" name="Tag (optional)">&quot;ac&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="2103106853978945">
             <conditions>
@@ -246,12 +259,6 @@
                 <action id="-12" name="Subtract from" sid="4624065376183045" type="torre">
                     <param id="0" name="Instance variable">vida</param>
                     <param id="1" name="Value">25</param>
-                </action>
-                <action id="0" name="Play" sid="5361163470573438" type="Audio">
-                    <param id="0" name="Audio file">Oops3</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;dano_torre&quot;</param>
                 </action>
                 <action id="-9" name="Destroy" sid="6997068064752294" type="bala3" />
             </actions>
@@ -294,6 +301,23 @@
                             <param id="0" name="&apos;On&apos; time">0.05</param>
                             <param id="1" name="&apos;Off&apos; time">0.05</param>
                             <param id="2" name="Duration">0.5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6310065327234257">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="5874796879580766" type="System">
+                            <param id="0" name="Variable">sfx_vol</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">-20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="5361163470573438" type="Audio">
+                            <param id="0" name="Audio file">Oops3</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">sfx_vol</param>
+                            <param id="1" name="Tag (optional)">&quot;dano_torre&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -350,12 +374,6 @@
                         <condition id="-4" name="Trigger once while true" sid="4702868134663368" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Play" sid="9029355622251516" type="Audio">
-                            <param id="0" name="Audio file">RetroLaser3</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">0</param>
-                            <param id="1" name="Tag (optional)">&quot;aa&quot;</param>
-                        </action>
                         <action id="-3" name="Create object" sid="4806437194829938" type="System">
                             <param id="0" name="Object to create">explosion</param>
                             <param id="1" name="Layer">1</param>
@@ -367,6 +385,25 @@
                             <param id="0" name="Angle">round(random(360))</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="7626159503105024">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7269581830632562" type="System">
+                                    <param id="0" name="Variable">sfx_vol</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">-20</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="9029355622251516" type="Audio">
+                                    <param id="0" name="Audio file">RetroLaser3</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">sfx_vol</param>
+                                    <param id="1" name="Tag (optional)">&quot;aa&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>

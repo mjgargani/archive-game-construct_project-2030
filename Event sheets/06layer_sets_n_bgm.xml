@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>06layer_sets</name>
+    <name>06layer_sets_n_bgm</name>
     <events>
         <comment>zoom e posição de camera inicial</comment>
         <event-block sid="7888246812971628">
@@ -12,10 +12,6 @@
                 <action id="-18" name="Set layer opacity" sid="5048149063025238" type="System">
                     <param id="0" name="Layer">0</param>
                     <param id="1" name="Opacity">0</param>
-                </action>
-                <action id="-9" name="Set value" sid="27376265354654" type="System">
-                    <param id="0" name="Variable">zoom_var</param>
-                    <param id="1" name="Value">1.5</param>
                 </action>
                 <action id="-17" name="Set layer scale" sid="15352954346797" type="System">
                     <param id="0" name="Layer">0</param>
@@ -31,7 +27,7 @@
             </actions>
             <sub-events>
                 <comment>music manipulation - to do</comment>
-                <event-block disabled="1" sid="2384477137191656">
+                <event-block sid="2384477137191656">
                     <conditions>
                         <condition id="5" inverted="1" name="Is tag playing" sid="8317386626839625" type="Audio">
                             <param id="0" name="Tag">&quot;ba&quot;</param>
@@ -41,7 +37,7 @@
                         <action id="0" name="Play" sid="7259967192205062" type="Audio">
                             <param id="0" name="Audio file">track01</param>
                             <param id="2" name="Loop">1</param>
-                            <param id="3" name="Volume">0</param>
+                            <param id="3" name="Volume">bgm_vol</param>
                             <param id="1" name="Tag (optional)">&quot;ba&quot;</param>
                         </action>
                     </actions>

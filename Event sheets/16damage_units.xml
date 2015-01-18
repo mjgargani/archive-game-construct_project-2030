@@ -22,12 +22,6 @@
                     <param id="1" name="&apos;Off&apos; time">0.05</param>
                     <param id="2" name="Duration">0.5</param>
                 </action>
-                <action id="0" name="Play" sid="5126594469077509" type="Audio">
-                    <param id="0" name="Audio file">RetroLaser1</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;aa&quot;</param>
-                </action>
             </actions>
             <sub-events>
                 <event-block sid="7683490896766154">
@@ -72,6 +66,23 @@
                         <action id="-12" name="Subtract from" sid="8299514172607931" type="unidade">
                             <param id="0" name="Instance variable">vida</param>
                             <param id="1" name="Value">25</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5116396434841588">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7921558991101557" type="System">
+                            <param id="0" name="Variable">sfx_vol</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">-20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="5126594469077509" type="Audio">
+                            <param id="0" name="Audio file">RetroLaser1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">sfx_vol</param>
+                            <param id="1" name="Tag (optional)">&quot;aa&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -172,13 +183,26 @@
                 <action id="6" name="Stop" sid="8462923032933146" type="Audio">
                     <param id="0" name="Tag">&quot;aa&quot;</param>
                 </action>
-                <action id="0" name="Play" sid="5689855706905269" type="Audio">
-                    <param id="0" name="Audio file">RetroLaser3</param>
-                    <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
-                    <param id="1" name="Tag (optional)">&quot;ab&quot;</param>
-                </action>
             </actions>
+            <sub-events>
+                <event-block sid="5668723478110229">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4262901256778273" type="System">
+                            <param id="0" name="Variable">sfx_vol</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">-20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="5689855706905269" type="Audio">
+                            <param id="0" name="Audio file">RetroLaser3</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">sfx_vol</param>
+                            <param id="1" name="Tag (optional)">&quot;ab&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="2399648843405768">
             <conditions>

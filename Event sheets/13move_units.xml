@@ -279,11 +279,22 @@
                         <action id="-15" name="Set visible" sid="6478076556191486" type="seletor">
                             <param id="0" name="Visibility">1</param>
                         </action>
-                        <action id="0" name="Set cursor style" sid="837962344383718" type="mouse">
-                            <param id="0" name="Cursor style">4</param>
-                        </action>
                         <action id="-9" name="Destroy" sid="3461215014536835" type="s_unit" />
                     </actions>
+                    <sub-events>
+                        <event-block sid="3380054223580409">
+                            <conditions>
+                                <condition id="7" inverted="1" name="Cursor is over object" sid="112527041474016" type="mouse">
+                                    <param id="0" name="Object">hud_btns</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="837962344383718" type="mouse">
+                                    <param id="0" name="Cursor style">4</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>ajustar hud para se manter acima</comment>
                 <event-block sid="6976799452357698">
@@ -307,10 +318,7 @@
                         <action id="-24" name="Move to top" sid="7620990490100691" type="hud_shadow3" />
                         <action id="-24" name="Move to top" sid="6388817620552449" type="hud_tempo" />
                         <action id="-24" name="Move to top" sid="4850886122197705" type="hud_unidades" />
-                        <action id="-24" name="Move to top" sid="7442814887127021" type="hud_restart" />
-                        <action id="-24" name="Move to top" sid="338990601971212" type="hud_zoom_in" />
-                        <action id="-24" name="Move to top" sid="4315357269884357" type="hud_zoom_out" />
-                        <action id="-24" name="Move to top" sid="4366399605727564" type="hud_quality" />
+                        <action id="-24" name="Move to top" sid="7442814887127021" type="hud_btns" />
                         <action id="-24" name="Move to top" sid="2008308485448196" type="debug_txt" />
                         <action id="-24" name="Move to top" sid="5498953351472385" type="hud_txt_contador" />
                         <action id="-24" name="Move to top" sid="397149998195161" type="hud_txt_unidades" />

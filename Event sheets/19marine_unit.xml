@@ -53,13 +53,26 @@
                                     <param id="0" name="X">cursor2.X</param>
                                     <param id="1" name="Y">cursor2.Y</param>
                                 </action>
-                                <action id="0" name="Play" sid="8054693358889051" type="Audio">
-                                    <param id="0" name="Audio file">Bump2</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">0</param>
-                                    <param id="1" name="Tag (optional)">&quot;tiro_unit&quot;</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="3384656942871496">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="595610931988023" type="System">
+                                            <param id="0" name="Variable">sfx_vol</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">-20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="8054693358889051" type="Audio">
+                                            <param id="0" name="Audio file">Bump2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">sfx_vol</param>
+                                            <param id="1" name="Tag (optional)">&quot;tiro_unit&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="4425012677524077">
                             <conditions>
@@ -88,13 +101,26 @@
                                     <param id="0" name="X">cursor2.X</param>
                                     <param id="1" name="Y">cursor2.Y</param>
                                 </action>
-                                <action id="0" name="Play" sid="3852472261925762" type="Audio">
-                                    <param id="0" name="Audio file">Bump2</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">0</param>
-                                    <param id="1" name="Tag (optional)">&quot;tiro_unit&quot;</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="4414347466465562">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="356795287951973" type="System">
+                                            <param id="0" name="Variable">sfx_vol</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">-20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="3852472261925762" type="Audio">
+                                            <param id="0" name="Audio file">Bump2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">sfx_vol</param>
+                                            <param id="1" name="Tag (optional)">&quot;tiro_unit&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="5900361051130613">
                             <conditions>
@@ -124,13 +150,26 @@
                                     <param id="0" name="Pin to">unidade</param>
                                     <param id="1" name="Mode">1</param>
                                 </action>
-                                <action id="0" name="Play" sid="6260691930455511" type="Audio">
-                                    <param id="0" name="Audio file">Bump2</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">0</param>
-                                    <param id="1" name="Tag (optional)">&quot;tiro_unit&quot;</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="5907715484650235">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="8994032473440448" type="System">
+                                            <param id="0" name="Variable">sfx_vol</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">-20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="6260691930455511" type="Audio">
+                                            <param id="0" name="Audio file">Bump2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">sfx_vol</param>
+                                            <param id="1" name="Tag (optional)">&quot;tiro_unit&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="6099776383779098">
                             <conditions>

@@ -16,17 +16,20 @@
         <variable constant="0" name="cam_in_units" sid="5860782108523236" static="0" type="number">0</variable>
         <variable constant="0" name="lock_cam" sid="9112105029336017" static="0" type="number">0</variable>
         <variable constant="0" name="video_options" sid="9155398618449083" static="0" type="number">1</variable>
+        <variable constant="0" name="bgm_vol" sid="3842912828923371" static="0" type="number">0</variable>
+        <variable constant="0" name="sfx_vol" sid="312393158413882" static="0" type="number">0</variable>
         <comment>Seguimentos</comment>
         <include>02initial_cleaning</include>
         <include>03map_generator</include>
         <include>05block_generator</include>
         <include>04tower_generator</include>
-        <include>06layer_sets</include>
+        <include>06layer_sets_n_bgm</include>
         <include>07uptower_generator</include>
         <include>08level_generator</include>
         <include>09regular_actions</include>
         <include>26cursor</include>
-        <include>10input_tests</include>
+        <include>10input_tests_options</include>
+        <include>27video_option</include>
         <include>11only_once_events</include>
         <include>12unit_sets</include>
         <include>13move_units</include>
@@ -42,6 +45,5 @@
         <include>23controls</include>
         <include>24cam_n_zoom_control</include>
         <include>25cam_lock</include>
-        <include>27video_option</include>
     </events>
 </c2eventsheet>

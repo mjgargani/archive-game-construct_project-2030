@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>10input_tests_options</name>
+    <events>
+        <comment>full-screen</comment>
+        <event-block sid="9461960423100057">
+            <conditions>
+                <condition id="2" name="Key is down" sid="8181571690568841" type="teclado">
+                    <param id="0" name="Key">18 (Alt)</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="5712418999522713" type="teclado">
+                    <param id="0" name="Key">13 (Return)</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="8085815345478923">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="9712037626136135" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4048091261817242">
+                            <conditions>
+                                <condition id="10" name="Is fullscreen" sid="4445651915950714" type="Browser" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="5644980291518685" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="11" name="Cancel fullscreen" sid="3979164759000865" type="Browser" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="6238695482017824">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="3765551807829506" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="1663174159247563" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="10" name="Request fullscreen" sid="7819281578666523" type="Browser">
+                                    <param id="0" name="Mode">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3438912539265744">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="9443509186579162" type="teclado">
+                    <param id="0" name="Key">27 (Esc)</param>
+                </condition>
+                <condition id="10" name="Is fullscreen" sid="3732347363004125" type="Browser" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="3122459577053329" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="11" name="Cancel fullscreen" sid="384957543401635" type="Browser" />
+            </actions>
+        </event-block>
+        <comment>restart-stage</comment>
+        <event-block sid="3815245997156285">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8637772146001381" type="Touch">
+                    <param id="0" name="Object">hud_restart</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="9683579280270147" type="System">
+                    <param id="0" name="Variable">on_touch</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="4741387402679103" type="System">
+                    <param id="0" name="Variable">move_layout</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-8" name="Compare two values" sid="5857711251294163" type="System">
+                    <param id="0" name="First value">LayerOpacity(0)</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="3764001290285743" type="System">
+                    <param id="0" name="Variable">move_layout</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="7767460916538764">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="942152353959334" type="System">
+                            <param id="0" name="Variable">sfx_vol</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">-20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="8842269983235046" type="Audio">
+                            <param id="0" name="Audio file">Menu Click 3</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">sfx_vol</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>bgm-control</comment>
+        <event-block sid="6233814565921079">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="8050120250570949" type="Touch">
+                    <param id="0" name="Object">hud_music</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="724510080184159" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="9029810097143471" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="6503687458321228" type="System">
+                    <param id="0" name="Variable">bgm_vol</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="3" name="Set volume" sid="2282122914871975" type="Audio">
+                    <param id="0" name="Tag">&quot;ba&quot;</param>
+                    <param id="1" name="dB">bgm_vol</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="8485012350348211">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="7662352922197536" type="System">
+                            <param id="0" name="Variable">sfx_vol</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">-20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="7249261189919467" type="Audio">
+                            <param id="0" name="Audio file">Menu Click 3</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">sfx_vol</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="8535642737221353">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4098185613953735" type="System">
+                    <param id="0" name="Variable">bgm_vol</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">-20</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="4884846016311785" type="System" />
+            </conditions>
+            <actions>
+                <action id="22" name="Set paused" sid="3347875251278912" type="Audio">
+                    <param id="0" name="Tag">&quot;ba&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="5" name="Set frame" sid="5086159793674077" type="hud_music">
+                    <param id="0" name="Frame number">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="8611974380430606">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2870821154949271" type="System">
+                    <param id="0" name="Variable">bgm_vol</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">-10</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="2707090985199109" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="7601404860057875" type="hud_music">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7118037624857441">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="9210652401967013" type="System">
+                    <param id="0" name="Variable">bgm_vol</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="5037173873405798" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="6417383304190117" type="hud_music">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6344044235004571">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6920151551254219" type="System">
+                    <param id="0" name="Variable">bgm_vol</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">-20</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1524517355759248" type="System">
+                    <param id="0" name="Variable">bgm_vol</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="3" name="Set volume" sid="5317999925879963" type="Audio">
+                    <param id="0" name="Tag">&quot;ba&quot;</param>
+                    <param id="1" name="dB">bgm_vol</param>
+                </action>
+                <action id="22" name="Set paused" sid="6350375682167453" type="Audio">
+                    <param id="0" name="Tag">&quot;ba&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>bgm-control</comment>
+        <event-block sid="2691262060923347">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="9874640565743251" type="Touch">
+                    <param id="0" name="Object">hud_sfx</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="1479613799689328" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="8115941561347535" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="8279957817197154" type="System">
+                    <param id="0" name="Variable">sfx_vol</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="6030284920590685">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="818946159562125" type="System">
+                            <param id="0" name="Variable">sfx_vol</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">-20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="8088070331671558" type="Audio">
+                            <param id="0" name="Audio file">Menu Click 3</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">sfx_vol</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1290018206602103">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8770679769094072" type="System">
+                    <param id="0" name="Variable">sfx_vol</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">-20</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="2985283434577742" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="2836612602332442" type="hud_sfx">
+                    <param id="0" name="Frame number">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5139604352741159">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5653112991698712" type="System">
+                    <param id="0" name="Variable">sfx_vol</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">-10</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="5637092037730977" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="1129234504295083" type="hud_sfx">
+                    <param id="0" name="Frame number">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4900873890723926">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8737524679126777" type="System">
+                    <param id="0" name="Variable">sfx_vol</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="4264293361307819" type="System" />
+            </conditions>
+            <actions>
+                <action id="5" name="Set frame" sid="7707464804074624" type="hud_sfx">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1153651566100253">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="8973886657134796" type="System">
+                    <param id="0" name="Variable">sfx_vol</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">-20</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="8056712926097151" type="System">
+                    <param id="0" name="Variable">sfx_vol</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Play" sid="3907409337398414" type="Audio">
+                    <param id="0" name="Audio file">Menu Click 3</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">sfx_vol</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

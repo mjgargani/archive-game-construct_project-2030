@@ -153,23 +153,8 @@
                     <param id="0" name="Object">torre</param>
                     <param id="1" name="Time scale">torre.timescale</param>
                 </action>
-                <action id="-16" name="Set opacity" sid="8318025723308883" type="hud_restart">
+                <action id="-16" name="Set opacity" sid="8318025723308883" type="hud_btns">
                     <param id="0" name="Opacity">100</param>
-                </action>
-                <action id="-16" name="Set opacity" sid="9033188993722787" type="hud_zoom_out">
-                    <param id="0" name="Opacity">100</param>
-                </action>
-                <action id="-16" name="Set opacity" sid="8110102539913805" type="hud_zoom_in">
-                    <param id="0" name="Opacity">100</param>
-                </action>
-                <action id="-16" name="Set opacity" sid="2559309309412583" type="hud_quality">
-                    <param id="0" name="Opacity">100</param>
-                </action>
-                <action id="-15" name="Set visible" sid="7721906803470464" type="a_visao">
-                    <param id="0" name="Visibility">0</param>
-                </action>
-                <action id="11" name="Set collisions enabled" sid="8636917027867387" type="a_visao">
-                    <param id="0" name="Collisions">0</param>
                 </action>
                 <action id="-15" name="Set visible" sid="285655663826289" type="hud_aux">
                     <param id="0" name="Visibility">0</param>
@@ -188,21 +173,6 @@
                     <actions>
                         <action id="-16" name="Set opacity" sid="4961130175177605" type="d_area">
                             <param id="0" name="Opacity">d_area.Opacity-10</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="6889127986056983">
-                    <conditions>
-                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="4111933156913211" type="torre">
-                            <param id="0" name="Object">a_visao</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="5777847992924386" type="a_visao">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action id="11" name="Set collisions enabled" sid="6614694581569574" type="a_visao">
-                            <param id="0" name="Collisions">1</param>
                         </action>
                     </actions>
                 </event-block>
