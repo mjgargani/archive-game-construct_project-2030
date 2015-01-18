@@ -12,19 +12,9 @@
                 <action id="-25" name="Move to bottom" sid="4607369199574757" type="bg0" />
             </actions>
             <sub-events>
-                <event-block sid="9256720330053735">
-                    <conditions>
-                        <condition id="-20" name="Is on mobile device" sid="2729932722448238" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-15" name="Set visible" sid="2415886060685016" type="c_visao">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="5489468807896906">
                     <conditions>
-                        <condition id="-22" name="Else" sid="6561801794409733" type="System" />
+                        <condition id="-20" inverted="1" name="Is on mobile device" sid="2729932722448238" type="System" />
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="3911410709316141" type="hud_analogic" />

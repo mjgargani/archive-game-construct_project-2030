@@ -318,6 +318,7 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>controle de animação do botão</comment>
         <event-block sid="9766076234773351">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="1672174913915459" type="System">

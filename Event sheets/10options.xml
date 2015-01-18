@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>10input_tests_options</name>
+    <name>10options</name>
     <events>
         <comment>full-screen</comment>
         <event-block sid="9461960423100057">
