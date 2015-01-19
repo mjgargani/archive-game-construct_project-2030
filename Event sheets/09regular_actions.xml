@@ -452,7 +452,7 @@
                 <event-block sid="9578807385796829">
                     <conditions />
                     <actions>
-                        <action behavior="Turret" id="5" name="Set enabled" sid="1339222979828462" type="torre">
+                        <action behavior="Turret" disabled="1" id="5" name="Set enabled" sid="1339222979828462" type="torre">
                             <param id="0" name="State">0</param>
                         </action>
                         <action disabled="1" id="5" name="Set frame" sid="2533430401190114" type="c_visao">

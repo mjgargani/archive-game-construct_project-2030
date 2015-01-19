@@ -425,6 +425,7 @@
                 <instance-variable name="vida" sid="3399645720583081" type="number" />
                 <instance-variable comment="ao levar dano" name="alerta" sid="3436526116660886" type="boolean" />
                 <instance-variable comment="desabilitar ou alertar" name="alerta_disable" sid="2235473282218789" type="number" />
+                <instance-variable name="alert_count" sid="5928683275112817" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Turret" sid="9788660041384946">

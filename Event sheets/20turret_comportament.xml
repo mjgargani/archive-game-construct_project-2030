@@ -35,6 +35,10 @@
                         <action behavior="Turret" id="0" name="Acquire target" sid="4486612144522807" type="torre">
                             <param id="0" name="Target">unidade</param>
                         </action>
+                        <action id="-10" name="Set value" sid="6440420673834131" type="torre">
+                            <param id="0" name="Instance variable">alert_count</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="8222700875568902">
@@ -60,25 +64,42 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action behavior="Turret" id="5" name="Set enabled" sid="9722899787136441" type="torre">
-                            <param id="0" name="State">0</param>
-                        </action>
-                        <action behavior="Sine" id="0" name="Set active" sid="5783379184240242" type="torre">
-                            <param id="0" name="State">1</param>
+                        <action id="-11" name="Add to" sid="8377962725496115" type="torre">
+                            <param id="0" name="Instance variable">alert_count</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="4974389822440365">
+                        <event-block sid="6065295057150988">
                             <conditions>
-                                <condition id="1" name="Is overlapping another object" sid="2315991150010905" type="torre">
-                                    <param id="0" name="Object">c_visao</param>
+                                <condition id="-7" name="Compare instance variable" sid="3056510332240496" type="torre">
+                                    <param id="0" name="Instance variable">alert_count</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">100</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="5" name="Set frame" sid="990235245206262" type="c_visao">
-                                    <param id="0" name="Frame number">0</param>
+                                <action behavior="Turret" id="5" name="Set enabled" sid="9722899787136441" type="torre">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="Sine" id="0" name="Set active" sid="5783379184240242" type="torre">
+                                    <param id="0" name="State">1</param>
                                 </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="4974389822440365">
+                                    <conditions>
+                                        <condition id="1" name="Is overlapping another object" sid="2315991150010905" type="torre">
+                                            <param id="0" name="Object">c_visao</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="990235245206262" type="c_visao">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
