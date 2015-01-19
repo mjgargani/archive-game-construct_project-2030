@@ -10,7 +10,7 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="5123325645124004" type="debug_txt">
+                <action disabled="1" id="0" name="Set text" sid="5123325645124004" type="debug_txt">
                     <param id="0" name="Text">&quot;FPS:&quot; &amp; str(fps) &amp; &quot;|CPU:&quot; &amp; str(round(cpuutilisation*100)) &amp; &quot;%|I.M: &quot;&amp; ImageMemoryUsage &amp; &quot;MB|O.C:&quot; &amp; str(objectcount)</param>
                 </action>
             </actions>
@@ -175,40 +175,6 @@
                             <param id="0" name="Opacity">d_area.Opacity-10</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="2556615896489448">
-                    <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="3065006732597953" type="unidade">
-                            <param id="0" name="Object">a_visao</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="4817303966815441">
-                            <conditions />
-                            <actions>
-                                <action id="-15" name="Set visible" sid="9822894903866066" type="a_visao">
-                                    <param id="0" name="Visibility">0</param>
-                                </action>
-                                <action id="11" name="Set collisions enabled" sid="8112401803593534" type="a_visao">
-                                    <param id="0" name="Collisions">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="4322262553437396">
-                            <conditions>
-                                <condition behavior="8Direction" id="0" name="Is moving" sid="851238543482719" type="unidade" />
-                            </conditions>
-                            <actions>
-                                <action id="-15" name="Set visible" sid="6109312688622569" type="a_visao">
-                                    <param id="0" name="Visibility">0</param>
-                                </action>
-                                <action id="11" name="Set collisions enabled" sid="5141762603272546" type="a_visao">
-                                    <param id="0" name="Collisions">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="5035079071005077">
                     <conditions>
@@ -476,6 +442,7 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <comment>atentar para o campo de visão</comment>
         <event-block sid="4335995687672119">
             <conditions>
                 <condition id="-1" name="Every tick" sid="6413191982065836" type="System" />
@@ -488,10 +455,7 @@
                         <action behavior="Turret" id="5" name="Set enabled" sid="1339222979828462" type="torre">
                             <param id="0" name="State">0</param>
                         </action>
-                        <action id="5" name="Set frame" sid="2533430401190114" type="c_visao">
-                            <param id="0" name="Frame number">0</param>
-                        </action>
-                        <action id="5" name="Set frame" sid="2531357397726595" type="a_visao">
+                        <action disabled="1" id="5" name="Set frame" sid="2533430401190114" type="c_visao">
                             <param id="0" name="Frame number">0</param>
                         </action>
                     </actions>

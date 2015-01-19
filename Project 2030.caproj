@@ -857,7 +857,6 @@
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="id_torre" sid="7691419348448684" type="number" />
-                <instance-variable name="shadow_id" sid="7401103465774453" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Pin" sid="1060708778324076">

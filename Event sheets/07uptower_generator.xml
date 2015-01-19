@@ -57,10 +57,6 @@
                         <action behavior="LineOfSight" id="2" name="Add obstacle" sid="2300853321166989" type="torre">
                             <param id="0" name="Obstacle">safe_zone</param>
                         </action>
-                        <action id="-10" name="Set value" sid="7068973639912326" type="c_visao">
-                            <param id="0" name="Instance variable">shadow_id</param>
-                            <param id="1" name="Value">torre_base.shadow_id</param>
-                        </action>
                         <action behavior="Sine" id="5" name="Set cycle position" sid="2037786569992759" type="torre">
                             <param id="0" name="Cycle position">random(1)</param>
                         </action>

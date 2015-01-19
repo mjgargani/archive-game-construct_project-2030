@@ -32,7 +32,24 @@
                         <action behavior="Sine" id="0" name="Set active" sid="5614291257565673" type="torre">
                             <param id="0" name="State">0</param>
                         </action>
+                        <action behavior="Turret" id="0" name="Acquire target" sid="4486612144522807" type="torre">
+                            <param id="0" name="Target">unidade</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="8222700875568902">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="6508564598790952" type="torre">
+                                    <param id="0" name="Object">c_visao</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="1677730066946325" type="c_visao">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="9785129893569474">
                     <conditions>
@@ -50,34 +67,16 @@
                             <param id="0" name="State">1</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="3762754802984745">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="5255617459367263" type="torre">
-                            <param id="0" name="Instance variable">alerta_disable</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">2</param>
-                        </condition>
-                        <condition id="1" name="Is overlapping another object" sid="4811157769705236" type="c_visao">
-                            <param id="0" name="Object">torre</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="6257399279126934" type="c_visao">
-                            <param id="0" name="Frame number">1</param>
-                        </action>
-                    </actions>
                     <sub-events>
-                        <event-block sid="3370566451643752">
+                        <event-block sid="4974389822440365">
                             <conditions>
-                                <condition id="-20" inverted="1" name="Is on mobile device" sid="8327274632983469" type="System" />
-                                <condition id="1" name="Is overlapping another object" sid="69336482537573" type="a_visao">
+                                <condition id="1" name="Is overlapping another object" sid="2315991150010905" type="torre">
                                     <param id="0" name="Object">c_visao</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="5" name="Set frame" sid="4067800170854921" type="a_visao">
-                                    <param id="0" name="Frame number">1</param>
+                                <action id="5" name="Set frame" sid="990235245206262" type="c_visao">
+                                    <param id="0" name="Frame number">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -131,12 +130,12 @@
                                             <sub-events>
                                                 <event-block sid="8977752101587262">
                                                     <conditions>
-                                                        <condition id="1" name="Is overlapping another object" sid="7719840473671539" type="a_visao">
+                                                        <condition id="1" name="Is overlapping another object" sid="7719840473671539" type="torre">
                                                             <param id="0" name="Object">c_visao</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="5" name="Set frame" sid="5737466821791284" type="a_visao">
+                                                        <action id="5" name="Set frame" sid="5584489370572742" type="c_visao">
                                                             <param id="0" name="Frame number">1</param>
                                                         </action>
                                                     </actions>
@@ -156,12 +155,12 @@
                                             <sub-events>
                                                 <event-block sid="6762523030969403">
                                                     <conditions>
-                                                        <condition id="1" name="Is overlapping another object" sid="1337039602247162" type="a_visao">
+                                                        <condition id="1" name="Is overlapping another object" sid="1337039602247162" type="torre">
                                                             <param id="0" name="Object">c_visao</param>
                                                         </condition>
                                                     </conditions>
                                                     <actions>
-                                                        <action id="5" name="Set frame" sid="886872236728606" type="a_visao">
+                                                        <action id="5" name="Set frame" sid="6779204408790782" type="c_visao">
                                                             <param id="0" name="Frame number">1</param>
                                                         </action>
                                                     </actions>
@@ -173,15 +172,17 @@
                                 <event-block sid="1182093813794369">
                                     <conditions>
                                         <condition id="-22" name="Else" sid="831384283741638" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="4262907414663613" type="torre">
+                                            <param id="0" name="Instance variable">alerta_disable</param>
+                                            <param id="1" name="Comparison">1</param>
+                                            <param id="2" name="Value">2</param>
+                                        </condition>
                                     </conditions>
                                     <actions>
                                         <action behavior="Turret" id="3" name="Unacquire target" sid="7221689622344504" type="torre" />
                                         <action id="-10" name="Set value" sid="5126729551944139" type="torre">
                                             <param id="0" name="Instance variable">alerta_disable</param>
                                             <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="5" name="Set frame" sid="3211614713076014" type="a_visao">
-                                            <param id="0" name="Frame number">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -200,6 +201,25 @@
                     </conditions>
                     <actions>
                         <action id="-10" name="Set value" sid="2421918258748564" type="torre">
+                            <param id="0" name="Instance variable">alerta_disable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3762754802984745">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5255617459367263" type="torre">
+                            <param id="0" name="Instance variable">alerta_disable</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition behavior="Turret" id="0" inverted="1" name="Has target" sid="7110163485165283" type="torre" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="6257399279126934" type="c_visao">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="6496764034535679" type="torre">
                             <param id="0" name="Instance variable">alerta_disable</param>
                             <param id="1" name="Value">0</param>
                         </action>
@@ -281,10 +301,13 @@
                             <param id="0" name="Instance variable">alerta_disable</param>
                             <param id="1" name="Value">2</param>
                         </action>
-                        <action id="-16" name="Wait" sid="4937530855937394" type="System">
+                        <action behavior="Turret" id="0" name="Acquire target" sid="2641555446145256" type="torre">
+                            <param id="0" name="Target">unidade</param>
+                        </action>
+                        <action disabled="1" id="-16" name="Wait" sid="4937530855937394" type="System">
                             <param id="0" name="Seconds">1.0</param>
                         </action>
-                        <action id="-10" name="Set value" sid="9524972772517503" type="torre">
+                        <action disabled="1" id="-10" name="Set value" sid="9524972772517503" type="torre">
                             <param id="0" name="Instance variable">alerta_disable</param>
                             <param id="1" name="Value">0</param>
                         </action>

@@ -842,7 +842,6 @@
                     </properties>
                     <instance-variables>
                         <id_torre>0</id_torre>
-                        <shadow_id>0</shadow_id>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
