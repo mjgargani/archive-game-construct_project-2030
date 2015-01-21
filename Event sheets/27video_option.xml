@@ -31,6 +31,12 @@
                     <param id="0" name="Variable">video_options</param>
                     <param id="1" name="Value">0.7</param>
                 </action>
+                <action behavior="Flash" id="1" name="Stop flashing" sid="862513453793035" type="hud_quality" />
+                <action behavior="Flash" id="0" name="Flash" sid="8358943580539255" type="hud_quality">
+                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                    <param id="2" name="Duration">0.5</param>
+                </action>
                 <action id="0" name="Call function" sid="6628591379859161" type="funções">
                     <param id="0" name="Name">&quot;change_video&quot;</param>
                     <param id="1" name="Parameter {n}"></param>
@@ -48,14 +54,7 @@
                             <param id="2" name="Value">-20</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="0" name="Play" sid="6834934440839809" type="Audio">
-                            <param id="0" name="Audio file">Menu Click 3</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">sfx_vol</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
-                        </action>
-                    </actions>
+                    <actions />
                 </event-block>
             </sub-events>
         </event-block>

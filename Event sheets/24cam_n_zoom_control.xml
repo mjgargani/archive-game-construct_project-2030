@@ -20,6 +20,12 @@
                 <event-block sid="1111667229277134">
                     <conditions />
                     <actions>
+                        <action behavior="Flash" id="1" name="Stop flashing" sid="1152659688385727" type="hud_zoom_in" />
+                        <action behavior="Flash" id="0" name="Flash" sid="1023488650694219" type="hud_zoom_in">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
                         <action id="-10" name="Add to" sid="3942910099128233" type="System">
                             <param id="0" name="Variable">zoom_var</param>
                             <param id="1" name="Value">0.05</param>
@@ -103,11 +109,14 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="6" name="Stop" sid="6190836746084338" type="Audio">
+                            <param id="0" name="Tag">&quot;sfx&quot;</param>
+                        </action>
                         <action id="0" name="Play" sid="3413416892460109" type="Audio">
-                            <param id="0" name="Audio file">Menu Click 3</param>
+                            <param id="0" name="Audio file">zoom_up</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">sfx_vol</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                            <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -129,6 +138,12 @@
                 <event-block sid="7542330318243969">
                     <conditions />
                     <actions>
+                        <action behavior="Flash" id="1" name="Stop flashing" sid="8190575953372409" type="hud_zoom_out" />
+                        <action behavior="Flash" id="0" name="Flash" sid="56140617443168" type="hud_zoom_out">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
                         <action id="-11" name="Subtract from" sid="8688565165520957" type="System">
                             <param id="0" name="Variable">zoom_var</param>
                             <param id="1" name="Value">0.05</param>
@@ -212,11 +227,14 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="6" name="Stop" sid="6248980333918241" type="Audio">
+                            <param id="0" name="Tag">&quot;sfx&quot;</param>
+                        </action>
                         <action id="0" name="Play" sid="6067942505172697" type="Audio">
-                            <param id="0" name="Audio file">Menu Click 3</param>
+                            <param id="0" name="Audio file">zoom_out</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">sfx_vol</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                            <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
                         </action>
                     </actions>
                 </event-block>

@@ -145,22 +145,36 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-14" name="Set object time scale" sid="2567158545932914" type="System">
-                    <param id="0" name="Object">unidade</param>
-                    <param id="1" name="Time scale">unidade.timescale</param>
-                </action>
-                <action id="-14" name="Set object time scale" sid="3449105318886312" type="System">
-                    <param id="0" name="Object">torre</param>
-                    <param id="1" name="Time scale">torre.timescale</param>
-                </action>
                 <action id="-16" name="Set opacity" sid="8318025723308883" type="hud_btns">
                     <param id="0" name="Opacity">100</param>
                 </action>
                 <action id="-15" name="Set visible" sid="285655663826289" type="hud_aux">
                     <param id="0" name="Visibility">0</param>
                 </action>
+                <action id="-16" name="Set opacity" sid="5983229251003118" type="hud_txt_contador">
+                    <param id="0" name="Opacity">100</param>
+                </action>
             </actions>
             <sub-events>
+                <event-block sid="1723226799682201">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6005351319455445" type="System">
+                            <param id="0" name="Variable">pause_game</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Set object time scale" sid="2567158545932914" type="System">
+                            <param id="0" name="Object">unidade</param>
+                            <param id="1" name="Time scale">unidade.timescale</param>
+                        </action>
+                        <action id="-14" name="Set object time scale" sid="3449105318886312" type="System">
+                            <param id="0" name="Object">torre</param>
+                            <param id="1" name="Time scale">torre.timescale</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>fx</comment>
                 <event-block sid="3781066972508046">
                     <conditions>
@@ -438,26 +452,6 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="5383564852978707" type="txt_vida_unidade" />
-                    </actions>
-                </event-block>
-            </sub-events>
-        </event-block>
-        <comment>atentar para o campo de visão</comment>
-        <event-block sid="4335995687672119">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="6413191982065836" type="System" />
-            </conditions>
-            <actions />
-            <sub-events>
-                <event-block sid="9578807385796829">
-                    <conditions />
-                    <actions>
-                        <action behavior="Turret" disabled="1" id="5" name="Set enabled" sid="1339222979828462" type="torre">
-                            <param id="0" name="State">0</param>
-                        </action>
-                        <action disabled="1" id="5" name="Set frame" sid="2533430401190114" type="c_visao">
-                            <param id="0" name="Frame number">0</param>
-                        </action>
                     </actions>
                 </event-block>
             </sub-events>

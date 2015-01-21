@@ -115,5 +115,17 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="7368226446603097">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5805707766232495" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="8116728268125027" type="unidade">
+                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                    <param id="2" name="Duration">2.0</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

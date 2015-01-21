@@ -25,24 +25,6 @@
                     <param id="0" name="Object">fuz_gen_point</param>
                 </action>
             </actions>
-            <sub-events>
-                <comment>music manipulation - to do</comment>
-                <event-block sid="2384477137191656">
-                    <conditions>
-                        <condition id="5" inverted="1" name="Is tag playing" sid="8317386626839625" type="Audio">
-                            <param id="0" name="Tag">&quot;ba&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Play" sid="7259967192205062" type="Audio">
-                            <param id="0" name="Audio file">track01</param>
-                            <param id="2" name="Loop">1</param>
-                            <param id="3" name="Volume">bgm_vol</param>
-                            <param id="1" name="Tag (optional)">&quot;ba&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

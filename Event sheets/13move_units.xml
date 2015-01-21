@@ -318,10 +318,10 @@
                         <action id="-24" name="Move to top" sid="7620990490100691" type="hud_shadow3" />
                         <action id="-24" name="Move to top" sid="6388817620552449" type="hud_tempo" />
                         <action id="-24" name="Move to top" sid="4850886122197705" type="hud_unidades" />
-                        <action id="-24" name="Move to top" sid="7442814887127021" type="hud_btns" />
                         <action id="-24" name="Move to top" sid="2008308485448196" type="debug_txt" />
                         <action id="-24" name="Move to top" sid="5498953351472385" type="hud_txt_contador" />
                         <action id="-24" name="Move to top" sid="397149998195161" type="hud_txt_unidades" />
+                        <action id="-24" name="Move to top" sid="7442814887127021" type="hud_btns" />
                         <action id="-24" name="Move to top" sid="5432387727544306" type="cursor" />
                         <action id="0" name="Call function" sid="6501656192482215" type="funções">
                             <param id="0" name="Name">&quot;selecionar_unidades&quot;</param>

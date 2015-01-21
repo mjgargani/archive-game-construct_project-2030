@@ -8,7 +8,7 @@
     <author-website>http://</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>19x0ejj3rpqgy</unique-id>
-    <saved-with-version>19000</saved-with-version>
+    <saved-with-version>19500</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
@@ -629,9 +629,14 @@
         </object-type>
         <object-type name="hud_tempo" sid="7354709453419127">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="8892211501609383">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6492946519853411" speed="0">
-                    <frame duration="1" hotspotX="0.52" hotspotY="0.52">
+                    <frame duration="1" hotspotX="0.139785" hotspotY="0.52">
                         <collision-poly>
                             <point x="1" y="1" />
                             <point x="0" y="1" />
@@ -639,7 +644,7 @@
                             <point x="1" y="0" />
                         </collision-poly>
                     </frame>
-                    <frame duration="1" hotspotX="0.52" hotspotY="0.52">
+                    <frame duration="1" hotspotX="0.139785" hotspotY="0.52">
                         <collision-poly>
                             <point x="1" y="1" />
                             <point x="0" y="1" />
@@ -652,6 +657,11 @@
         </object-type>
         <object-type name="hud_txt_contador" sid="9431182702184587">
             <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Flash" sid="8323731603130111">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
             <texture original-source="D:\Bibliotecas\Dropbox\Construct 2\projeto_17-5-14\SpriteFont_LilyUPC_Normal_(34)_[0,0,0]_21x23.png" />
         </object-type>
         <object-type name="hud_unidades" sid="5241574805281112">
@@ -775,6 +785,11 @@
         </object-type>
         <object-type name="hud_restart" sid="7865192265925163">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="5701705662635318">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9777755268251696" speed="5">
                     <frame duration="1" hotspotX="0.52" hotspotY="0.52">
@@ -1052,6 +1067,11 @@
         </object-type>
         <object-type name="hud_zoom_in" sid="3927317433981466">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="8828315967886647">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1211214773539478" speed="0">
                     <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
@@ -1061,6 +1081,11 @@
         </object-type>
         <object-type name="hud_zoom_out" sid="2218668181361148">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="3474794442933175">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1825390224049771" speed="0">
                     <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
@@ -1135,6 +1160,11 @@
         </object-type>
         <object-type name="hud_quality" sid="2343300440386016">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="2272319281441129">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4480623434065904" speed="0">
                     <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
@@ -1145,6 +1175,11 @@
         </object-type>
         <object-type name="hud_music" sid="6403535123053574">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="363353248505915">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5616500929988371" speed="0">
                     <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
@@ -1155,6 +1190,11 @@
         </object-type>
         <object-type name="hud_sfx" sid="7856749411252157">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="922818768414955">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9768070927907694" speed="0">
                     <frame duration="1" hotspotX="0.52" hotspotY="0.52" />
@@ -1284,9 +1324,18 @@
         <file name="Oops3.m4a" />
         <file name="Oops3.ogg" />
         <file name="Oops3.wav" />
-        <file name="Menu Click 3.m4a" />
-        <file name="Menu Click 3.ogg" />
-        <file name="Menu Click 3.wav" />
+        <file name="mouseclick.m4a" />
+        <file name="mouseclick.ogg" />
+        <file name="explosion.m4a" />
+        <file name="explosion.ogg" />
+        <file name="zoom_out.m4a" />
+        <file name="zoom_out.ogg" />
+        <file name="zoom_up.m4a" />
+        <file name="zoom_up.ogg" />
+        <file name="pause.m4a" />
+        <file name="pause.ogg" />
+        <file name="unpause.m4a" />
+        <file name="unpause.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="track01.m4a" />

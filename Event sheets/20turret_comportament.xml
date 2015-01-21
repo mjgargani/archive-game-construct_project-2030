@@ -440,10 +440,10 @@
                             </conditions>
                             <actions>
                                 <action id="0" name="Play" sid="9029355622251516" type="Audio">
-                                    <param id="0" name="Audio file">RetroLaser3</param>
+                                    <param id="0" name="Audio file">explosion</param>
                                     <param id="2" name="Loop">0</param>
                                     <param id="3" name="Volume">sfx_vol</param>
-                                    <param id="1" name="Tag (optional)">&quot;aa&quot;</param>
+                                    <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
                                 </action>
                             </actions>
                         </event-block>

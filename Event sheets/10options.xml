@@ -86,9 +86,18 @@
                 </condition>
             </conditions>
             <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="6507914727200662" type="hud_restart">
+                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                    <param id="2" name="Duration">0.5</param>
+                </action>
                 <action id="-9" name="Set value" sid="3764001290285743" type="System">
                     <param id="0" name="Variable">move_layout</param>
                     <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="3818193041408825" type="System">
+                    <param id="0" name="Variable">pause_game</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
             <sub-events>
@@ -101,11 +110,14 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Play" sid="8842269983235046" type="Audio">
-                            <param id="0" name="Audio file">Menu Click 3</param>
+                        <action id="6" name="Stop" sid="5063198856972703" type="Audio">
+                            <param id="0" name="Tag">&quot;sfx&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="3915734332621976" type="Audio">
+                            <param id="0" name="Audio file">mouseclick</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">sfx_vol</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                            <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -122,6 +134,12 @@
             <actions>
                 <action id="-16" name="Wait" sid="9029810097143471" type="System">
                     <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action behavior="Flash" id="1" name="Stop flashing" sid="7939048582959252" type="hud_music" />
+                <action behavior="Flash" id="0" name="Flash" sid="7576638543417407" type="hud_music">
+                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                    <param id="2" name="Duration">0.5</param>
                 </action>
                 <action id="-11" name="Subtract from" sid="6503687458321228" type="System">
                     <param id="0" name="Variable">bgm_vol</param>
@@ -142,11 +160,14 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Play" sid="7249261189919467" type="Audio">
-                            <param id="0" name="Audio file">Menu Click 3</param>
+                        <action id="6" name="Stop" sid="7369098717492654" type="Audio">
+                            <param id="0" name="Tag">&quot;sfx&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="9157457572676697" type="Audio">
+                            <param id="0" name="Audio file">mouseclick</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">sfx_vol</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                            <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -236,6 +257,12 @@
                 <action id="-16" name="Wait" sid="8115941561347535" type="System">
                     <param id="0" name="Seconds">0.2</param>
                 </action>
+                <action behavior="Flash" id="1" name="Stop flashing" sid="2855462968501674" type="hud_sfx" />
+                <action behavior="Flash" id="0" name="Flash" sid="2308828394906898" type="hud_sfx">
+                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                    <param id="2" name="Duration">0.5</param>
+                </action>
                 <action id="-11" name="Subtract from" sid="8279957817197154" type="System">
                     <param id="0" name="Variable">sfx_vol</param>
                     <param id="1" name="Value">10</param>
@@ -251,11 +278,14 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Play" sid="8088070331671558" type="Audio">
-                            <param id="0" name="Audio file">Menu Click 3</param>
+                        <action id="6" name="Stop" sid="952794600716133" type="Audio">
+                            <param id="0" name="Tag">&quot;sfx&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="2735059839933622" type="Audio">
+                            <param id="0" name="Audio file">mouseclick</param>
                             <param id="2" name="Loop">0</param>
                             <param id="3" name="Volume">sfx_vol</param>
-                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                            <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
                         </action>
                     </actions>
                 </event-block>
@@ -319,11 +349,14 @@
                     <param id="0" name="Variable">sfx_vol</param>
                     <param id="1" name="Value">0</param>
                 </action>
-                <action id="0" name="Play" sid="3907409337398414" type="Audio">
-                    <param id="0" name="Audio file">Menu Click 3</param>
+                <action id="6" name="Stop" sid="5365840490194254" type="Audio">
+                    <param id="0" name="Tag">&quot;sfx&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="8245072339693913" type="Audio">
+                    <param id="0" name="Audio file">mouseclick</param>
                     <param id="2" name="Loop">0</param>
                     <param id="3" name="Volume">sfx_vol</param>
-                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                    <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
                 </action>
             </actions>
         </event-block>
