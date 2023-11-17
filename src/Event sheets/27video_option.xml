@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>27video_option</name>
+    <events>
+        <comment>em 13move_units, o hud e ajustado para se manter acima de tudo</comment>
+        <event-block sid="8625164651844297">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5204308503097531" type="System" />
+            </conditions>
+            <actions>
+                <action id="23" name="Set minimum size" sid="422358743714649" type="NodeWebkit">
+                    <param id="0" name="Min width">560</param>
+                    <param id="1" name="Min height">317</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>controle</comment>
+        <event-block sid="6786831977794608">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="4537853341219025" type="Touch">
+                    <param id="0" name="Object">hud_quality</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="9521915909682588" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="3531891754439978" type="System">
+                    <param id="0" name="Seconds">0.2</param>
+                </action>
+                <action id="-10" name="Add to" sid="9023771670400343" type="System">
+                    <param id="0" name="Variable">video_options</param>
+                    <param id="1" name="Value">0.7</param>
+                </action>
+                <action behavior="Flash" id="1" name="Stop flashing" sid="862513453793035" type="hud_quality" />
+                <action behavior="Flash" id="0" name="Flash" sid="8358943580539255" type="hud_quality">
+                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                    <param id="2" name="Duration">0.5</param>
+                </action>
+                <action id="0" name="Call function" sid="6628591379859161" type="funções">
+                    <param id="0" name="Name">&quot;change_video&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="5" name="Set frame" sid="9936639999200385" type="hud_quality">
+                    <param id="0" name="Frame number">hud_quality.AnimationFrame+1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="3466450134900947">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8657743025519555" type="System">
+                            <param id="0" name="Variable">sfx_vol</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">-20</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="2496931988307981">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2347179393694428" type="System">
+                    <param id="0" name="Variable">video_options</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">2.4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="95452764652764" type="System">
+                    <param id="0" name="Variable">video_options</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Call function" sid="2915775936811574" type="funções">
+                    <param id="0" name="Name">&quot;change_video&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+                <action id="5" name="Set frame" sid="3265907340971391" type="hud_quality">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>motor</comment>
+        <event-block sid="4622377937166646">
+            <conditions>
+                <condition id="0" name="On function" sid="3691850457951262" type="funções">
+                    <param id="0" name="Name">&quot;change_video&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-28" name="Set canvas size" sid="7975876513627201" type="System">
+                    <param id="0" name="Width">848/video_options</param>
+                    <param id="1" name="Height">480/video_options</param>
+                </action>
+                <action id="-17" name="Set layer scale" sid="7632849004639918" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Scale">zoom_var/video_options</param>
+                </action>
+                <action id="-17" name="Set layer scale" sid="516851804339654" type="System">
+                    <param id="0" name="Layer">1</param>
+                    <param id="1" name="Scale">zoom_var/video_options</param>
+                </action>
+                <action id="-17" name="Set layer scale" sid="9908190009122338" type="System">
+                    <param id="0" name="Layer">2</param>
+                    <param id="1" name="Scale">1/video_options</param>
+                </action>
+                <action id="-17" name="Set layer scale" sid="7094036584737383" type="System">
+                    <param id="0" name="Layer">3</param>
+                    <param id="1" name="Scale">1/video_options</param>
+                </action>
+                <action id="-17" name="Set layer scale" sid="5584695785172276" type="System">
+                    <param id="0" name="Layer">4</param>
+                    <param id="1" name="Scale">1/video_options</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

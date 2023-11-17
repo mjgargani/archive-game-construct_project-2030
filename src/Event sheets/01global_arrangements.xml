@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>01global_arrangements</name>
+    <events>
+        <comment>Controle de unidades</comment>
+        <variable constant="0" name="fuzileiros" sid="4042998849929856" static="0" type="number">0</variable>
+        <variable constant="0" name="medicos" sid="842205000528449" static="0" type="number">0</variable>
+        <variable constant="0" name="robos" sid="2913778578999171" static="0" type="number">0</variable>
+        <comment>Somatória do tempo entre cenários</comment>
+        <variable constant="0" name="tempo_total" sid="2436281162956913" static="0" type="number">0</variable>
+        <comment>Controle de geração e movientação de quadros</comment>
+        <variable constant="0" name="move_layout" sid="7376981779755066" static="0" type="number">0</variable>
+        <variable constant="0" name="random_var" sid="6362215638111569" static="0" type="number">0</variable>
+        <variable constant="0" name="loop_aux" sid="968654898575712" static="0" type="number">0</variable>
+        <comment>Controle de camera</comment>
+        <variable constant="0" name="cam_in_units" sid="5860782108523236" static="0" type="number">0</variable>
+        <variable constant="0" name="zoom_var" sid="3887454708989682" static="0" type="number">1.5</variable>
+        <variable constant="0" name="lock_cam" sid="9112105029336017" static="0" type="number">0</variable>
+        <comment>Touch flag</comment>
+        <variable constant="0" name="on_touch" sid="735917836844667" static="0" type="number">0</variable>
+        <comment>Opcionais</comment>
+        <variable constant="0" name="video_options" sid="9155398618449083" static="0" type="number">1</variable>
+        <variable constant="0" name="bgm_vol" sid="3842912828923371" static="0" type="number">0</variable>
+        <variable constant="0" name="sfx_vol" sid="312393158413882" static="0" type="number">0</variable>
+        <variable constant="0" name="pause_game" sid="6256019018200024" static="0" type="number">0</variable>
+        <comment>Seguimentos</comment>
+        <event-group description="Limpeza e geradores" sid="8847915067772244" title="Bloco inicial">
+            <sub-events>
+                <include>02initial_cleaning</include>
+                <include>03map_generator</include>
+                <include>05block_generator</include>
+                <include>04tower_generator</include>
+                <include>06layer_sets_n_bgm</include>
+                <include>07uptower_generator</include>
+                <include>08level_generator</include>
+                <include>12unit_sets</include>
+            </sub-events>
+        </event-group>
+        <event-group description="Eventos regulares e únicos, cursor (não pausar)" sid="1300818051868214" title="2º Seguimento">
+            <sub-events>
+                <include>09regular_actions</include>
+                <include>11only_once_events</include>
+                <include>26cursor</include>
+            </sub-events>
+        </event-group>
+        <comment>ajustes sobreposição de hud em 13move_units - 3º seguimento</comment>
+        <event-group description="Controle de unidades" sid="8597903484814401" title="3º Seguimento">
+            <sub-events>
+                <include>13move_units</include>
+                <include>14unit_anim</include>
+                <include>15stealth_mode_marines</include>
+                <include>16damage_units</include>
+                <include>17robot_unit</include>
+                <include>18medic_unit</include>
+                <include>19marine_unit</include>
+            </sub-events>
+        </event-group>
+        <event-group description="Comportamento das torres e objetivo" sid="4003491394087787" title="4º Seguimento">
+            <sub-events>
+                <include>20turret_comportament</include>
+                <include>21objective</include>
+            </sub-events>
+        </event-group>
+        <event-group description="FX, HUD, e cameras" sid="3592300830015813" title="5º Seguimento">
+            <sub-events>
+                <include>22FX</include>
+                <include>24cam_n_zoom_control</include>
+                <include>25cam_lock</include>
+            </sub-events>
+        </event-group>
+        <event-group description="Video, Som e Controles" sid="3004824418259697" title="Opções">
+            <sub-events>
+                <include>10options</include>
+                <include>27video_option</include>
+                <include>23controls</include>
+            </sub-events>
+        </event-group>
+        <event-group description="Pausar o motor, e testes gerais" sid="4881196365923316" title="Pause/Debug">
+            <sub-events>
+                <comment>pause game</comment>
+                <event-block sid="418858621810319">
+                    <conditions>
+                        <condition id="0" name="On function" sid="1730639275255026" type="funções">
+                            <param id="0" name="Name">&quot;pause_game&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2563138711327557">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="7951446613581338" type="System">
+                                    <param id="0" name="Variable">pause_game</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="3037063007131995" type="hud_tempo">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="3807794683602733" type="hud_txt_contador">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="930895265458973" type="hud_tempo">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="8982196308353609" type="System">
+                                    <param id="0" name="Group name">&quot;3º Seguimento&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="3748464373996767" type="System">
+                                    <param id="0" name="Group name">&quot;4º Seguimento&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="22" name="Set paused" sid="1874729546601859" type="Audio">
+                                    <param id="0" name="Tag">&quot;ba&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="255871019022588" type="System">
+                                    <param id="0" name="Variable">pause_game</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="5574862378086337">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-14" name="Set object time scale" sid="8679943083621202" type="System">
+                                            <param id="0" name="Object">torre</param>
+                                            <param id="1" name="Time scale">0</param>
+                                        </action>
+                                        <action id="-14" name="Set object time scale" sid="6843761010694985" type="System">
+                                            <param id="0" name="Object">unidade</param>
+                                            <param id="1" name="Time scale">0</param>
+                                        </action>
+                                        <action id="-14" name="Set object time scale" sid="1971107887882141" type="System">
+                                            <param id="0" name="Object">bala1</param>
+                                            <param id="1" name="Time scale">0</param>
+                                        </action>
+                                        <action id="-14" name="Set object time scale" sid="9450047031277335" type="System">
+                                            <param id="0" name="Object">bala2</param>
+                                            <param id="1" name="Time scale">0</param>
+                                        </action>
+                                        <action id="-14" name="Set object time scale" sid="8976143341970236" type="System">
+                                            <param id="0" name="Object">bala3</param>
+                                            <param id="1" name="Time scale">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="7260441183212401">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="2823436744873731" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="1" name="Stop flashing" sid="616820609250909" type="hud_tempo" />
+                                <action behavior="Flash" id="1" name="Stop flashing" sid="2104148266720518" type="hud_txt_contador" />
+                                <action behavior="Flash" id="0" name="Flash" sid="2059113711626925" type="hud_tempo">
+                                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                    <param id="2" name="Duration">0.5</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="5464023705671543" type="hud_txt_contador">
+                                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                    <param id="2" name="Duration">0.5</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="9210793985237988" type="System">
+                                    <param id="0" name="Variable">pause_game</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="8476712151045452" type="hud_tempo">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="1960364622257991" type="System">
+                                    <param id="0" name="Group name">&quot;3º Seguimento&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="450116092769892" type="System">
+                                    <param id="0" name="Group name">&quot;4º Seguimento&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9126010358890745" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="22" name="Set paused" sid="6640751944566177" type="Audio">
+                                    <param id="0" name="Tag">&quot;ba&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <comment>start_bgm</comment>
+                                <event-block sid="4825418652877484">
+                                    <conditions>
+                                        <condition id="5" inverted="1" name="Is tag playing" sid="6251809746310108" type="Audio">
+                                            <param id="0" name="Tag">&quot;ba&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="5196925426989555" type="Audio">
+                                            <param id="0" name="Audio file">track01</param>
+                                            <param id="2" name="Loop">1</param>
+                                            <param id="3" name="Volume">bgm_vol</param>
+                                            <param id="1" name="Tag (optional)">&quot;ba&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7458003320120846">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-14" name="Set object time scale" sid="6179186037988872" type="System">
+                                            <param id="0" name="Object">torre</param>
+                                            <param id="1" name="Time scale">1</param>
+                                        </action>
+                                        <action id="-14" name="Set object time scale" sid="3466433280484959" type="System">
+                                            <param id="0" name="Object">unidade</param>
+                                            <param id="1" name="Time scale">1</param>
+                                        </action>
+                                        <action id="-14" name="Set object time scale" sid="2947363419454414" type="System">
+                                            <param id="0" name="Object">bala1</param>
+                                            <param id="1" name="Time scale">1</param>
+                                        </action>
+                                        <action id="-14" name="Set object time scale" sid="365018934515488" type="System">
+                                            <param id="0" name="Object">bala2</param>
+                                            <param id="1" name="Time scale">1</param>
+                                        </action>
+                                        <action id="-14" name="Set object time scale" sid="4559011963656366" type="System">
+                                            <param id="0" name="Object">bala3</param>
+                                            <param id="1" name="Time scale">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5506979071826923">
+                    <conditions>
+                        <condition id="4" name="Is touching object" sid="9226167496287432" type="Touch">
+                            <param id="0" name="Object">hud_tempo</param>
+                        </condition>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="2576739150597302" type="hud_tempo" />
+                        <condition id="-4" name="Trigger once while true" sid="2758326661431179" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="7062275669918255" type="System">
+                            <param id="0" name="Seconds">0.2</param>
+                        </action>
+                        <action id="0" name="Call function" sid="6103483473714912" type="funções">
+                            <param id="0" name="Name">&quot;pause_game&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="1159668969270219">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="2007556070669358" type="System">
+                                    <param id="0" name="Variable">sfx_vol</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">-20</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="7843253478794151">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="5480167291272539" type="System">
+                                            <param id="0" name="Variable">pause_game</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="6" name="Stop" sid="8717365492272128" type="Audio">
+                                            <param id="0" name="Tag">&quot;sfx&quot;</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="1940302675892558" type="Audio">
+                                            <param id="0" name="Audio file">pause</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">sfx_vol</param>
+                                            <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="7677337171902317">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="2704868868469363" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="6" name="Stop" sid="156124389645981" type="Audio">
+                                            <param id="0" name="Tag">&quot;sfx&quot;</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="4640107819210422" type="Audio">
+                                            <param id="0" name="Audio file">unpause</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">sfx_vol</param>
+                                            <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7276198291259665">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="5576023024290803" type="mouse">
+                            <param id="0" name="Object">hud_tempo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="9616827910167099" type="hud_txt_contador">
+                            <param id="0" name="Opacity">66</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6942165810128625">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9952257742741893" type="System">
+                            <param id="0" name="First value">LayerOpacity(0)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1483273243299632">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="5737106241815217" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="1" name="Stop flashing" sid="3911920812756232" type="unidade" />
+                                <action id="0" name="Call function" sid="1033049931412548" type="funções">
+                                    <param id="0" name="Name">&quot;pause_game&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

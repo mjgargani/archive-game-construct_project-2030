@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>19marine_unit</name>
+    <events>
+        <comment>fuzileiro</comment>
+        <event-block any="1" sid="1810583353689271">
+            <conditions>
+                <condition id="2" name="Key is down" sid="2532699874901282" type="teclado">
+                    <param id="0" name="Key">32</param>
+                </condition>
+                <condition id="12" name="Has Nth touch" sid="1329943735364947" type="Touch">
+                    <param id="0" name="Touch number">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1548505957433291">
+                    <conditions>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="4989668078677991" type="unidade">
+                            <param id="0" name="Object">start_zone</param>
+                        </condition>
+                        <condition id="1" inverted="1" name="Is overlapping another object" sid="4802372951458968" type="unidade">
+                            <param id="0" name="Object">safe_zone</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3152439526157803">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="3777267627620811" type="s_unit">
+                                    <param id="0" name="Object">unidade</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="8869993746282508" type="unidade">
+                                    <param id="0" name="Instance variable">classe</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="1259630983101354" type="unidade">
+                                    <param id="0" name="Instance variable">selecionado</param>
+                                </condition>
+                                <condition id="-6" name="Every X seconds" sid="9181838949327623" type="System">
+                                    <param id="0" name="Interval (seconds)">1.0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="107491781101796" type="unidade">
+                                    <param id="0" name="Object">bala3</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="1348515865033742" type="bala3">
+                                    <param id="0" name="X">cursor2.X</param>
+                                    <param id="1" name="Y">cursor2.Y</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="3384656942871496">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="595610931988023" type="System">
+                                            <param id="0" name="Variable">sfx_vol</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">-20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="8054693358889051" type="Audio">
+                                            <param id="0" name="Audio file">Bump2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">sfx_vol</param>
+                                            <param id="1" name="Tag (optional)">&quot;tiro_unit&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="4425012677524077">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="9775868702575762" type="s_unit">
+                                    <param id="0" name="Object">unidade</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="7891430226157381" type="unidade">
+                                    <param id="0" name="Instance variable">classe</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="1139754537322803" type="unidade">
+                                    <param id="0" name="Instance variable">selecionado</param>
+                                </condition>
+                                <condition id="-6" name="Every X seconds" sid="3180816141150671" type="System">
+                                    <param id="0" name="Interval (seconds)">1.0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="1386477130446383" type="unidade">
+                                    <param id="0" name="Object">bala2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">1</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="3184566161473085" type="bala2">
+                                    <param id="0" name="X">cursor2.X</param>
+                                    <param id="1" name="Y">cursor2.Y</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="4414347466465562">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="356795287951973" type="System">
+                                            <param id="0" name="Variable">sfx_vol</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">-20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="3852472261925762" type="Audio">
+                                            <param id="0" name="Audio file">Bump2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">sfx_vol</param>
+                                            <param id="1" name="Tag (optional)">&quot;tiro_unit&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="5900361051130613">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="6170638851580377" type="s_unit">
+                                    <param id="0" name="Object">unidade</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="5571368652304955" type="unidade">
+                                    <param id="0" name="Instance variable">classe</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="1659694895365319" type="unidade">
+                                    <param id="0" name="Instance variable">selecionado</param>
+                                </condition>
+                                <condition id="-6" name="Every X seconds" sid="67116087466255" type="System">
+                                    <param id="0" name="Interval (seconds)">1.0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="4185468005602905" type="System">
+                                    <param id="0" name="Object to create">d_area</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">unidade.ImagePointX(1)</param>
+                                    <param id="3" name="Y">unidade.ImagePointY(1)</param>
+                                </action>
+                                <action behavior="Pin" id="0" name="Pin to object" sid="614587890608983" type="d_area">
+                                    <param id="0" name="Pin to">unidade</param>
+                                    <param id="1" name="Mode">1</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="5907715484650235">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="8994032473440448" type="System">
+                                            <param id="0" name="Variable">sfx_vol</param>
+                                            <param id="1" name="Comparison">4</param>
+                                            <param id="2" name="Value">-20</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Play" sid="6260691930455511" type="Audio">
+                                            <param id="0" name="Audio file">Bump2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">sfx_vol</param>
+                                            <param id="1" name="Tag (optional)">&quot;tiro_unit&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="6099776383779098">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="3704640027214524" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set cursor style" sid="5432529803253009" type="mouse">
+                                    <param id="0" name="Cursor style">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3352540604162151">
+            <conditions>
+                <condition id="2" inverted="1" name="Key is down" sid="5702512346274597" type="teclado">
+                    <param id="0" name="Key">32</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="919006314798343">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="7721606517745926" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set cursor style" sid="8507726222158943" type="mouse">
+                            <param id="0" name="Cursor style">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3393358747439766">
+            <conditions>
+                <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="30504212882833" type="bala3">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Distance">100</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="981159727170564" type="bala3" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

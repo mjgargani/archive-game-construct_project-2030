@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>22FX</name>
+    <events>
+        <comment>FX</comment>
+        <event-block sid="6247929776504343">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="5248604211197091" type="mouse">
+                    <param id="0" name="Object">hud_btns</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="5656464072010283" type="hud_btns">
+                    <param id="0" name="Opacity">66</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7285815840830891">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="5704647626260621" type="mouse">
+                    <param id="0" name="Object">unidade</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="5060938489881215" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="2495331225521346" type="mouse">
+                    <param id="0" name="Cursor style">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1598342060268049">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="4298663125846312" type="mouse">
+                    <param id="0" name="Object">hud_btns</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="896570771397843" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="1224321305870651" type="mouse">
+                    <param id="0" name="Cursor style">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6637204618898364">
+            <conditions>
+                <condition id="5" name="On any finished" sid="4976272849610283" type="explosion" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4649448752389165" type="explosion" />
+            </actions>
+        </event-block>
+        <event-block sid="9804130533518152">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="9117713612627865" type="Touch">
+                    <param id="0" name="Object">hud_aux</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="4239483353614938" type="System">
+                    <param id="0" name="Variable">zoom_var</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="8988398723393969" type="System">
+                    <param id="0" name="Variable">lock_cam</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="3206914290379791" type="hud_aux">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9590736056060895">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="5625031950083483" type="System">
+                    <param id="0" name="Variable">lock_cam</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="9135091195433206" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="8850728865003519" type="hud_aux">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5322660538391262" type="hud_scroll">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="4206478256545979">
+            <conditions>
+                <condition id="7" name="Cursor is over object" sid="6660797769810171" type="mouse">
+                    <param id="0" name="Object">hud_aux</param>
+                </condition>
+                <condition id="7" name="Cursor is over object" sid="9475239892607773" type="mouse">
+                    <param id="0" name="Object">hud_background</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6832217511168449">
+                    <conditions>
+                        <condition id="7" inverted="1" name="Cursor is over object" sid="4297890226628398" type="mouse">
+                            <param id="0" name="Object">hud_btns</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set cursor style" sid="5756823449888814" type="mouse">
+                            <param id="0" name="Cursor style">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7368226446603097">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="5805707766232495" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="8116728268125027" type="unidade">
+                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                    <param id="2" name="Duration">2.0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>09regular_actions</name>
+    <events>
+        <event-block sid="4224823415294346">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="6125657778323504" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action disabled="1" id="0" name="Set text" sid="5123325645124004" type="debug_txt">
+                    <param id="0" name="Text">&quot;FPS:&quot; &amp; str(fps) &amp; &quot;|CPU:&quot; &amp; str(round(cpuutilisation*100)) &amp; &quot;%|I.M: &quot;&amp; ImageMemoryUsage &amp; &quot;MB|O.C:&quot; &amp; str(objectcount)</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="5537043075545034">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7136093852947076" type="variaveis">
+                            <param id="0" name="Instance variable">segundos</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="4643448939083477" type="hud_txt_contador">
+                            <param id="0" name="Text">&quot;00&quot;&amp;variaveis.segundos</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6013803762684895">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1513597879095252" type="variaveis">
+                            <param id="0" name="Instance variable">segundos</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">10</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="4638770271656754" type="variaveis">
+                            <param id="0" name="Instance variable">segundos</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="6611252085167608" type="hud_txt_contador">
+                            <param id="0" name="Text">&quot;0&quot;&amp;variaveis.segundos</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="164747011819813">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5307982520205964" type="variaveis">
+                            <param id="0" name="Instance variable">segundos</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="4666885956947632" type="hud_txt_contador">
+                            <param id="0" name="Text">variaveis.segundos</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3853105898773735">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="2056719303464434" type="System">
+                    <param id="0" name="Interval (seconds)">0.1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Set speed" sid="8649959252647899" type="unidade">
+                    <param id="0" name="Speed">unidade.8Direction.Speed/10</param>
+                </action>
+                <action id="0" name="Set text" sid="815839016812392" type="hud_txt_unidades">
+                    <param id="0" name="Text">variaveis.unit_count &amp;&quot;/&quot;&amp;variaveis.unit_count_inicial</param>
+                </action>
+                <action id="-10" name="Set value" sid="1656259963183154" type="variaveis">
+                    <param id="0" name="Instance variable">unit_count</param>
+                    <param id="1" name="Value">unidade.Count</param>
+                </action>
+                <action id="-25" name="Move to bottom" sid="2571922841000901" type="scenario_bg" />
+            </actions>
+            <sub-events>
+                <comment>contagem de selecionados</comment>
+                <event-block sid="6792245834819708">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="1855564413103874" type="unidade">
+                            <param id="0" name="Instance variable">selecionado</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="4863800087720367" type="variaveis">
+                            <param id="0" name="Instance variable">unit_selected_count</param>
+                            <param id="1" name="Value">unidade.PickedCount</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4466240905472992">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="8150245330889553" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="8091184343123668" type="variaveis">
+                            <param id="0" name="Instance variable">unit_selected_count</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>flag for cam focus in units</comment>
+                <event-block sid="8462429993690832">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="8193410552762482" type="variaveis">
+                            <param id="0" name="Instance variable">unit_selected_count</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3052826588521867" type="System">
+                            <param id="0" name="Variable">cam_in_units</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5513506177722718">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="1933679755730695" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="9460740100980106" type="System">
+                            <param id="0" name="Variable">cam_in_units</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6096969110819539">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="8941350146625113" type="System">
+                    <param id="0" name="Interval (seconds)">0.05</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="8318025723308883" type="hud_btns">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="-15" name="Set visible" sid="285655663826289" type="hud_aux">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="5983229251003118" type="hud_txt_contador">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="1723226799682201">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6005351319455445" type="System">
+                            <param id="0" name="Variable">pause_game</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-14" name="Set object time scale" sid="2567158545932914" type="System">
+                            <param id="0" name="Object">unidade</param>
+                            <param id="1" name="Time scale">unidade.timescale</param>
+                        </action>
+                        <action id="-14" name="Set object time scale" sid="3449105318886312" type="System">
+                            <param id="0" name="Object">torre</param>
+                            <param id="1" name="Time scale">torre.timescale</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>fx</comment>
+                <event-block sid="3781066972508046">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="3676229917078861" type="System">
+                            <param id="0" name="First value">d_area.Opacity</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="4961130175177605" type="d_area">
+                            <param id="0" name="Opacity">d_area.Opacity-10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5035079071005077">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="6035980096132606" type="System">
+                            <param id="0" name="Variable">on_touch</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="7926311882157102" type="hud_deadzone">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="4152403685934255" type="hud_analogic">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="8057678622922056">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="2958440161981085" type="Touch">
+                                    <param id="0" name="Object">hud_deadzone</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="1569410499935836" type="hud_deadzone">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="6168866518806765" type="analogic">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="1261613800993234">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="4841261742594367" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="2906541004518715" type="hud_deadzone">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="1479844326794658" type="analogic">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="5681864500803824" type="analogic">
+                                    <param id="0" name="X">Touch.XAt(0)</param>
+                                    <param id="1" name="Y">Touch.YAt(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5199088326931495">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3119489265858416" type="System">
+                            <param id="0" name="Variable">on_touch</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="3683934433369507" type="hud_deadzone">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="7721247136682574" type="analogic">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="8731615711752765" type="hud_deadzone">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="8232753848207974" type="hud_analogic">
+                            <param id="0" name="Opacity">50</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>a cerca do prosseguimento do jogo</comment>
+                <event-block sid="4312749498246773">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="397109908870503" type="System">
+                            <param id="0" name="Variable">move_layout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3584073980394611">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="4854169119607053" type="System">
+                                    <param id="0" name="First value">LayerOpacity(0)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Set layer opacity" sid="60767826070807" type="System">
+                                    <param id="0" name="Layer">0</param>
+                                    <param id="1" name="Opacity">LayerOpacity(0)+15</param>
+                                </action>
+                                <action id="-18" name="Set layer opacity" sid="1485457840853541" type="System">
+                                    <param id="0" name="Layer">1</param>
+                                    <param id="1" name="Opacity">LayerOpacity(0)</param>
+                                </action>
+                                <action id="-18" name="Set layer opacity" sid="3529046575087843" type="System">
+                                    <param id="0" name="Layer">2</param>
+                                    <param id="1" name="Opacity">LayerOpacity(0)</param>
+                                </action>
+                                <action id="-18" name="Set layer opacity" sid="2472555556968761" type="System">
+                                    <param id="0" name="Layer">3</param>
+                                    <param id="1" name="Opacity">LayerOpacity(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="4472924066660644">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6393434449832464" type="System">
+                                    <param id="0" name="First value">LayerOpacity(4)</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Set layer opacity" sid="9260902423064534" type="System">
+                                    <param id="0" name="Layer">4</param>
+                                    <param id="1" name="Opacity">LayerOpacity(4)-15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="7750140988302286">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="4414915036880286" type="System">
+                            <param id="0" name="Variable">move_layout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Set layer opacity" sid="5014698488757224" type="System">
+                            <param id="0" name="Layer">0</param>
+                            <param id="1" name="Opacity">LayerOpacity(0)-15</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="5400989750916697" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Opacity">LayerOpacity(0)</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="4925873964662922" type="System">
+                            <param id="0" name="Layer">2</param>
+                            <param id="1" name="Opacity">LayerOpacity(0)</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="1033563736300121" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Opacity">LayerOpacity(0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="7466094896917504">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="6254406204416277" type="System">
+                                    <param id="0" name="First value">LayerOpacity(0)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-26" name="Restart layout" sid="5855390473338977" type="System" />
+                                <action id="-9" name="Set value" sid="226659589605816" type="System">
+                                    <param id="0" name="Variable">move_layout</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="9039486488486106">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="7319506693384409" type="System">
+                                    <param id="0" name="First value">LayerOpacity(4)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Set layer opacity" sid="6279405816453032" type="System">
+                                    <param id="0" name="Layer">4</param>
+                                    <param id="1" name="Opacity">LayerOpacity(4)+15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="896175275667502">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="5879260896716525" type="System">
+                            <param id="0" name="Variable">move_layout</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-18" name="Set layer opacity" sid="6280760808749236" type="System">
+                            <param id="0" name="Layer">0</param>
+                            <param id="1" name="Opacity">LayerOpacity(0)-15</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="7715523888954458" type="System">
+                            <param id="0" name="Layer">1</param>
+                            <param id="1" name="Opacity">LayerOpacity(0)</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="9592344273925394" type="System">
+                            <param id="0" name="Layer">2</param>
+                            <param id="1" name="Opacity">LayerOpacity(0)</param>
+                        </action>
+                        <action id="-18" name="Set layer opacity" sid="5866555215818724" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Opacity">LayerOpacity(0)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6069821920003271">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="3008142426091093" type="System">
+                                    <param id="0" name="First value">LayerOpacity(0)</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action disabled="1" id="-25" name="Go to layout (by name)" sid="5648054786863651" type="System">
+                                    <param id="0" name="Layout">left(LayoutName,1)&amp;str(int(right(LayoutName,1))+1)</param>
+                                </action>
+                                <action id="-26" name="Restart layout" sid="8075529199906311" type="System" />
+                                <action id="-9" name="Set value" sid="5436848184624544" type="System">
+                                    <param id="0" name="Variable">move_layout</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="3016904376083856">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="9842728949334109" type="System">
+                                    <param id="0" name="First value">LayerOpacity(4)</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">100</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-18" name="Set layer opacity" sid="2813095733533842" type="System">
+                                    <param id="0" name="Layer">4</param>
+                                    <param id="1" name="Opacity">LayerOpacity(4)+15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="8665310303205179">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="9665948359552024" type="System">
+                            <param id="0" name="First value">int(txt_vida_unidade.Text)</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5383564852978707" type="txt_vida_unidade" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
