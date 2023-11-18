@@ -6,7 +6,7 @@
 
 ## 🇧🇷 pt-br
 
-### Controles/Controls
+### Controles
 
 > ⚠️ Quando foi desenvolvido, o jogo havia sido otimizado para `mobile`, apesar disso, por ser um software antigo, é provável que ocorram vários bugs de UI, nesses aparelhos.
 
