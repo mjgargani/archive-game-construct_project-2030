@@ -4,6 +4,8 @@
 
 > 🌐 [https://project2030.gargani.dev/](https://project2030.gargani.dev/)
 
+With special thanks to: João Scheffer (Sprites) and Evandro Erick (BGM).
+
 ## 🇧🇷 pt-br
 
 ### Controles

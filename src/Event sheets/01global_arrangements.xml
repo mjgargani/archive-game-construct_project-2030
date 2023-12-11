@@ -24,6 +24,7 @@
         <variable constant="0" name="bgm_vol" sid="3842912828923371" static="0" type="number">0</variable>
         <variable constant="0" name="sfx_vol" sid="312393158413882" static="0" type="number">0</variable>
         <variable constant="0" name="pause_game" sid="6256019018200024" static="0" type="number">0</variable>
+        <variable constant="0" name="show_info" sid="474101162466798" static="0" type="number">1</variable>
         <comment>Seguimentos</comment>
         <event-group description="Limpeza e geradores" sid="8847915067772244" title="Bloco inicial">
             <sub-events>
@@ -78,6 +79,87 @@
         </event-group>
         <event-group description="Pausar o motor, e testes gerais" sid="4881196365923316" title="Pause/Debug">
             <sub-events>
+                <comment>mostrar informações</comment>
+                <event-block sid="548645855370483">
+                    <conditions>
+                        <condition id="0" name="On function" sid="579142785654014" type="funções">
+                            <param id="0" name="Name">&quot;show_info&quot;</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="352812832263379" type="System">
+                            <param id="0" name="Layer">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="981026781575294" type="System">
+                            <param id="0" name="Layer">5</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="350383466089811">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="737797771121560" type="System">
+                                    <param id="0" name="Variable">pause_game</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="254422695045235" type="funções">
+                                    <param id="0" name="Name">&quot;pause_game&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="780233474376844">
+                    <conditions>
+                        <condition id="4" name="Is touching object" sid="492721805160367" type="Touch">
+                            <param id="0" name="Object">hud_info</param>
+                        </condition>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="603271932300132" type="System">
+                            <param id="0" name="Layer">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="499288021179160" type="funções">
+                            <param id="0" name="Name">&quot;show_info&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action id="6" name="Stop" sid="309310867878759" type="Audio">
+                            <param id="0" name="Tag">&quot;sfx&quot;</param>
+                        </action>
+                        <action id="0" name="Play" sid="808987597894316" type="Audio">
+                            <param id="0" name="Audio file">unpause</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">sfx_vol</param>
+                            <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="363668697970352">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="926598578418347" type="info_hide" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set layer visible" sid="948927216001547" type="System">
+                            <param id="0" name="Layer">5</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="632346502256575">
+                    <conditions>
+                        <condition id="0" name="On clicked" sid="364421627826291" type="info_github" />
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Open URL in new window" sid="173014840658725" type="Browser">
+                            <param id="0" name="URL">&quot;https://github.com/mjgargani/archive-game-construct_project-2030#readme&quot;</param>
+                            <param id="1" name="Tag">&quot;NewWindow&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>pause game</comment>
                 <event-block sid="418858621810319">
                     <conditions>
@@ -159,6 +241,14 @@
                                 <condition id="-22" name="Else" sid="2823436744873731" type="System" />
                             </conditions>
                             <actions>
+                                <action id="-4" name="Set layer visible" sid="686114378694539" type="System">
+                                    <param id="0" name="Layer">5</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="928065075896663" type="System">
+                                    <param id="0" name="Variable">show_info</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
                                 <action behavior="Flash" id="1" name="Stop flashing" sid="616820609250909" type="hud_tempo" />
                                 <action behavior="Flash" id="1" name="Stop flashing" sid="2104148266720518" type="hud_txt_contador" />
                                 <action behavior="Flash" id="0" name="Flash" sid="2059113711626925" type="hud_tempo">
@@ -336,11 +426,35 @@
                             </conditions>
                             <actions>
                                 <action behavior="Flash" id="1" name="Stop flashing" sid="3911920812756232" type="unidade" />
-                                <action id="0" name="Call function" sid="1033049931412548" type="funções">
-                                    <param id="0" name="Name">&quot;pause_game&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="630599997750043">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="507620381212148" type="System">
+                                            <param id="0" name="Variable">show_info</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="849754057747402" type="funções">
+                                            <param id="0" name="Name">&quot;show_info&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="372775021300309">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="331919530670969" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="1033049931412548" type="funções">
+                                            <param id="0" name="Name">&quot;pause_game&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

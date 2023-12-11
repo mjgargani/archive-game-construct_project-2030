@@ -15,6 +15,14 @@
                     <param id="0" name="Layer">3</param>
                     <param id="1" name="Visibility">1</param>
                 </action>
+                <action id="-3" name="Set position" sid="326065821438001" type="loading_bg">
+                    <param id="0" name="X">0</param>
+                    <param id="1" name="Y">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="919586467269997" type="loading_mask_icon">
+                    <param id="0" name="X">loading_mask_icon.start_x</param>
+                    <param id="1" name="Y">loading_mask_icon.start_y</param>
+                </action>
             </actions>
             <sub-events>
                 <comment>destruir objetos</comment>
