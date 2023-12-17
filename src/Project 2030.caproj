@@ -10,6 +10,7 @@
     <unique-id>19x0ejj3rpqgy</unique-id>
     <saved-with-version>28000</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
@@ -21,6 +22,7 @@
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
@@ -1570,6 +1572,12 @@
         <object-type name="Button" sid="129702014814888">
             <plugin id="Button" />
         </object-type>
+        <object-type name="AJAX" sid="831692387490766">
+            <plugin id="AJAX" />
+        </object-type>
+        <object-type name="info_readme" sid="273625236939524">
+            <plugin id="TextBox" />
+        </object-type>
     </object-folder>
     <families>
         <family name="balas" plugin-id="Sprite" sid="9729375665077322">
@@ -1664,6 +1672,7 @@
             </properties>
         </global-instance>
         <global-instance type="Browser" uid="63" />
+        <global-instance type="AJAX" uid="109" />
     </global-instances>
     <sounds-folder>
         <file name="RetroLaser1.m4a" />

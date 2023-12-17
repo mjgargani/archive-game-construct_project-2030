@@ -25,6 +25,7 @@
         <variable constant="0" name="sfx_vol" sid="312393158413882" static="0" type="number">0</variable>
         <variable constant="0" name="pause_game" sid="6256019018200024" static="0" type="number">0</variable>
         <variable constant="0" name="show_info" sid="474101162466798" static="0" type="number">1</variable>
+        <variable constant="0" name="repo_readme" sid="340738307328535" static="0" type="text"></variable>
         <comment>Seguimentos</comment>
         <event-group description="Limpeza e geradores" sid="8847915067772244" title="Bloco inicial">
             <sub-events>
@@ -77,9 +78,117 @@
                 <include>23controls</include>
             </sub-events>
         </event-group>
-        <event-group description="Pausar o motor, e testes gerais" sid="4881196365923316" title="Pause/Debug">
+        <event-group description="Pausar o motor, testes gerais e informações" sid="4881196365923316" title="Pause/Debug/Game Info">
             <sub-events>
                 <comment>mostrar informações</comment>
+                <event-block sid="493939928549929">
+                    <conditions>
+                        <condition id="0" name="On function" sid="221532340895894" type="funções">
+                            <param id="0" name="Name">&quot;set_readme&quot;</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="576399161546954" type="System">
+                            <param id="0" name="Variable">repo_readme</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="749240743790920" type="info_readme">
+                            <param id="0" name="Text">repo_readme</param>
+                        </action>
+                        <action id="0" name="Set text" sid="877009427632685" type="info_readme">
+                            <param id="0" name="Text">replace(info_readme.Text, &quot;![thumbnail](./thumbnail.webp)&quot;,&quot;&gt; LEIA-ME / README&quot;)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="737500026611302" type="info_readme">
+                            <param id="0" name="Text">replace(info_readme.Text, &quot;&gt; 🌐 [https://project2030.gargani.dev/](https://project2030.gargani.dev/)&quot;,&quot;&gt; Informações sobre o Jogo / Game Information&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="811358614041391">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="819077460802131" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="742053703907841">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="738186968602570" type="System">
+                                    <param id="0" name="Variable">repo_readme</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Request URL" sid="150396457566394" type="AJAX">
+                                    <param id="0" name="Tag">&quot;readme&quot;</param>
+                                    <param id="1" name="URL">&quot;https://raw.githubusercontent.com/mjgargani/archive-game-construct_project-2030/main/README.md&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="213563717774013">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="956352818371105" type="System">
+                                    <param id="0" name="Variable">repo_readme</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="144734443500951" type="funções">
+                                    <param id="0" name="Name">&quot;set_readme&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="894769853474341">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="219344960873232" type="AJAX">
+                            <param id="0" name="Tag">&quot;readme&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="361173333972215" type="System">
+                            <param id="0" name="Variable">repo_readme</param>
+                            <param id="1" name="Value">AJAX.LastData</param>
+                        </action>
+                        <action id="0" name="Call function" sid="552248715361829" type="funções">
+                            <param id="0" name="Name">&quot;set_readme&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="967502514843523">
+                    <conditions>
+                        <condition id="4" name="On any error" sid="377442504064080" type="AJAX" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="182684445810486" type="info_readme" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="800217030712397">
+                            <conditions>
+                                <condition id="-9" inverted="1" name="Is visible" sid="874199259139887" type="info_text" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="701496594635129" type="info_text">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="846042530014192">
+                            <conditions>
+                                <condition id="-9" inverted="1" name="Is visible" sid="293233570570199" type="info_bg" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="991231042814197" type="info_bg">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="548645855370483">
                     <conditions>
                         <condition id="0" name="On function" sid="579142785654014" type="funções">
@@ -181,6 +290,10 @@
                             <param id="0" name="Layer">5</param>
                             <param id="1" name="Visibility">0</param>
                         </action>
+                        <action id="-9" name="Set value" sid="228358815562791" type="System">
+                            <param id="0" name="Variable">show_info</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="632346502256575">
@@ -191,6 +304,36 @@
                         <action id="8" name="Open URL in new window" sid="173014840658725" type="Browser">
                             <param id="0" name="URL">&quot;https://github.com/mjgargani/archive-game-construct_project-2030#readme&quot;</param>
                             <param id="1" name="Tag">&quot;NewWindow&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="950848610006470">
+                    <conditions>
+                        <condition id="-9" inverted="1" name="Layer is visible" sid="339427782944166" type="System">
+                            <param id="0" name="Layer">5</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="965023814302841" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="774903214547209" type="info_turret">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="2" name="Stop" sid="507547562120747" type="info_unit" />
+                    </actions>
+                </event-block>
+                <event-block sid="206069123948200">
+                    <conditions>
+                        <condition id="-9" name="Layer is visible" sid="256898907483149" type="System">
+                            <param id="0" name="Layer">5</param>
+                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="474273842593317" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="596370341223408" type="info_turret">
+                            <param id="0" name="Speed">180</param>
+                        </action>
+                        <action id="3" name="Start" sid="194320205231557" type="info_unit">
+                            <param id="0" name="From">0</param>
                         </action>
                     </actions>
                 </event-block>

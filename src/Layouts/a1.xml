@@ -1821,7 +1821,7 @@
                 <instance type="info_text" uid="68">
                     <properties>
                         <text>&quot;Project 2030&quot; was an amateur project using Construct 2 (Discontinued) developed for the Newgrounds Game Jam around 2015.</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-12,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -1848,7 +1848,7 @@
                 <instance type="info_text" uid="69">
                     <properties>
                         <text>The concept revolves around subverting the traditional Tower-defense mechanics, using some RTS elements to control units, instead of towers. The objective is to reach the end of the map (procedurally generated with each new round) with as many units as possible, in the shortest time possible.</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-11,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -1901,7 +1901,7 @@
                 </instance>
                 <instance type="info_bg" uid="77">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <hotspot>Top-left</hotspot>
                     </properties>
                     <blend-mode>0</blend-mode>
@@ -1922,7 +1922,7 @@
                 <instance type="info_text" uid="71">
                     <properties>
                         <text>[ Mouse / Mouse Click ] - On the edges: Move camera; In units: Select (Click and drag); Interaction with the menus.</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-11,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
@@ -1949,7 +1949,7 @@
                 <instance type="info_text" uid="72">
                     <properties>
                         <text>[ A/W/S/D ] - After selecting the units: Move the set.</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-11,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
@@ -1976,7 +1976,7 @@
                 <instance type="info_text" uid="73">
                     <properties>
                         <text>[ SPACE ] - Shoot the selected units towards the mouse pointer.</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-11,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
@@ -2003,7 +2003,7 @@
                 <instance type="info_text" uid="74">
                     <properties>
                         <text>[ CTRL ] - Activates a relative camera mode between the units and the mouse pointer (Good for quick gameplay).</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-11,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
@@ -2030,7 +2030,7 @@
                 <instance type="info_text" uid="75">
                     <properties>
                         <text>Controls</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-13,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -2056,7 +2056,7 @@
                 </instance>
                 <instance type="info_bg" uid="78">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <hotspot>Top-left</hotspot>
                     </properties>
                     <blend-mode>0</blend-mode>
@@ -2077,7 +2077,7 @@
                 <instance type="info_text" uid="76">
                     <properties>
                         <text>Rules</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-13,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -2089,10 +2089,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>432</x>
+                        <x>448</x>
                         <y>128</y>
                         <z>0</z>
-                        <width>384</width>
+                        <width>368</width>
                         <height>32</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -2104,7 +2104,7 @@
                 <instance type="info_text" uid="79">
                     <properties>
                         <text>- You start with a limited number of units;</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-11,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
@@ -2131,7 +2131,7 @@
                 <instance type="info_text" uid="80">
                     <properties>
                         <text>- The units (the idea is that there would be more than one type of unit) have a special effect;</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-11,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
@@ -2158,7 +2158,7 @@
                 <instance type="info_text" uid="81">
                     <properties>
                         <text>- In the case of troops, they are able to hide from the towers by standing still in the terrain with tall grass;</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-11,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
@@ -2185,7 +2185,7 @@
                 <instance type="info_text" uid="82">
                     <properties>
                         <text>- They are also able to fire at the same time when selected, which can cause damage to a tower;</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-11,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
@@ -2212,7 +2212,7 @@
                 <instance type="info_text" uid="83">
                     <properties>
                         <text>- If the tower manages to observe you or take damage, it will rotate towards you and fire at you.</text>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <font>Arial,-11,700,0</font>
                         <color>255,255,255</color>
                         <horizontal-alignment>Left</horizontal-alignment>
@@ -2680,7 +2680,7 @@
                 <instance type="info_hide" uid="107">
                     <properties>
                         <type>Button</type>
-                        <text>Hide this info</text>
+                        <text>❌ Hide this info</text>
                         <tooltip>Hide this info</tooltip>
                         <initial-visibility>Visible</initial-visibility>
                         <enabled>Yes</enabled>
@@ -2704,7 +2704,7 @@
                 <instance type="info_github" uid="108">
                     <properties>
                         <type>Button</type>
-                        <text>Go to GitHub Repo</text>
+                        <text>⛓️ Go to GitHub Repo</text>
                         <tooltip>Go to GitHub Repo</tooltip>
                         <initial-visibility>Visible</initial-visibility>
                         <enabled>Yes</enabled>
@@ -2720,6 +2720,32 @@
                         <z>0</z>
                         <width>144</width>
                         <height>32</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                    </world>
+                </instance>
+                <instance type="info_readme" uid="110">
+                    <properties>
+                        <text></text>
+                        <placeholder></placeholder>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <read-only>Yes</read-only>
+                        <spell-check>No</spell-check>
+                        <type>Textarea</type>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>16</x>
+                        <y>64</y>
+                        <z>0</z>
+                        <width>816</width>
+                        <height>288</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
