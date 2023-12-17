@@ -12,6 +12,28 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <open-tabs>
         <layout order="0">a1</layout>
         <event-sheet active="1" order="1">01global_arrangements</event-sheet>
+        <event-sheet order="2">21objective</event-sheet>
+        <event-sheet order="3">22FX</event-sheet>
+        <event-sheet order="4">11only_once_events</event-sheet>
+        <event-sheet order="5">02initial_cleaning</event-sheet>
+        <event-sheet order="6">03map_generator</event-sheet>
+        <event-sheet order="7">04tower_generator</event-sheet>
+        <event-sheet order="8">05block_generator</event-sheet>
+        <event-sheet order="9">06layer_sets_n_bgm</event-sheet>
+        <event-sheet order="10">07uptower_generator</event-sheet>
+        <event-sheet order="11">08level_generator</event-sheet>
+        <event-sheet order="12">09regular_actions</event-sheet>
+        <event-sheet order="13">10options</event-sheet>
+        <event-sheet order="14">12unit_sets</event-sheet>
+        <event-sheet order="15">13move_units</event-sheet>
+        <event-sheet order="16">14unit_anim</event-sheet>
+        <event-sheet order="17">16damage_units</event-sheet>
+        <event-sheet order="18">20turret_comportament</event-sheet>
+        <event-sheet order="19">23controls</event-sheet>
+        <event-sheet order="20">24cam_n_zoom_control</event-sheet>
+        <event-sheet order="21">25cam_lock</event-sheet>
+        <event-sheet order="22">26cursor</event-sheet>
+        <event-sheet order="23">27video_option</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -27,7 +49,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
         <folder expanded="0" path="layout-folder/" />
-        <folder expanded="0" path="event-folder/" />
+        <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="event-folder/game_motor/" />
         <folder expanded="0" path="file-folder/" />
         <folder expanded="0" path="sound-folder/" />

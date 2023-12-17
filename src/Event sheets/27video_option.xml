@@ -112,6 +112,10 @@
                     <param id="0" name="Layer">4</param>
                     <param id="1" name="Scale">1/video_options</param>
                 </action>
+                <action id="-17" name="Set layer scale" sid="948502819155706" type="System">
+                    <param id="0" name="Layer">5</param>
+                    <param id="1" name="Scale">1/video_options</param>
+                </action>
             </actions>
         </event-block>
     </events>

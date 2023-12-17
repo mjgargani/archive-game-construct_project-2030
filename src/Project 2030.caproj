@@ -54,7 +54,7 @@
         <prop name="Downscaling">Low quality</prop>
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
-        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Fullscreen scaling">Low quality</prop>
         <prop name="Loader style">Percentage text</prop>
         <prop name="Orientations">Landscape</prop>
         <prop name="Pause on unfocus">Yes</prop>
@@ -1565,6 +1565,9 @@
             <plugin id="Button" />
         </object-type>
         <object-type name="info_github" sid="375869047868737">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="Button" sid="129702014814888">
             <plugin id="Button" />
         </object-type>
     </object-folder>
