@@ -218,7 +218,7 @@
                                     <param id="0" name="Frame number">1</param>
                                 </action>
                                 <action id="-16" name="Set opacity" sid="6168866518806765" type="analogic">
-                                    <param id="0" name="Opacity">50</param>
+                                    <param id="0" name="Opacity">75</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -234,8 +234,8 @@
                                     <param id="0" name="Opacity">100</param>
                                 </action>
                                 <action id="-22" name="Set angle toward position" sid="5681864500803824" type="analogic">
-                                    <param id="0" name="X">Touch.XAt(0)</param>
-                                    <param id="1" name="Y">Touch.YAt(0)</param>
+                                    <param id="0" name="X">cursor.X</param>
+                                    <param id="1" name="Y">cursor.Y</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -254,13 +254,13 @@
                             <param id="0" name="Frame number">0</param>
                         </action>
                         <action id="-16" name="Set opacity" sid="7721247136682574" type="analogic">
-                            <param id="0" name="Opacity">50</param>
+                            <param id="0" name="Opacity">75</param>
                         </action>
                         <action id="-16" name="Set opacity" sid="8731615711752765" type="hud_deadzone">
-                            <param id="0" name="Opacity">50</param>
+                            <param id="0" name="Opacity">75</param>
                         </action>
                         <action id="-16" name="Set opacity" sid="8232753848207974" type="hud_analogic">
-                            <param id="0" name="Opacity">50</param>
+                            <param id="0" name="Opacity">75</param>
                         </action>
                     </actions>
                 </event-block>

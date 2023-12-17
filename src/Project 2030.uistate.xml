@@ -11,7 +11,25 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">a1</layout>
-        <event-sheet active="1" order="1">01global_arrangements</event-sheet>
+        <event-sheet order="1">26cursor</event-sheet>
+        <event-sheet order="2">27video_option</event-sheet>
+        <event-sheet order="3">25cam_lock</event-sheet>
+        <event-sheet order="4">24cam_n_zoom_control</event-sheet>
+        <event-sheet order="5">23controls</event-sheet>
+        <event-sheet order="6">22FX</event-sheet>
+        <event-sheet order="7">21objective</event-sheet>
+        <event-sheet order="8">20turret_comportament</event-sheet>
+        <event-sheet order="9">19marine_unit</event-sheet>
+        <event-sheet order="10">18medic_unit</event-sheet>
+        <event-sheet order="11">17robot_unit</event-sheet>
+        <event-sheet order="12">16damage_units</event-sheet>
+        <event-sheet order="13">15stealth_mode_marines</event-sheet>
+        <event-sheet order="14">14unit_anim</event-sheet>
+        <event-sheet order="15">13move_units</event-sheet>
+        <event-sheet order="16">12unit_sets</event-sheet>
+        <event-sheet order="17">11only_once_events</event-sheet>
+        <event-sheet order="18">10options</event-sheet>
+        <event-sheet active="1" order="19">09regular_actions</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -21,14 +39,14 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </properties>
     <families-expanded root="0">
         <family expanded="0" name="balas" />
-        <family expanded="0" name="hud_aux" />
+        <family expanded="1" name="hud_aux" />
         <family expanded="0" name="hud_btns" />
     </families-expanded>
     <folders-expanded>
-        <folder expanded="1" path="object-folder/" />
+        <folder expanded="0" path="object-folder/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
-        <folder expanded="0" path="event-folder/game_motor/" />
+        <folder expanded="1" path="event-folder/game_motor/" />
         <folder expanded="0" path="file-folder/" />
         <folder expanded="0" path="sound-folder/" />
         <folder expanded="0" path="music-folder/" />

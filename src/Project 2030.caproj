@@ -976,6 +976,11 @@
         </object-type>
         <object-type name="analogic" sid="1335225014407896">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="384095272117776">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6278351860653966" speed="5">
                     <frame duration="1" hotspotX="-0.75" hotspotY="0.5">
@@ -993,6 +998,11 @@
         </object-type>
         <object-type name="hud_analogic" sid="1316792566803828">
             <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Flash" sid="821488668215435">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
             <texture />
         </object-type>
         <object-type name="debug_txt" sid="7839188765371182">
@@ -1044,6 +1054,11 @@
         </object-type>
         <object-type name="hud_deadzone" sid="2074879400943188">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="761063522839080">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="7127172290122372" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">

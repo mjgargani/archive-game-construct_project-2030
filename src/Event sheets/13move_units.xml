@@ -263,23 +263,38 @@
             <actions>
                 <action id="-11" name="Add to" sid="6367431308174635" type="variaveis">
                     <param id="0" name="Instance variable">timer</param>
-                    <param id="1" name="Value">2</param>
+                    <param id="1" name="Value">1</param>
                 </action>
             </actions>
             <sub-events>
                 <event-block sid="3204366727077535">
                     <conditions>
-                        <condition id="-4" name="Trigger once while true" sid="2276809904846202" type="System" />
+                        <condition id="-7" name="Compare instance variable" sid="825532043733517" type="variaveis">
+                            <param id="0" name="Instance variable">timer</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="-3" name="Set position" sid="8761342107785611" type="seletor">
                             <param id="0" name="X">cursor.X</param>
                             <param id="1" name="Y">cursor.Y</param>
                         </action>
+                        <action id="-5" name="Set width" sid="968492128689145" type="seletor">
+                            <param id="0" name="Width">0</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="566259687007666" type="seletor">
+                            <param id="0" name="Height">0</param>
+                        </action>
                         <action id="-15" name="Set visible" sid="6478076556191486" type="seletor">
                             <param id="0" name="Visibility">1</param>
                         </action>
-                        <action id="-9" name="Destroy" sid="3461215014536835" type="s_unit" />
+                        <action id="-9" name="Destroy" sid="811325163011962" type="s_unit" />
+                        <action id="-9" name="Destroy" sid="313262002143460" type="txt_vida_unidade" />
+                        <action id="-4" name="Set layer visible" sid="478067380607329" type="System">
+                            <param id="0" name="Layer">3</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="3380054223580409">
@@ -299,18 +314,14 @@
                 <comment>ajustar hud para se manter acima</comment>
                 <event-block sid="6976799452357698">
                     <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="3058823491304558" type="variaveis">
-                            <param id="0" name="Instance variable">timer</param>
-                            <param id="1" name="Comparison">4</param>
-                            <param id="2" name="Value">10</param>
-                        </condition>
+                        <condition id="-22" name="Else" sid="446099416702682" type="System" />
                     </conditions>
                     <actions>
                         <action id="-5" name="Set width" sid="6917830799316622" type="seletor">
                             <param id="0" name="Width">cursor.X - seletor.X</param>
                         </action>
                         <action id="-6" name="Set height" sid="6265963145073728" type="seletor">
-                            <param id="0" name="Height">cursor.Y - seletor.y</param>
+                            <param id="0" name="Height">cursor.Y - seletor.Y</param>
                         </action>
                         <action id="-24" name="Move to top" sid="4530162007354219" type="seletor" />
                         <action id="-24" name="Move to top" sid="3053016554273954" type="hud_background" />
@@ -351,12 +362,16 @@
                         <action id="-6" name="Set height" sid="8313898176582633" type="seletor">
                             <param id="0" name="Height">0</param>
                         </action>
-                        <action id="-3" name="Set position" sid="6236776456991297" type="seletor">
+                        <action disabled="1" id="-3" name="Set position" sid="6236776456991297" type="seletor">
                             <param id="0" name="X">0</param>
                             <param id="1" name="Y">0</param>
                         </action>
                         <action id="0" name="Set cursor style" sid="667677411029208" type="mouse">
                             <param id="0" name="Cursor style">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="353103852837909" type="variaveis">
+                            <param id="0" name="Instance variable">timer</param>
+                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -420,6 +435,10 @@
                                 <action id="0" name="Set text" sid="7210244147606062" type="txt_vida_unidade">
                                     <param id="0" name="Text">unidade.vida</param>
                                 </action>
+                                <action id="-4" name="Set layer visible" sid="180831261421651" type="System">
+                                    <param id="0" name="Layer">3</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="2400893150640726">
@@ -449,6 +468,31 @@
                     </sub-events>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="727846599234032">
+            <conditions>
+                <condition id="-9" name="Layer is visible" sid="370437873071318" type="System">
+                    <param id="0" name="Layer">3</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="908023406520069" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="596031953868012" type="hud_analogic">
+                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                    <param id="2" name="Duration">0.25</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="570772366169649" type="hud_deadzone">
+                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                    <param id="2" name="Duration">0.25</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="293206883148230" type="analogic">
+                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                    <param id="2" name="Duration">0.25</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
