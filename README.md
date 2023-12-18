@@ -22,10 +22,11 @@
 
 #### 📱 No touchscreen
 
-> ⚠️ Quando foi desenvolvido, o jogo havia sido otimizado para `mobile`, apesar disso, por ser um software antigo, é provável que ocorram vários bugs de UI, nesses aparelhos.
-
--   Selecione tocando e arrastando na tela;
--   Após selecionar as unidades, uma interface de movimento deve aparecer, na direita da tela.
+-   A interface do usuário é acionada pelo toque (Bordas para movimentar a câmera; Interação com os menus);
+-   Selecione as unidades tocando e arrastando na tela;
+-   Após selecionar as unidades, uma interface de movimento deve aparecer, na direita da tela;
+-   Utilize o centro da interface de movimento, para manter as unidades selecionadas paradas;
+-   Com as unidades selecionadas, utilize o segundo toque, para disparar com as unidades na direção deste toque.
 
 ### 📜 Regras
 
@@ -57,14 +58,15 @@ O conceito gira em torno de subverter a mecânica tradicional de um Tower-defens
 
 **[ SPACE ]** - Shoot the selected units towards the mouse pointer.
 
-**[ CTRL ]** - Activates a relative camera mode between the units and the mouse pointer (Good for quick gameplay).
+**[ CTRL ]** - Activates a relative camera mode between the units and the mouse pointer (Good for quick game play).
 
 #### 📱 On touchscreen
 
-> ⚠️ When it was developed, the game had been optimized for `mobile`, despite this, as it is old software, it is likely that several UI bugs will occur on these devices.
-
--   Select by touching and dragging on the screen;
--   After selecting the units, a movement interface should appear on the right of the screen.
+-   The user interface is activated by touch (Edges to move the camera; Interaction with the menus);
+-   Select units by touching and dragging on the screen;
+-   After selecting the units, a movement interface should appear on the right of the screen;
+-   Use the center of the movement interface to keep the selected units stationary;
+-   With the units selected, use the second touch to fire with the units in the direction of this touch.
 
 ### 📜 Rules
 

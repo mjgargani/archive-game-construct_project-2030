@@ -10,10 +10,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">a1</layout>
-        <event-sheet order="1">16damage_units</event-sheet>
-        <event-sheet active="1" order="2">19marine_unit</event-sheet>
-        <event-sheet order="3">15stealth_mode_marines</event-sheet>
+        <layout active="1" order="0">a1</layout>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -28,7 +25,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="0" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="event-folder/game_motor/" />
         <folder expanded="0" path="file-folder/" />

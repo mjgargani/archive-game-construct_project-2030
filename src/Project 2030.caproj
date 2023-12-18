@@ -1031,11 +1031,6 @@
         </object-type>
         <object-type name="cursor" sid="2484226894680077">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="8Direction" sid="2968418128243405">
-                    <behavior id="EightDir" />
-                </behavior-type>
-            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8467302215642674" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />

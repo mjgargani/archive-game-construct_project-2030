@@ -21,11 +21,7 @@
                     <param id="3" name="Value">0</param>
                 </condition>
             </conditions>
-            <actions>
-                <action behavior="8Direction" id="9" name="Set vector X" sid="3045493275527964" type="cursor">
-                    <param id="0" name="Vector X">Gamepad.Axis(0, 0)</param>
-                </action>
-            </actions>
+            <actions />
         </event-block>
     </events>
 </c2eventsheet>
