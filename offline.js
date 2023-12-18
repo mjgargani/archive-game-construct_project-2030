@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1702853400,
+	"version": 1702924989,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -74,7 +74,15 @@
 		"images/hud_sfx-sheet1.png",
 		"images/hud_sfx-sheet2.png",
 		"images/info_start-sheet0.png",
+		"images/info_start-sheet1.png",
 		"images/hud_info-sheet0.png",
+		"images/particleswin.png",
+		"images/sprite-sheet0.png",
+		"images/sprite2-sheet0.png",
+		"images/sprite2-sheet1.png",
+		"images/stats_hourglass-sheet0.png",
+		"images/statistics-sheet0.png",
+		"images/hud_statistics-sheet0.png",
 		"media/retrolaser1.m4a",
 		"media/retrolaser1.ogg",
 		"media/retrolaser3.m4a",
