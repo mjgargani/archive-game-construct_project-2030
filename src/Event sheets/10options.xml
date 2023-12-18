@@ -184,17 +184,29 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">-20</param>
                 </condition>
-                <condition id="-4" name="Trigger once while true" sid="4884846016311785" type="System" />
             </conditions>
             <actions>
                 <action id="22" name="Set paused" sid="3347875251278912" type="Audio">
                     <param id="0" name="Tag">&quot;ba&quot;</param>
                     <param id="1" name="State">0</param>
                 </action>
-                <action id="5" name="Set frame" sid="5086159793674077" type="hud_music">
-                    <param id="0" name="Frame number">2</param>
+                <action id="2" name="Set muted" sid="721850463142452" type="Audio">
+                    <param id="0" name="Tag">&quot;ba&quot;</param>
+                    <param id="1" name="State">0</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="985152110678288">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="4884846016311785" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="5086159793674077" type="hud_music">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="8611974380430606">
             <conditions>
@@ -244,6 +256,10 @@
                     <param id="1" name="dB">bgm_vol</param>
                 </action>
                 <action id="22" name="Set paused" sid="6350375682167453" type="Audio">
+                    <param id="0" name="Tag">&quot;ba&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="2" name="Set muted" sid="417856881737928" type="Audio">
                     <param id="0" name="Tag">&quot;ba&quot;</param>
                     <param id="1" name="State">1</param>
                 </action>
@@ -302,13 +318,28 @@
                     <param id="1" name="Comparison">0</param>
                     <param id="2" name="Value">-20</param>
                 </condition>
-                <condition id="-4" name="Trigger once while true" sid="2985283434577742" type="System" />
             </conditions>
             <actions>
-                <action id="5" name="Set frame" sid="2836612602332442" type="hud_sfx">
-                    <param id="0" name="Frame number">2</param>
+                <action id="2" name="Set muted" sid="826552786381346" type="Audio">
+                    <param id="0" name="Tag">&quot;sfx&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="6" name="Stop" sid="594884541358936" type="Audio">
+                    <param id="0" name="Tag">&quot;sfx&quot;</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="950148616408476">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="955908372963916" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="2836612602332442" type="hud_sfx">
+                            <param id="0" name="Frame number">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="5139604352741159">
             <conditions>
@@ -337,6 +368,10 @@
             <actions>
                 <action id="5" name="Set frame" sid="7707464804074624" type="hud_sfx">
                     <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="2" name="Set muted" sid="427141264830027" type="Audio">
+                    <param id="0" name="Tag">&quot;sfx&quot;</param>
+                    <param id="1" name="State">1</param>
                 </action>
             </actions>
         </event-block>

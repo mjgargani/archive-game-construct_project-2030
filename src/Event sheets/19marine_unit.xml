@@ -49,10 +49,6 @@
                                     <param id="1" name="Layer">1</param>
                                     <param id="2" name="Image point">1</param>
                                 </action>
-                                <action id="-22" name="Set angle toward position" sid="1348515865033742" type="bala3">
-                                    <param id="0" name="X">cursor2.X</param>
-                                    <param id="1" name="Y">cursor2.Y</param>
-                                </action>
                             </actions>
                             <sub-events>
                                 <event-block sid="3384656942871496">
@@ -69,6 +65,28 @@
                                             <param id="2" name="Loop">0</param>
                                             <param id="3" name="Volume">sfx_vol</param>
                                             <param id="1" name="Tag (optional)">&quot;tiro_unit&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="876389210199093">
+                                    <conditions>
+                                        <condition id="-20" name="Is on mobile device" sid="871519684244432" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-22" name="Set angle toward position" sid="729612387377483" type="bala3">
+                                            <param id="0" name="X">Touch.XAt(1)</param>
+                                            <param id="1" name="Y">Touch.YAt(1)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="585358443585322">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="953889024247223" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-22" name="Set angle toward position" sid="1348515865033742" type="bala3">
+                                            <param id="0" name="X">cursor2.X</param>
+                                            <param id="1" name="Y">cursor2.Y</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -214,6 +232,16 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="981159727170564" type="bala3" />
+            </actions>
+        </event-block>
+        <event-block sid="571028350155476">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="801885809805085" type="balas">
+                    <param id="0" name="Object">area_block</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="153409832838207" type="balas" />
             </actions>
         </event-block>
     </events>

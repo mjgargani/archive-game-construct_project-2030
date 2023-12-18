@@ -171,12 +171,12 @@
                     <sub-events>
                         <event-block sid="6855047315736616">
                             <conditions>
-                                <condition id="-4" name="Trigger once while true" sid="3530873674093378" type="System" />
-                                <condition id="-14" name="Compare variable" sid="2681170564267206" type="System">
+                                <condition id="-14" name="Compare variable" sid="629654058419477" type="System">
                                     <param id="0" name="Variable">sfx_vol</param>
                                     <param id="1" name="Comparison">4</param>
                                     <param id="2" name="Value">-20</param>
                                 </condition>
+                                <condition id="-4" name="Trigger once while true" sid="3530873674093378" type="System" />
                             </conditions>
                             <actions>
                                 <action id="5" name="Set frame" sid="3255905308326515" type="hud_estrela">
@@ -217,6 +217,12 @@
                                 <action id="5" name="Set frame" sid="6784937861330487" type="hud_estrela">
                                     <param id="0" name="Frame number">2</param>
                                 </action>
+                                <action id="2" name="Set spray cone" sid="8206914663991184" type="Particles">
+                                    <param id="0" name="Spray cone">160</param>
+                                </action>
+                                <action id="1" name="Set rate" sid="9771234785141994" type="Particles">
+                                    <param id="0" name="Rate">100</param>
+                                </action>
                                 <action id="-16" name="Wait" sid="7608024467733215" type="System">
                                     <param id="0" name="Seconds">0.5</param>
                                 </action>
@@ -230,19 +236,20 @@
                                     <param id="3" name="Volume">sfx_vol</param>
                                     <param id="1" name="Tag (optional)">&quot;ae&quot;</param>
                                 </action>
-                                <action id="5" name="Set frame" sid="1933330331166877" type="hud_estrela">
-                                    <param id="0" name="Frame number">3</param>
+                                <action id="4" name="Set animation" sid="1933330331166877" type="hud_estrela">
+                                    <param id="0" name="Animation">&quot;win&quot;</param>
+                                    <param id="1" name="From">1</param>
                                 </action>
-                                <action behavior="Flash" disabled="1" id="0" name="Flash" sid="2388097890587267" type="hud_estrela">
-                                    <param id="0" name="&apos;On&apos; time">0.2</param>
-                                    <param id="1" name="&apos;Off&apos; time">0.2</param>
-                                    <param id="2" name="Duration">0.10</param>
+                                <action behavior="Flash" id="0" name="Flash" sid="2388097890587267" type="hud_estrela">
+                                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                    <param id="2" name="Duration">0.05</param>
                                 </action>
-                                <action id="2" name="Set spray cone" sid="8206914663991184" type="Particles">
-                                    <param id="0" name="Spray cone">160</param>
+                                <action id="2" name="Set spray cone" sid="975101678284632" type="Particles">
+                                    <param id="0" name="Spray cone">270</param>
                                 </action>
-                                <action id="1" name="Set rate" sid="9771234785141994" type="Particles">
-                                    <param id="0" name="Rate">100</param>
+                                <action id="1" name="Set rate" sid="959071295242911" type="Particles">
+                                    <param id="0" name="Rate">150</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="3753448771008876" type="System">
                                     <param id="0" name="Seconds">0.5</param>
@@ -250,65 +257,12 @@
                                 <action id="0" name="Set spraying" sid="9337910380528445" type="Particles">
                                     <param id="0" name="State">0</param>
                                 </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="8117055607987126">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="50730847161396" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="5" name="Set frame" sid="9160999640632081" type="hud_estrela">
-                                    <param id="0" name="Frame number">0</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="7199218205494592" type="System">
-                                    <param id="0" name="Seconds">1</param>
-                                </action>
-                                <action id="-3" name="Set position" sid="2297576946463097" type="Particles">
-                                    <param id="0" name="X">hud_estrela.ImagePointX(1)</param>
-                                    <param id="1" name="Y">hud_estrela.ImagePointY(1)</param>
-                                </action>
-                                <action id="0" name="Set spraying" sid="6539337170061785" type="Particles">
-                                    <param id="0" name="State">1</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="9158718540865755" type="hud_estrela">
-                                    <param id="0" name="Frame number">1</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="4314878532214042" type="System">
-                                    <param id="0" name="Seconds">0.5</param>
-                                </action>
-                                <action id="-3" name="Set position" sid="8008763351475536" type="Particles">
+                                <action id="-3" name="Set position" sid="346890041067175" type="ParticlesWin">
                                     <param id="0" name="X">hud_estrela.ImagePointX(2)</param>
                                     <param id="1" name="Y">hud_estrela.ImagePointY(2)</param>
                                 </action>
-                                <action id="5" name="Set frame" sid="7854202732492747" type="hud_estrela">
-                                    <param id="0" name="Frame number">2</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="8712690272922053" type="System">
-                                    <param id="0" name="Seconds">0.5</param>
-                                </action>
-                                <action id="-3" name="Set position" sid="2820349421282774" type="Particles">
-                                    <param id="0" name="X">hud_estrela.ImagePointX(3)</param>
-                                    <param id="1" name="Y">hud_estrela.ImagePointY(3)</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="5373562430604498" type="hud_estrela">
-                                    <param id="0" name="Frame number">3</param>
-                                </action>
-                                <action behavior="Flash" id="0" name="Flash" sid="2919850822223717" type="hud_estrela">
-                                    <param id="0" name="&apos;On&apos; time">0.2</param>
-                                    <param id="1" name="&apos;Off&apos; time">0.2</param>
-                                    <param id="2" name="Duration">0.10</param>
-                                </action>
-                                <action id="2" name="Set spray cone" sid="6919555049480009" type="Particles">
-                                    <param id="0" name="Spray cone">160</param>
-                                </action>
-                                <action id="1" name="Set rate" sid="4573194971671957" type="Particles">
-                                    <param id="0" name="Rate">100</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="4386608805394494" type="System">
-                                    <param id="0" name="Seconds">0.5</param>
-                                </action>
-                                <action id="0" name="Set spraying" sid="613515733441565" type="Particles">
-                                    <param id="0" name="State">0</param>
+                                <action id="0" name="Set spraying" sid="774369771165733" type="ParticlesWin">
+                                    <param id="0" name="State">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -339,11 +293,6 @@
                         <event-block sid="6431826718616736">
                             <conditions>
                                 <condition id="-4" name="Trigger once while true" sid="7956706280367447" type="System" />
-                                <condition id="-14" name="Compare variable" sid="1611235008213321" type="System">
-                                    <param id="0" name="Variable">sfx_vol</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">-20</param>
-                                </condition>
                             </conditions>
                             <actions>
                                 <action id="5" name="Set frame" sid="7486962780368887" type="hud_estrela">
@@ -392,45 +341,6 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="9615546275707958">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="1463972018670003" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="5" name="Set frame" sid="1894619529949063" type="hud_estrela">
-                                    <param id="0" name="Frame number">0</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="490863356413163" type="System">
-                                    <param id="0" name="Seconds">1</param>
-                                </action>
-                                <action id="-3" name="Set position" sid="5833160855894226" type="Particles">
-                                    <param id="0" name="X">hud_estrela.ImagePointX(1)</param>
-                                    <param id="1" name="Y">hud_estrela.ImagePointY(1)</param>
-                                </action>
-                                <action id="0" name="Set spraying" sid="6942504577668912" type="Particles">
-                                    <param id="0" name="State">1</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="8773550117790967" type="hud_estrela">
-                                    <param id="0" name="Frame number">1</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="7637572704125987" type="System">
-                                    <param id="0" name="Seconds">0.5</param>
-                                </action>
-                                <action id="-3" name="Set position" sid="9485964319168866" type="Particles">
-                                    <param id="0" name="X">hud_estrela.ImagePointX(2)</param>
-                                    <param id="1" name="Y">hud_estrela.ImagePointY(2)</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="5661898478516763" type="hud_estrela">
-                                    <param id="0" name="Frame number">2</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="3231130428058618" type="System">
-                                    <param id="0" name="Seconds">0.5</param>
-                                </action>
-                                <action id="0" name="Set spraying" sid="3246063320778495" type="Particles">
-                                    <param id="0" name="State">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
                     </sub-events>
                 </event-block>
                 <event-block sid="630465696280409">
@@ -458,11 +368,6 @@
                         <event-block sid="7042591746412458">
                             <conditions>
                                 <condition id="-4" name="Trigger once while true" sid="3059550001002602" type="System" />
-                                <condition id="-14" name="Compare variable" sid="8404325377722094" type="System">
-                                    <param id="0" name="Variable">sfx_vol</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">-20</param>
-                                </condition>
                             </conditions>
                             <actions>
                                 <action id="5" name="Set frame" sid="633002340957585" type="hud_estrela">
@@ -491,35 +396,6 @@
                                     <param id="0" name="Seconds">0.5</param>
                                 </action>
                                 <action id="0" name="Set spraying" sid="2746165457064113" type="Particles">
-                                    <param id="0" name="State">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="18901891705641">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="4681730418636793" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="5" name="Set frame" sid="9653545488305358" type="hud_estrela">
-                                    <param id="0" name="Frame number">0</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="4688340365251627" type="System">
-                                    <param id="0" name="Seconds">1</param>
-                                </action>
-                                <action id="-3" name="Set position" sid="6683677767573467" type="Particles">
-                                    <param id="0" name="X">hud_estrela.ImagePointX(1)</param>
-                                    <param id="1" name="Y">hud_estrela.ImagePointY(1)</param>
-                                </action>
-                                <action id="0" name="Set spraying" sid="2856958273520886" type="Particles">
-                                    <param id="0" name="State">1</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="5447206381470154" type="hud_estrela">
-                                    <param id="0" name="Frame number">1</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="8258150360759037" type="System">
-                                    <param id="0" name="Seconds">0.5</param>
-                                </action>
-                                <action id="0" name="Set spraying" sid="4708721374641059" type="Particles">
                                     <param id="0" name="State">0</param>
                                 </action>
                             </actions>

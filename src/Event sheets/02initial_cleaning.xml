@@ -11,6 +11,9 @@
                 <action id="0" name="Set spraying" sid="9759451406901885" type="Particles">
                     <param id="0" name="State">0</param>
                 </action>
+                <action id="0" name="Set spraying" sid="995414635562785" type="ParticlesWin">
+                    <param id="0" name="State">0</param>
+                </action>
                 <action id="-3" name="Set position" sid="326065821438001" type="loading_bg">
                     <param id="0" name="X">0</param>
                     <param id="1" name="Y">0</param>

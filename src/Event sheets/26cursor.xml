@@ -30,6 +30,10 @@
                                     <param id="0" name="X">Touch.AbsoluteXAt(1)/(WindowHeight/OriginalWindowHeight)*video_options</param>
                                     <param id="1" name="Y">Touch.AbsoluteYAt(1)/(WindowWidth/OriginalWindowWidth)*video_options</param>
                                 </action>
+                                <action id="-3" name="Set position" sid="217764823050556" type="cursor">
+                                    <param id="0" name="X">Touch.AbsoluteXAt(1)/(WindowHeight/OriginalWindowHeight)*video_options</param>
+                                    <param id="1" name="Y">Touch.AbsoluteYAt(1)/(WindowWidth/OriginalWindowWidth)*video_options</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="5681687002208755">
