@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>30info</name>
+    <events>
+        <comment>readme ajax retrieve</comment>
+        <event-block sid="554505586032673">
+            <conditions>
+                <condition id="0" name="On function" sid="261989559553694" type="funções">
+                    <param id="0" name="Name">&quot;set_readme&quot;</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="951106014413719" type="System">
+                    <param id="0" name="Variable">repo_readme</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">&quot;&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="449617967364635" type="info_readme">
+                    <param id="0" name="Text">repo_readme</param>
+                </action>
+                <action id="0" name="Set text" sid="423760764524051" type="info_readme">
+                    <param id="0" name="Text">replace(info_readme.Text, &quot;![thumbnail](./thumbnail.webp)&quot;,&quot;&gt; LEIA-ME / README&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="698530164116986" type="info_readme">
+                    <param id="0" name="Text">replace(info_readme.Text, &quot;&gt; 🌐 [https://project2030.gargani.dev/](https://project2030.gargani.dev/)&quot;,&quot;&gt; Informações sobre o Jogo / Game Information&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="638553077666149">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="735346646461656" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="996099324455618">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="924414583168457" type="System">
+                            <param id="0" name="Variable">repo_readme</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Request URL" sid="604525115310385" type="AJAX">
+                            <param id="0" name="Tag">&quot;readme&quot;</param>
+                            <param id="1" name="URL">&quot;https://raw.githubusercontent.com/mjgargani/archive-game-construct_project-2030/main/README.md&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="363622161401506">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="159738606642993" type="System">
+                            <param id="0" name="Variable">repo_readme</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="567305087201680" type="funções">
+                            <param id="0" name="Name">&quot;set_readme&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="965800326681608">
+            <conditions>
+                <condition id="0" name="On completed" sid="649264077220949" type="AJAX">
+                    <param id="0" name="Tag">&quot;readme&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="680231155425424" type="System">
+                    <param id="0" name="Variable">repo_readme</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="0" name="Call function" sid="793512076710162" type="funções">
+                    <param id="0" name="Name">&quot;set_readme&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="695182353319591">
+            <conditions>
+                <condition id="4" name="On any error" sid="515477133067160" type="AJAX" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="180004598945658" type="info_readme" />
+            </actions>
+            <sub-events>
+                <event-block sid="591548896757707">
+                    <conditions>
+                        <condition id="-9" inverted="1" name="Is visible" sid="880344561223904" type="info_text" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="738542690372546" type="info_text">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="222132416898199">
+                    <conditions>
+                        <condition id="-9" inverted="1" name="Is visible" sid="922563776967052" type="info_bg" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="131256024436393" type="info_bg">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <comment>ui</comment>
+        <event-block sid="422665870457904">
+            <conditions>
+                <condition id="3" name="On touched object" sid="192839524133119" type="Touch">
+                    <param id="0" name="Object">hud_info</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="325190418663939">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="465629957826813" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="487570907197689" type="funções">
+                            <param id="0" name="Name">&quot;clear_screen&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action behavior="Flash" id="1" name="Stop flashing" sid="405483947590293" type="hud_info" />
+                        <action behavior="Flash" id="0" name="Flash" sid="170442280733992" type="hud_info">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="205331265924410" type="System">
+                            <param id="0" name="Layer">5</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="383569357329951">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="652586587585591" type="System">
+                                    <param id="0" name="Variable">pause_game</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="216461251317329" type="funções">
+                                    <param id="0" name="Name">&quot;pause_game&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="554064977889984">
+            <conditions>
+                <condition id="0" name="On clicked" sid="297934307594812" type="info_hide" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="740635565726689" type="System">
+                    <param id="0" name="Layer">5</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="519053581349637">
+            <conditions>
+                <condition id="0" name="On clicked" sid="325924697781916" type="info_github" />
+            </conditions>
+            <actions>
+                <action id="8" name="Open URL in new window" sid="952917406305863" type="Browser">
+                    <param id="0" name="URL">&quot;https://github.com/mjgargani/archive-game-construct_project-2030#readme&quot;</param>
+                    <param id="1" name="Tag">&quot;NewWindow&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

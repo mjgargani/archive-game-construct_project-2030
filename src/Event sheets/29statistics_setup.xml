@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>29statistics_setup</name>
+    <events>
+        <comment>getting data in &apos;02initial_cleaning&apos;</comment>
+        <comment>setting data in &apos;21objective&apos;</comment>
+        <event-block any="1" sid="418359895789589">
+            <conditions>
+                <condition id="1" name="On item get" sid="485979743194172" type="LocalStorage">
+                    <param id="0" name="Key">&quot;total_rounds&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="106231423999922" type="LocalStorage">
+                    <param id="0" name="Key">&quot;total_rounds&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="490890572362955" type="statistics">
+                    <param id="0" name="Instance variable">total_rounds</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="0" name="Set text" sid="147485104421988" type="stats_total_rounds">
+                    <param id="0" name="Text">funções.Call(&quot;counter_format&quot;, LocalStorage.ItemValue)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="222305876852937">
+            <conditions>
+                <condition id="1" name="On item get" sid="506069211066073" type="LocalStorage">
+                    <param id="0" name="Key">&quot;total_units&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="512049770832160" type="LocalStorage">
+                    <param id="0" name="Key">&quot;total_units&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="325384021064840" type="statistics">
+                    <param id="0" name="Instance variable">total_units</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="0" name="Set text" sid="401433020438712" type="stats_total_units">
+                    <param id="0" name="Text">funções.Call(&quot;counter_format&quot;, LocalStorage.ItemValue)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="383618457809426">
+            <conditions>
+                <condition id="1" name="On item get" sid="108782508866240" type="LocalStorage">
+                    <param id="0" name="Key">&quot;all_times&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="109385821562803" type="LocalStorage">
+                    <param id="0" name="Key">&quot;all_times&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="740294238378151" type="statistics">
+                    <param id="0" name="Instance variable">all_times</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="11" name="Load" sid="957448683553403" type="all_times_array">
+                    <param id="0" name="JSON">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="205069024435993">
+            <conditions>
+                <condition id="1" name="On item get" sid="154746736112923" type="LocalStorage">
+                    <param id="0" name="Key">&quot;avg_time&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="782334859418509" type="LocalStorage">
+                    <param id="0" name="Key">&quot;avg_time&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="814463699375729" type="statistics">
+                    <param id="0" name="Instance variable">avg_time</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="0" name="Set text" sid="224290525005800" type="stats_avg_time">
+                    <param id="0" name="Text">funções.Call(&quot;counter_format&quot;, LocalStorage.ItemValue)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="331596780237203">
+            <conditions>
+                <condition id="1" name="On item get" sid="953348831586727" type="LocalStorage">
+                    <param id="0" name="Key">&quot;avg_saves&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="946919361384711" type="LocalStorage">
+                    <param id="0" name="Key">&quot;avg_saves&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="646797911261944" type="statistics">
+                    <param id="0" name="Instance variable">avg_saves</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="0" name="Set text" sid="563832960529497" type="stats_avg_saves">
+                    <param id="0" name="Text">funções.Call(&quot;counter_format&quot;, LocalStorage.ItemValue)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="995890354343505">
+            <conditions>
+                <condition id="1" name="On item get" sid="275444347188693" type="LocalStorage">
+                    <param id="0" name="Key">&quot;star_death&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="612015053037697" type="LocalStorage">
+                    <param id="0" name="Key">&quot;star_death&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="351838966990328" type="statistics">
+                    <param id="0" name="Instance variable">star_death</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="0" name="Set text" sid="616042144936635" type="stats_star_death">
+                    <param id="0" name="Text">funções.Call(&quot;counter_format&quot;, LocalStorage.ItemValue)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="667964521952465">
+            <conditions>
+                <condition id="1" name="On item get" sid="215057603573997" type="LocalStorage">
+                    <param id="0" name="Key">&quot;star_zero&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="491415121977391" type="LocalStorage">
+                    <param id="0" name="Key">&quot;star_zero&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="654691747940620" type="statistics">
+                    <param id="0" name="Instance variable">star_zero</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="0" name="Set text" sid="109659001678647" type="stats_star_zero">
+                    <param id="0" name="Text">funções.Call(&quot;counter_format&quot;, LocalStorage.ItemValue)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="800430858963497">
+            <conditions>
+                <condition id="1" name="On item get" sid="225894948766122" type="LocalStorage">
+                    <param id="0" name="Key">&quot;star_one&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="248254560204765" type="LocalStorage">
+                    <param id="0" name="Key">&quot;star_one&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="865126060277508" type="statistics">
+                    <param id="0" name="Instance variable">star_one</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="0" name="Set text" sid="503503303305423" type="stats_star_one">
+                    <param id="0" name="Text">funções.Call(&quot;counter_format&quot;, LocalStorage.ItemValue)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="487157021488130">
+            <conditions>
+                <condition id="1" name="On item get" sid="133877493663646" type="LocalStorage">
+                    <param id="0" name="Key">&quot;star_two&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="288985072713761" type="LocalStorage">
+                    <param id="0" name="Key">&quot;star_two&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="299817705225652" type="statistics">
+                    <param id="0" name="Instance variable">star_two</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="0" name="Set text" sid="569380571981252" type="stats_star_two">
+                    <param id="0" name="Text">funções.Call(&quot;counter_format&quot;, LocalStorage.ItemValue)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="699462866769433">
+            <conditions>
+                <condition id="1" name="On item get" sid="453360178266172" type="LocalStorage">
+                    <param id="0" name="Key">&quot;star_three&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="184516288140433" type="LocalStorage">
+                    <param id="0" name="Key">&quot;star_three&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="866462386353609" type="statistics">
+                    <param id="0" name="Instance variable">star_three</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="0" name="Set text" sid="553112694762634" type="stats_star_three">
+                    <param id="0" name="Text">funções.Call(&quot;counter_format&quot;, LocalStorage.ItemValue)</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>interface setup</comment>
+        <variable constant="0" name="confirm_clear" sid="593410640171063" static="0" type="number">0</variable>
+        <event-block sid="635594083424504">
+            <conditions>
+                <condition id="3" name="On touched object" sid="953770009455284" type="Touch">
+                    <param id="0" name="Object">hud_statistics</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="799251643828883">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="406276519896635" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="163544212302798" type="funções">
+                            <param id="0" name="Name">&quot;clear_screen&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                        <action behavior="Flash" id="1" name="Stop flashing" sid="305930279899984" type="hud_statistics" />
+                        <action behavior="Flash" id="0" name="Flash" sid="446952346261743" type="hud_statistics">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.5</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="145340656782697" type="System">
+                            <param id="0" name="Layer">6</param>
+                            <param id="1" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="557378346973221">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="676006400633460" type="System">
+                                    <param id="0" name="Variable">pause_game</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="275325923040053" type="funções">
+                                    <param id="0" name="Name">&quot;pause_game&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="959502426326066">
+            <conditions>
+                <condition id="0" name="On clicked" sid="242526615059541" type="stats_hide" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set layer visible" sid="564122179833836" type="System">
+                    <param id="0" name="Layer">6</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="908847030229327" type="System">
+                    <param id="0" name="Variable">confirm_clear</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set text" sid="183407787147210" type="stats_clear">
+                    <param id="0" name="Text">&quot;Clear statistics&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="729179837023144">
+            <conditions>
+                <condition id="0" name="On clicked" sid="252761676992976" type="stats_clear" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="482756711698501">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="473394507069079" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="624549299526304">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="336878070385093" type="System">
+                                    <param id="0" name="Variable">confirm_clear</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set enabled" sid="895592656030808" type="stats_clear">
+                                    <param id="0" name="Mode">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="835092477697161" type="stats_clear">
+                                    <param id="0" name="Text">&quot;✅ Confirm?&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="538375023843594" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="616992306380407" type="System">
+                                    <param id="0" name="Variable">confirm_clear</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="3" name="Set enabled" sid="890821014449061" type="stats_clear">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="356837088874515">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="412101305374044" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="3" name="Set enabled" sid="731484010748077" type="stats_clear">
+                                    <param id="0" name="Mode">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="794216745467520" type="stats_clear">
+                                    <param id="0" name="Text">&quot;Resetting...&quot;</param>
+                                </action>
+                                <action id="3" name="Clear storage" sid="380949245304000" type="LocalStorage" />
+                                <action id="0" name="Set text" sid="690914571428260" type="stats_counters">
+                                    <param id="0" name="Text">&quot;000&quot;</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="842464457781023" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="759205317950635" type="System">
+                                    <param id="0" name="Variable">confirm_clear</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="229332657900212" type="stats_clear">
+                                    <param id="0" name="Text">&quot;Clear statistics&quot;</param>
+                                </action>
+                                <action id="3" name="Set enabled" sid="218231873315200" type="stats_clear">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                                <action behavior="Flash2" id="0" name="Flash" sid="352383572089019" type="stats_counters">
+                                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                    <param id="2" name="Duration">0.5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

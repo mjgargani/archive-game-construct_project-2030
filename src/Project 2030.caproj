@@ -11,11 +11,13 @@
     <saved-with-version>28000</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Button" version="1">Button</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="NodeWebkit" version="1">NW.js</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
@@ -1533,8 +1535,21 @@
         </object-type>
         <object-type name="info_start" sid="855417401642318">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="581663402504324">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="886240897108981" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="886240897108981" speed="0">
+                    <frame duration="1" hotspotX="0" hotspotY="0">
+                        <collision-poly>
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                        </collision-poly>
+                    </frame>
                     <frame duration="1" hotspotX="0" hotspotY="0">
                         <collision-poly>
                             <point x="1" y="0" />
@@ -1589,6 +1604,262 @@
             <plugin id="Particles" />
             <texture />
         </object-type>
+        <object-type name="stats_stars" sid="600959317123185">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="506433914882610">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="243711409660873" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="0.833333" y="0.5" />
+                        <image-point name="Imagepoint 2" x="0.5" y="0.5" />
+                        <image-point name="Imagepoint 3" x="0.166667" y="0.5" />
+                        <collision-poly>
+                            <point x="0.885417" y="0.34375" />
+                            <point x="0.9375" y="0.5" />
+                            <point x="0.734375" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="0.833333" y="0.5" />
+                        <image-point name="Imagepoint 2" x="0.5" y="0.5" />
+                        <image-point name="Imagepoint 3" x="0.166667" y="0.5" />
+                        <collision-poly>
+                            <point x="0.114583" y="0.34375" />
+                            <point x="0.166667" y="0.046875" />
+                            <point x="0.21875" y="0.34375" />
+                            <point x="0.291667" y="0.5" />
+                            <point x="0.244792" y="0.734375" />
+                            <point x="0.166667" y="0.703125" />
+                            <point x="0.078125" y="0.765625" />
+                            <point x="0.03125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="0.833333" y="0.5" />
+                        <image-point name="Imagepoint 2" x="0.5" y="0.5" />
+                        <image-point name="Imagepoint 3" x="0.166667" y="0.5" />
+                        <collision-poly>
+                            <point x="0.114583" y="0.34375" />
+                            <point x="0.166667" y="0.046875" />
+                            <point x="0.21875" y="0.34375" />
+                            <point x="0.291667" y="0.5" />
+                            <point x="0.244792" y="0.734375" />
+                            <point x="0.166667" y="0.703125" />
+                            <point x="0.078125" y="0.765625" />
+                            <point x="0.03125" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="1" name="win" pingpong="0" repeatcount="0" repeatto="0" sid="657710622463133" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="0.833333" y="0.5" />
+                        <image-point name="Imagepoint 2" x="0.5" y="0.5" />
+                        <image-point name="Imagepoint 3" x="0.166667" y="0.5" />
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="Imagepoint 1" x="0.833333" y="0.5" />
+                        <image-point name="Imagepoint 2" x="0.5" y="0.5" />
+                        <image-point name="Imagepoint 3" x="0.166667" y="0.5" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="858898236461828">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="512107626986710" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="Z:\Downloads\DALL·E 2023-12-18 02.00.08 - make a 32x32 pixel 8 color death skull.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="225815456825403">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="403653062308963" speed="15">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="stats_hourglass" sid="431275878541840">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Rotate" sid="270672048501185">
+                    <behavior id="Rotate" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="123171842458706" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="LocalStorage" sid="922495674025657">
+            <plugin id="LocalStorage" />
+        </object-type>
+        <object-type name="statistics" sid="188993003172858">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="total_rounds" sid="786597957044921" type="number" />
+                <instance-variable name="total_units" sid="447068230688084" type="number" />
+                <instance-variable name="all_times" sid="521266879468983" type="string" />
+                <instance-variable name="avg_time" sid="479414439008804" type="number" />
+                <instance-variable name="avg_saves" sid="371505995476970" type="number" />
+                <instance-variable name="star_death" sid="707939017193679" type="number" />
+                <instance-variable name="star_zero" sid="961448887515781" type="number" />
+                <instance-variable name="star_one" sid="408486366050182" type="number" />
+                <instance-variable name="star_two" sid="473235052207865" type="number" />
+                <instance-variable name="star_three" sid="676048680670987" type="number" />
+                <instance-variable name="sum_time_avg" sid="752489070911657" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="606683555368014" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type global="1" name="all_times_array" sid="715207006412905">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="stats_star_death" sid="994259472865196">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Flash" sid="423101190782083">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="D:\Bibliotecas\Dropbox\Construct 2\projeto_17-5-14\SpriteFont_LilyUPC_Normal_(34)_[0,0,0]_21x23.png" />
+        </object-type>
+        <object-type name="stats_star_zero" sid="845593098525039">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Flash" sid="555849878195616">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="D:\Bibliotecas\Dropbox\Construct 2\projeto_17-5-14\SpriteFont_LilyUPC_Normal_(34)_[0,0,0]_21x23.png" />
+        </object-type>
+        <object-type name="stats_star_one" sid="184910405968691">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Flash" sid="784649554861941">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="D:\Bibliotecas\Dropbox\Construct 2\projeto_17-5-14\SpriteFont_LilyUPC_Normal_(34)_[0,0,0]_21x23.png" />
+        </object-type>
+        <object-type name="stats_star_two" sid="789133761411831">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Flash" sid="410773868005149">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="D:\Bibliotecas\Dropbox\Construct 2\projeto_17-5-14\SpriteFont_LilyUPC_Normal_(34)_[0,0,0]_21x23.png" />
+        </object-type>
+        <object-type name="stats_star_three" sid="697786176128225">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Flash" sid="721069343381867">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="D:\Bibliotecas\Dropbox\Construct 2\projeto_17-5-14\SpriteFont_LilyUPC_Normal_(34)_[0,0,0]_21x23.png" />
+        </object-type>
+        <object-type name="stats_total_rounds" sid="155407190840792">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Flash" sid="952429424976160">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="D:\Bibliotecas\Dropbox\Construct 2\projeto_17-5-14\SpriteFont_LilyUPC_Normal_(34)_[0,0,0]_21x23.png" />
+        </object-type>
+        <object-type name="stats_total_units" sid="979534730031957">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Flash" sid="409956018643120">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="D:\Bibliotecas\Dropbox\Construct 2\projeto_17-5-14\SpriteFont_LilyUPC_Normal_(34)_[0,0,0]_21x23.png" />
+        </object-type>
+        <object-type name="stats_avg_time" sid="814118917409189">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Flash" sid="439637644197991">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="D:\Bibliotecas\Dropbox\Construct 2\projeto_17-5-14\SpriteFont_LilyUPC_Normal_(34)_[0,0,0]_21x23.png" />
+        </object-type>
+        <object-type name="stats_avg_saves" sid="665368937083465">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Flash" sid="772042402924605">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="D:\Bibliotecas\Dropbox\Construct 2\projeto_17-5-14\SpriteFont_LilyUPC_Normal_(34)_[0,0,0]_21x23.png" />
+        </object-type>
+        <object-type name="hud_statistics" sid="504450707847452">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="469740284058390">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="508630231601562" speed="5">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.6" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.6" />
+                            <point x="1" y="1" />
+                            <point x="0.6" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.6" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="stats_hide" sid="910360923770389">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="stats_clear" sid="236859779611118">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="hud_statistics_icon_title" sid="697953145700732">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Flash" sid="356883122322336">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="464977433976716" speed="5">
+                    <frame duration="1" hotspotX="0.52" hotspotY="0.52">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.6" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="0.6" />
+                            <point x="1" y="1" />
+                            <point x="0.6" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.6" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families>
         <family name="balas" plugin-id="Sprite" sid="9729375665077322">
@@ -1613,10 +1884,30 @@
                 <member>hud_quality</member>
                 <member>hud_restart</member>
                 <member>hud_sfx</member>
+                <member>hud_statistics</member>
+                <member>hud_statistics_icon_title</member>
                 <member>hud_tempo</member>
                 <member>hud_zoom_in</member>
                 <member>hud_zoom_out</member>
             </members>
+        </family>
+        <family name="stats_counters" plugin-id="Spritefont2" sid="681419654267759">
+            <members>
+                <member>stats_avg_saves</member>
+                <member>stats_avg_time</member>
+                <member>stats_star_death</member>
+                <member>stats_star_one</member>
+                <member>stats_star_three</member>
+                <member>stats_star_two</member>
+                <member>stats_star_zero</member>
+                <member>stats_total_rounds</member>
+                <member>stats_total_units</member>
+            </members>
+            <behaviors>
+                <behavior-type name="Flash2" sid="220300653267111">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
         </family>
     </families>
     <layout-folder>
@@ -1651,6 +1942,9 @@
             <event-sheet>25cam_lock.xml</event-sheet>
             <event-sheet>26cursor.xml</event-sheet>
             <event-sheet>27video_option.xml</event-sheet>
+            <event-sheet>29statistics_setup.xml</event-sheet>
+            <event-sheet>28utils.xml</event-sheet>
+            <event-sheet>30info.xml</event-sheet>
         </event-folder>
     </event-folder>
     <global-instances>
@@ -1684,6 +1978,7 @@
         </global-instance>
         <global-instance type="Browser" uid="63" />
         <global-instance type="AJAX" uid="109" />
+        <global-instance type="LocalStorage" uid="122" />
     </global-instances>
     <sounds-folder>
         <file name="RetroLaser1.m4a" />

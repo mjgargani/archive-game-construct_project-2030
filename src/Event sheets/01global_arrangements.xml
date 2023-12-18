@@ -29,6 +29,7 @@
         <comment>Seguimentos</comment>
         <event-group description="Limpeza e geradores" sid="8847915067772244" title="Bloco inicial">
             <sub-events>
+                <include>28utils</include>
                 <include>02initial_cleaning</include>
                 <include>03map_generator</include>
                 <include>05block_generator</include>
@@ -78,518 +79,301 @@
                 <include>23controls</include>
             </sub-events>
         </event-group>
-        <event-group description="Pausar o motor, testes gerais e informações" sid="4881196365923316" title="Pause/Debug/Game Info">
+        <event-group description="Pausar o motor, testes gerais, estatísticas e informações" sid="4881196365923316" title="Debug/Pause/Stats/Game Info">
             <sub-events>
-                <comment>mostrar informações</comment>
-                <event-block sid="493939928549929">
+                <comment>debug</comment>
+                <event-block disabled="1" sid="704011544306256">
                     <conditions>
-                        <condition id="0" name="On function" sid="221532340895894" type="funções">
-                            <param id="0" name="Name">&quot;set_readme&quot;</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="576399161546954" type="System">
-                            <param id="0" name="Variable">repo_readme</param>
-                            <param id="1" name="Comparison">1</param>
-                            <param id="2" name="Value">&quot;&quot;</param>
+                        <condition id="-6" name="Every X seconds" sid="537995697199943" type="System">
+                            <param id="0" name="Interval (seconds)">0.25</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Set text" sid="749240743790920" type="info_readme">
-                            <param id="0" name="Text">repo_readme</param>
+                        <action id="0" name="Set text" sid="794133767871878" type="debug_txt">
+                            <param id="0" name="Text">&quot;FPS:&quot; &amp; str(fps) &amp; &quot;|CPU:&quot; &amp; str(round(cpuutilisation*100)) &amp; &quot;%|I.M: &quot;&amp; ImageMemoryUsage &amp; &quot;MB|O.C:&quot; &amp; str(objectcount)</param>
                         </action>
-                        <action id="0" name="Set text" sid="877009427632685" type="info_readme">
-                            <param id="0" name="Text">replace(info_readme.Text, &quot;![thumbnail](./thumbnail.webp)&quot;,&quot;&gt; LEIA-ME / README&quot;)</param>
-                        </action>
-                        <action id="0" name="Set text" sid="737500026611302" type="info_readme">
-                            <param id="0" name="Text">replace(info_readme.Text, &quot;&gt; 🌐 [https://project2030.gargani.dev/](https://project2030.gargani.dev/)&quot;,&quot;&gt; Informações sobre o Jogo / Game Information&quot;)</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="811358614041391">
-                    <conditions>
-                        <condition id="-2" name="On start of layout" sid="819077460802131" type="System" />
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="742053703907841">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="738186968602570" type="System">
-                                    <param id="0" name="Variable">repo_readme</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Request URL" sid="150396457566394" type="AJAX">
-                                    <param id="0" name="Tag">&quot;readme&quot;</param>
-                                    <param id="1" name="URL">&quot;https://raw.githubusercontent.com/mjgargani/archive-game-construct_project-2030/main/README.md&quot;</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="213563717774013">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="956352818371105" type="System">
-                                    <param id="0" name="Variable">repo_readme</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">&quot;&quot;</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="144734443500951" type="funções">
-                                    <param id="0" name="Name">&quot;set_readme&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="894769853474341">
-                    <conditions>
-                        <condition id="0" name="On completed" sid="219344960873232" type="AJAX">
-                            <param id="0" name="Tag">&quot;readme&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="361173333972215" type="System">
-                            <param id="0" name="Variable">repo_readme</param>
-                            <param id="1" name="Value">AJAX.LastData</param>
-                        </action>
-                        <action id="0" name="Call function" sid="552248715361829" type="funções">
-                            <param id="0" name="Name">&quot;set_readme&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="967502514843523">
-                    <conditions>
-                        <condition id="4" name="On any error" sid="377442504064080" type="AJAX" />
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="182684445810486" type="info_readme" />
-                    </actions>
-                    <sub-events>
-                        <event-block sid="800217030712397">
-                            <conditions>
-                                <condition id="-9" inverted="1" name="Is visible" sid="874199259139887" type="info_text" />
-                            </conditions>
-                            <actions>
-                                <action id="-15" name="Set visible" sid="701496594635129" type="info_text">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="846042530014192">
-                            <conditions>
-                                <condition id="-9" inverted="1" name="Is visible" sid="293233570570199" type="info_bg" />
-                            </conditions>
-                            <actions>
-                                <action id="-15" name="Set visible" sid="991231042814197" type="info_bg">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="548645855370483">
-                    <conditions>
-                        <condition id="0" name="On function" sid="579142785654014" type="funções">
-                            <param id="0" name="Name">&quot;show_info&quot;</param>
-                        </condition>
-                        <condition id="-9" inverted="1" name="Layer is visible" sid="352812832263379" type="System">
-                            <param id="0" name="Layer">5</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-4" name="Set layer visible" sid="981026781575294" type="System">
-                            <param id="0" name="Layer">5</param>
-                            <param id="1" name="Visibility">1</param>
-                        </action>
-                        <action behavior="Flash" id="1" name="Stop flashing" sid="849602338089734" type="hud_info" />
-                        <action behavior="Flash" id="0" name="Flash" sid="655461111425583" type="hud_info">
-                            <param id="0" name="&apos;On&apos; time">0.05</param>
-                            <param id="1" name="&apos;Off&apos; time">0.05</param>
-                            <param id="2" name="Duration">0.5</param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="350383466089811">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="737797771121560" type="System">
-                                    <param id="0" name="Variable">pause_game</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="0" name="Call function" sid="254422695045235" type="funções">
-                                    <param id="0" name="Name">&quot;pause_game&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="777306694625621">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="156069969570130" type="System">
-                                    <param id="0" name="Variable">video_options</param>
-                                    <param id="1" name="Comparison">1</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action behavior="Flash" id="1" name="Stop flashing" sid="966780009200795" type="hud_quality" />
-                                <action behavior="Flash" id="0" name="Flash" sid="118995942641973" type="hud_quality">
-                                    <param id="0" name="&apos;On&apos; time">0.05</param>
-                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
-                                    <param id="2" name="Duration">0.5</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="318877676920801" type="System">
-                                    <param id="0" name="Variable">video_options</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                                <action id="0" name="Call function" sid="479037720988201" type="funções">
-                                    <param id="0" name="Name">&quot;change_video&quot;</param>
-                                    <param id="1" name="Parameter {n}"></param>
-                                </action>
-                                <action id="5" name="Set frame" sid="764763759727238" type="hud_quality">
-                                    <param id="0" name="Frame number">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="780233474376844">
-                    <conditions>
-                        <condition id="4" name="Is touching object" sid="492721805160367" type="Touch">
-                            <param id="0" name="Object">hud_info</param>
-                        </condition>
-                        <condition id="-9" inverted="1" name="Layer is visible" sid="603271932300132" type="System">
-                            <param id="0" name="Layer">5</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Call function" sid="499288021179160" type="funções">
-                            <param id="0" name="Name">&quot;show_info&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                        <action id="6" name="Stop" sid="309310867878759" type="Audio">
-                            <param id="0" name="Tag">&quot;sfx&quot;</param>
-                        </action>
-                        <action id="0" name="Play" sid="808987597894316" type="Audio">
-                            <param id="0" name="Audio file">unpause</param>
-                            <param id="2" name="Loop">0</param>
-                            <param id="3" name="Volume">sfx_vol</param>
-                            <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="363668697970352">
-                    <conditions>
-                        <condition id="0" name="On clicked" sid="926598578418347" type="info_hide" />
-                    </conditions>
-                    <actions>
-                        <action id="-4" name="Set layer visible" sid="948927216001547" type="System">
-                            <param id="0" name="Layer">5</param>
-                            <param id="1" name="Visibility">0</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="228358815562791" type="System">
-                            <param id="0" name="Variable">show_info</param>
-                            <param id="1" name="Value">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="632346502256575">
-                    <conditions>
-                        <condition id="0" name="On clicked" sid="364421627826291" type="info_github" />
-                    </conditions>
-                    <actions>
-                        <action id="8" name="Open URL in new window" sid="173014840658725" type="Browser">
-                            <param id="0" name="URL">&quot;https://github.com/mjgargani/archive-game-construct_project-2030#readme&quot;</param>
-                            <param id="1" name="Tag">&quot;NewWindow&quot;</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="950848610006470">
-                    <conditions>
-                        <condition id="-9" inverted="1" name="Layer is visible" sid="339427782944166" type="System">
-                            <param id="0" name="Layer">5</param>
-                        </condition>
-                        <condition id="-4" name="Trigger once while true" sid="965023814302841" type="System" />
-                    </conditions>
-                    <actions>
-                        <action behavior="Rotate" id="0" name="Set speed" sid="774903214547209" type="info_turret">
-                            <param id="0" name="Speed">0</param>
-                        </action>
-                        <action id="2" name="Stop" sid="507547562120747" type="info_unit" />
-                    </actions>
-                </event-block>
-                <event-block sid="206069123948200">
-                    <conditions>
-                        <condition id="-9" name="Layer is visible" sid="256898907483149" type="System">
-                            <param id="0" name="Layer">5</param>
-                        </condition>
-                        <condition id="-4" name="Trigger once while true" sid="474273842593317" type="System" />
-                    </conditions>
-                    <actions>
-                        <action behavior="Rotate" id="0" name="Set speed" sid="596370341223408" type="info_turret">
-                            <param id="0" name="Speed">180</param>
-                        </action>
-                        <action id="3" name="Start" sid="194320205231557" type="info_unit">
-                            <param id="0" name="From">0</param>
+                        <action disabled="1" id="0" name="Set text" sid="476906479408459" type="debug_txt">
+                            <param id="0" name="Text">variaveis.safe_units &amp; &quot;/&quot; &amp; ceil(variaveis.unit_count_inicial*0.25)</param>
                         </action>
                     </actions>
                 </event-block>
                 <comment>pause game</comment>
-                <event-block sid="418858621810319">
+                <event-block sid="934627855371682">
                     <conditions>
-                        <condition id="0" name="On function" sid="1730639275255026" type="funções">
+                        <condition id="0" name="On function" sid="435249877705650" type="funções">
                             <param id="0" name="Name">&quot;pause_game&quot;</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="2563138711327557">
+                        <event-block sid="418237849881335">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="7951446613581338" type="System">
-                                    <param id="0" name="Variable">pause_game</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">0</param>
-                                </condition>
+                                <condition id="-4" name="Trigger once while true" sid="756848928643069" type="System" />
                             </conditions>
                             <actions>
-                                <action behavior="Flash" id="0" name="Flash" sid="3037063007131995" type="hud_tempo">
-                                    <param id="0" name="&apos;On&apos; time">0.1</param>
-                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
-                                    <param id="2" name="Duration">1.0</param>
-                                </action>
-                                <action behavior="Flash" id="0" name="Flash" sid="3807794683602733" type="hud_txt_contador">
-                                    <param id="0" name="&apos;On&apos; time">0.1</param>
-                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
-                                    <param id="2" name="Duration">1.0</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="930895265458973" type="hud_tempo">
-                                    <param id="0" name="Frame number">1</param>
-                                </action>
-                                <action id="-12" name="Set group active" sid="8982196308353609" type="System">
-                                    <param id="0" name="Group name">&quot;3º Seguimento&quot;</param>
-                                    <param id="1" name="State">0</param>
-                                </action>
-                                <action id="-12" name="Set group active" sid="3748464373996767" type="System">
-                                    <param id="0" name="Group name">&quot;4º Seguimento&quot;</param>
-                                    <param id="1" name="State">0</param>
-                                </action>
-                                <action id="22" name="Set paused" sid="1874729546601859" type="Audio">
-                                    <param id="0" name="Tag">&quot;ba&quot;</param>
-                                    <param id="1" name="State">0</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="255871019022588" type="System">
-                                    <param id="0" name="Variable">pause_game</param>
-                                    <param id="1" name="Value">1</param>
+                                <action id="-16" name="Wait" sid="953334415431306" type="System">
+                                    <param id="0" name="Seconds">0.25</param>
                                 </action>
                             </actions>
                             <sub-events>
-                                <event-block sid="5574862378086337">
-                                    <conditions />
-                                    <actions>
-                                        <action id="-14" name="Set object time scale" sid="8679943083621202" type="System">
-                                            <param id="0" name="Object">torre</param>
-                                            <param id="1" name="Time scale">0</param>
-                                        </action>
-                                        <action id="-14" name="Set object time scale" sid="6843761010694985" type="System">
-                                            <param id="0" name="Object">unidade</param>
-                                            <param id="1" name="Time scale">0</param>
-                                        </action>
-                                        <action id="-14" name="Set object time scale" sid="1971107887882141" type="System">
-                                            <param id="0" name="Object">bala1</param>
-                                            <param id="1" name="Time scale">0</param>
-                                        </action>
-                                        <action id="-14" name="Set object time scale" sid="9450047031277335" type="System">
-                                            <param id="0" name="Object">bala2</param>
-                                            <param id="1" name="Time scale">0</param>
-                                        </action>
-                                        <action id="-14" name="Set object time scale" sid="8976143341970236" type="System">
-                                            <param id="0" name="Object">bala3</param>
-                                            <param id="1" name="Time scale">0</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                        <event-block sid="7260441183212401">
-                            <conditions>
-                                <condition id="-22" name="Else" sid="2823436744873731" type="System" />
-                            </conditions>
-                            <actions>
-                                <action id="-4" name="Set layer visible" sid="686114378694539" type="System">
-                                    <param id="0" name="Layer">5</param>
-                                    <param id="1" name="Visibility">0</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="928065075896663" type="System">
-                                    <param id="0" name="Variable">show_info</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action behavior="Flash" id="1" name="Stop flashing" sid="616820609250909" type="hud_tempo" />
-                                <action behavior="Flash" id="1" name="Stop flashing" sid="2104148266720518" type="hud_txt_contador" />
-                                <action behavior="Flash" id="0" name="Flash" sid="2059113711626925" type="hud_tempo">
-                                    <param id="0" name="&apos;On&apos; time">0.05</param>
-                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
-                                    <param id="2" name="Duration">0.5</param>
-                                </action>
-                                <action behavior="Flash" id="0" name="Flash" sid="5464023705671543" type="hud_txt_contador">
-                                    <param id="0" name="&apos;On&apos; time">0.05</param>
-                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
-                                    <param id="2" name="Duration">0.5</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="9210793985237988" type="System">
-                                    <param id="0" name="Variable">pause_game</param>
-                                    <param id="1" name="Value">0</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="8476712151045452" type="hud_tempo">
-                                    <param id="0" name="Frame number">0</param>
-                                </action>
-                                <action id="-12" name="Set group active" sid="1960364622257991" type="System">
-                                    <param id="0" name="Group name">&quot;3º Seguimento&quot;</param>
-                                    <param id="1" name="State">1</param>
-                                </action>
-                                <action id="-12" name="Set group active" sid="450116092769892" type="System">
-                                    <param id="0" name="Group name">&quot;4º Seguimento&quot;</param>
-                                    <param id="1" name="State">1</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="9126010358890745" type="System">
-                                    <param id="0" name="Seconds">0.5</param>
-                                </action>
-                                <action id="22" name="Set paused" sid="6640751944566177" type="Audio">
-                                    <param id="0" name="Tag">&quot;ba&quot;</param>
-                                    <param id="1" name="State">1</param>
-                                </action>
-                            </actions>
-                            <sub-events>
-                                <comment>start_bgm</comment>
-                                <event-block sid="4825418652877484">
+                                <event-block sid="126758448738726">
                                     <conditions>
-                                        <condition id="5" inverted="1" name="Is tag playing" sid="6251809746310108" type="Audio">
-                                            <param id="0" name="Tag">&quot;ba&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Play" sid="5196925426989555" type="Audio">
-                                            <param id="0" name="Audio file">track01</param>
-                                            <param id="2" name="Loop">1</param>
-                                            <param id="3" name="Volume">bgm_vol</param>
-                                            <param id="1" name="Tag (optional)">&quot;ba&quot;</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="7458003320120846">
-                                    <conditions />
-                                    <actions>
-                                        <action id="-14" name="Set object time scale" sid="6179186037988872" type="System">
-                                            <param id="0" name="Object">torre</param>
-                                            <param id="1" name="Time scale">1</param>
-                                        </action>
-                                        <action id="-14" name="Set object time scale" sid="3466433280484959" type="System">
-                                            <param id="0" name="Object">unidade</param>
-                                            <param id="1" name="Time scale">1</param>
-                                        </action>
-                                        <action id="-14" name="Set object time scale" sid="2947363419454414" type="System">
-                                            <param id="0" name="Object">bala1</param>
-                                            <param id="1" name="Time scale">1</param>
-                                        </action>
-                                        <action id="-14" name="Set object time scale" sid="365018934515488" type="System">
-                                            <param id="0" name="Object">bala2</param>
-                                            <param id="1" name="Time scale">1</param>
-                                        </action>
-                                        <action id="-14" name="Set object time scale" sid="4559011963656366" type="System">
-                                            <param id="0" name="Object">bala3</param>
-                                            <param id="1" name="Time scale">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block sid="5506979071826923">
-                    <conditions>
-                        <condition id="4" name="Is touching object" sid="9226167496287432" type="Touch">
-                            <param id="0" name="Object">hud_tempo</param>
-                        </condition>
-                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="2576739150597302" type="hud_tempo" />
-                        <condition id="-4" name="Trigger once while true" sid="2758326661431179" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-16" name="Wait" sid="7062275669918255" type="System">
-                            <param id="0" name="Seconds">0.2</param>
-                        </action>
-                        <action id="0" name="Call function" sid="6103483473714912" type="funções">
-                            <param id="0" name="Name">&quot;pause_game&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
-                        </action>
-                    </actions>
-                    <sub-events>
-                        <event-block sid="1159668969270219">
-                            <conditions>
-                                <condition id="-14" name="Compare variable" sid="2007556070669358" type="System">
-                                    <param id="0" name="Variable">sfx_vol</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">-20</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block sid="7843253478794151">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="5480167291272539" type="System">
+                                        <condition id="-14" name="Compare variable" sid="932329888247471" type="System">
                                             <param id="0" name="Variable">pause_game</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">0</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="6" name="Stop" sid="8717365492272128" type="Audio">
-                                            <param id="0" name="Tag">&quot;sfx&quot;</param>
+                                        <action behavior="Flash" id="0" name="Flash" sid="909247368568137" type="hud_tempo">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">1.0</param>
                                         </action>
-                                        <action id="0" name="Play" sid="1940302675892558" type="Audio">
-                                            <param id="0" name="Audio file">pause</param>
-                                            <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">sfx_vol</param>
-                                            <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
+                                        <action behavior="Flash" id="0" name="Flash" sid="914923095329080" type="hud_txt_contador">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">1.0</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="826023787940666" type="hud_tempo">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                        <action id="-12" name="Set group active" sid="331627850800237" type="System">
+                                            <param id="0" name="Group name">&quot;3º Seguimento&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                        <action id="-12" name="Set group active" sid="586204087772624" type="System">
+                                            <param id="0" name="Group name">&quot;4º Seguimento&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                        <action id="22" name="Set paused" sid="206734867868035" type="Audio">
+                                            <param id="0" name="Tag">&quot;ba&quot;</param>
+                                            <param id="1" name="State">0</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="195971743175953" type="System">
+                                            <param id="0" name="Variable">pause_game</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="973883553134453">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="677697049132101" type="System">
+                                                    <param id="0" name="Variable">sfx_vol</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">-20</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="6" name="Stop" sid="293671483994104" type="Audio">
+                                                    <param id="0" name="Tag">&quot;sfx&quot;</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="334285333086311" type="Audio">
+                                                    <param id="0" name="Audio file">pause</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">sfx_vol</param>
+                                                    <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="895092372843755">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-14" name="Set object time scale" sid="519352516715954" type="System">
+                                                    <param id="0" name="Object">torre</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="954296969120961" type="System">
+                                                    <param id="0" name="Object">unidade</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="375950111676422" type="System">
+                                                    <param id="0" name="Object">bala1</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="777319493571788" type="System">
+                                                    <param id="0" name="Object">bala2</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="279148568944743" type="System">
+                                                    <param id="0" name="Object">bala3</param>
+                                                    <param id="1" name="Time scale">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
-                                <event-block sid="7677337171902317">
+                                <event-block sid="344319892815994">
                                     <conditions>
-                                        <condition id="-22" name="Else" sid="2704868868469363" type="System" />
+                                        <condition id="-22" name="Else" sid="112886067727598" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="6" name="Stop" sid="156124389645981" type="Audio">
-                                            <param id="0" name="Tag">&quot;sfx&quot;</param>
+                                        <action behavior="Flash" id="1" name="Stop flashing" sid="844058822557359" type="hud_tempo" />
+                                        <action behavior="Flash" id="1" name="Stop flashing" sid="741336937231182" type="hud_txt_contador" />
+                                        <action behavior="Flash" id="0" name="Flash" sid="936811509756995" type="hud_tempo">
+                                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                            <param id="2" name="Duration">0.5</param>
                                         </action>
-                                        <action id="0" name="Play" sid="4640107819210422" type="Audio">
-                                            <param id="0" name="Audio file">unpause</param>
-                                            <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">sfx_vol</param>
-                                            <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
+                                        <action behavior="Flash" id="0" name="Flash" sid="664535945593241" type="hud_txt_contador">
+                                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                            <param id="2" name="Duration">0.5</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="746047321894739" type="System">
+                                            <param id="0" name="Variable">pause_game</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="766326268567390" type="hud_tempo">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="-12" name="Set group active" sid="279356478208235" type="System">
+                                            <param id="0" name="Group name">&quot;3º Seguimento&quot;</param>
+                                            <param id="1" name="State">1</param>
+                                        </action>
+                                        <action id="-12" name="Set group active" sid="403484023484110" type="System">
+                                            <param id="0" name="Group name">&quot;4º Seguimento&quot;</param>
+                                            <param id="1" name="State">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="606408312623345" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action id="22" name="Set paused" sid="200015936308446" type="Audio">
+                                            <param id="0" name="Tag">&quot;ba&quot;</param>
+                                            <param id="1" name="State">1</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="906306769380330">
+                                            <conditions>
+                                                <condition id="-9" name="Layer is visible" sid="731658380481491" type="System">
+                                                    <param id="0" name="Layer">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-4" name="Set layer visible" sid="883576185347801" type="System">
+                                                    <param id="0" name="Layer">5</param>
+                                                    <param id="1" name="Visibility">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="266307918808507">
+                                            <conditions>
+                                                <condition id="-9" name="Layer is visible" sid="153641417160457" type="System">
+                                                    <param id="0" name="Layer">6</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-4" name="Set layer visible" sid="390975226607953" type="System">
+                                                    <param id="0" name="Layer">6</param>
+                                                    <param id="1" name="Visibility">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="228539029007235">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="527140407875538" type="System">
+                                                    <param id="0" name="Variable">sfx_vol</param>
+                                                    <param id="1" name="Comparison">4</param>
+                                                    <param id="2" name="Value">-20</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="6" name="Stop" sid="592485793010059" type="Audio">
+                                                    <param id="0" name="Tag">&quot;sfx&quot;</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="483275047798056" type="Audio">
+                                                    <param id="0" name="Audio file">unpause</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">sfx_vol</param>
+                                                    <param id="1" name="Tag (optional)">&quot;sfx&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <comment>start_bgm</comment>
+                                        <event-block sid="110869003049482">
+                                            <conditions>
+                                                <condition id="5" inverted="1" name="Is tag playing" sid="299454909790606" type="Audio">
+                                                    <param id="0" name="Tag">&quot;ba&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Play" sid="693795231711923" type="Audio">
+                                                    <param id="0" name="Audio file">track01</param>
+                                                    <param id="2" name="Loop">1</param>
+                                                    <param id="3" name="Volume">bgm_vol</param>
+                                                    <param id="1" name="Tag (optional)">&quot;ba&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="944096980935644">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-14" name="Set object time scale" sid="951315869281379" type="System">
+                                                    <param id="0" name="Object">torre</param>
+                                                    <param id="1" name="Time scale">1</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="742484136647832" type="System">
+                                                    <param id="0" name="Object">unidade</param>
+                                                    <param id="1" name="Time scale">1</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="331644717947229" type="System">
+                                                    <param id="0" name="Object">bala1</param>
+                                                    <param id="1" name="Time scale">1</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="290109018062482" type="System">
+                                                    <param id="0" name="Object">bala2</param>
+                                                    <param id="1" name="Time scale">1</param>
+                                                </action>
+                                                <action id="-14" name="Set object time scale" sid="212037814844871" type="System">
+                                                    <param id="0" name="Object">bala3</param>
+                                                    <param id="1" name="Time scale">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="7276198291259665">
+                <event-block sid="534261526548761">
                     <conditions>
-                        <condition id="7" name="Cursor is over object" sid="5576023024290803" type="mouse">
+                        <condition id="3" name="On touched object" sid="550480442700324" type="Touch">
+                            <param id="0" name="Object">hud_tempo</param>
+                        </condition>
+                        <condition behavior="Flash" id="0" inverted="1" name="Is flashing" sid="874088447265498" type="hud_tempo" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="391279044218233">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="643851896700176" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="652883292686273" type="funções">
+                                    <param id="0" name="Name">&quot;pause_game&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="290215436765029">
+                    <conditions>
+                        <condition id="7" name="Cursor is over object" sid="625699313384726" type="mouse">
                             <param id="0" name="Object">hud_tempo</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-16" name="Set opacity" sid="9616827910167099" type="hud_txt_contador">
+                        <action id="-16" name="Set opacity" sid="169855189393946" type="hud_txt_contador">
                             <param id="0" name="Opacity">66</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="6942165810128625">
+                <event-block sid="793578888458296">
                     <conditions>
-                        <condition id="-8" name="Compare two values" sid="9952257742741893" type="System">
+                        <condition id="-8" name="Compare two values" sid="676653155538767" type="System">
                             <param id="0" name="First value">LayerOpacity(0)</param>
                             <param id="1" name="Comparison">0</param>
                             <param id="2" name="Second value">100</param>
@@ -597,37 +381,49 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="1483273243299632">
+                        <event-block sid="626766463702043">
                             <conditions>
-                                <condition id="-4" name="Trigger once while true" sid="5737106241815217" type="System" />
+                                <condition id="-4" name="Trigger once while true" sid="965054505447091" type="System" />
                             </conditions>
                             <actions>
-                                <action behavior="Flash" id="1" name="Stop flashing" sid="3911920812756232" type="unidade" />
+                                <action behavior="Flash" id="1" name="Stop flashing" sid="124108389932596" type="unidade" />
                             </actions>
                             <sub-events>
-                                <event-block sid="630599997750043">
+                                <event-block sid="887371095410406">
                                     <conditions>
-                                        <condition id="-14" name="Compare variable" sid="507620381212148" type="System">
+                                        <condition id="-14" name="Compare variable" sid="280031796591683" type="System">
                                             <param id="0" name="Variable">show_info</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="849754057747402" type="funções">
-                                            <param id="0" name="Name">&quot;show_info&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
+                                        <action behavior="Flash" id="1" name="Stop flashing" sid="297521562569973" type="hud_info" />
+                                        <action behavior="Flash" id="0" name="Flash" sid="696129319666630" type="hud_info">
+                                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                            <param id="2" name="Duration">0.5</param>
                                         </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="372775021300309">
-                                    <conditions>
-                                        <condition id="-22" name="Else" sid="331919530670969" type="System" />
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="1033049931412548" type="funções">
+                                        <action id="-4" name="Set layer visible" sid="776708287977896" type="System">
+                                            <param id="0" name="Layer">5</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="134720881674580" type="System">
+                                            <param id="0" name="Variable">show_info</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="8" name="Set silent" sid="505241669844300" type="Audio">
+                                            <param id="0" name="Mode">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="147949399101387" type="funções">
                                             <param id="0" name="Name">&quot;pause_game&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="471411532442542" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action id="8" name="Set silent" sid="973097069937388" type="Audio">
+                                            <param id="0" name="Mode">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -635,6 +431,8 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <include>29statistics_setup</include>
+                <include>30info</include>
             </sub-events>
         </event-group>
     </events>

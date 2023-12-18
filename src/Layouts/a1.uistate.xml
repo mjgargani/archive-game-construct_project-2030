@@ -4,11 +4,11 @@
 It is entirely optional and the project will load without it.  If you are placing the project under source control,
 you probably do not want to add any .uistate.xml files to the repository.-->
     <camera>
-        <position-x>848</position-x>
-        <position-y>210.523</position-y>
-        <position-z>92.3074</position-z>
-        <lookat-x>848</lookat-x>
-        <lookat-y>210.523</lookat-y>
+        <position-x>581.693</position-x>
+        <position-y>266.144</position-y>
+        <position-z>73.2838</position-z>
+        <lookat-x>581.693</lookat-x>
+        <lookat-y>266.144</lookat-y>
         <lookat-z>0</lookat-z>
     </camera>
     <snap-to-grid>1</snap-to-grid>
@@ -23,7 +23,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Margins" />
         <property expanded="1" name="Effects" />
     </properties>
-    <active-layer name="objects" />
+    <active-layer name="statistics" />
     <layers>
         <layer locked="1" name="tilemap" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="objects" parallax-in-editor="0" visible="1" />
@@ -31,5 +31,6 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <layer locked="1" name="Touch" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="loading_mask" parallax-in-editor="0" visible="1" />
         <layer locked="1" name="control_info" parallax-in-editor="0" visible="1" />
+        <layer locked="1" name="statistics" parallax-in-editor="0" visible="1" />
     </layers>
 </c2uistate>

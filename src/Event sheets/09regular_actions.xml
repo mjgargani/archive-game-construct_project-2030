@@ -10,59 +10,10 @@
                 </condition>
             </conditions>
             <actions>
-                <action disabled="1" id="0" name="Set text" sid="5123325645124004" type="debug_txt">
-                    <param id="0" name="Text">&quot;FPS:&quot; &amp; str(fps) &amp; &quot;|CPU:&quot; &amp; str(round(cpuutilisation*100)) &amp; &quot;%|I.M: &quot;&amp; ImageMemoryUsage &amp; &quot;MB|O.C:&quot; &amp; str(objectcount)</param>
+                <action id="0" name="Set text" sid="4643448939083477" type="hud_txt_contador">
+                    <param id="0" name="Text">funções.Call(&quot;counter_format&quot;, variaveis.segundos)</param>
                 </action>
             </actions>
-            <sub-events>
-                <event-block sid="5537043075545034">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="7136093852947076" type="variaveis">
-                            <param id="0" name="Instance variable">segundos</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Value">10</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Set text" sid="4643448939083477" type="hud_txt_contador">
-                            <param id="0" name="Text">&quot;00&quot;&amp;variaveis.segundos</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="6013803762684895">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="1513597879095252" type="variaveis">
-                            <param id="0" name="Instance variable">segundos</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">10</param>
-                        </condition>
-                        <condition id="-7" name="Compare instance variable" sid="4638770271656754" type="variaveis">
-                            <param id="0" name="Instance variable">segundos</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Value">100</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Set text" sid="6611252085167608" type="hud_txt_contador">
-                            <param id="0" name="Text">&quot;0&quot;&amp;variaveis.segundos</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="164747011819813">
-                    <conditions>
-                        <condition id="-7" name="Compare instance variable" sid="5307982520205964" type="variaveis">
-                            <param id="0" name="Instance variable">segundos</param>
-                            <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Value">100</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="0" name="Set text" sid="4666885956947632" type="hud_txt_contador">
-                            <param id="0" name="Text">variaveis.segundos</param>
-                        </action>
-                    </actions>
-                </event-block>
-            </sub-events>
         </event-block>
         <event-block sid="3853105898773735">
             <conditions>

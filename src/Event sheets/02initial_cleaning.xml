@@ -57,6 +57,42 @@
                         </action>
                     </actions>
                 </event-block>
+                <comment>init statistics variables</comment>
+                <event-block bookmark="1" sid="639615434496918">
+                    <conditions />
+                    <actions>
+                        <action id="1" name="Get item" sid="548271763972231" type="LocalStorage">
+                            <param id="0" name="Key">&quot;total_rounds&quot;</param>
+                        </action>
+                        <action id="1" name="Get item" sid="518364738578604" type="LocalStorage">
+                            <param id="0" name="Key">&quot;total_units&quot;</param>
+                        </action>
+                        <action id="1" name="Get item" sid="290551124190762" type="LocalStorage">
+                            <param id="0" name="Key">&quot;all_times&quot;</param>
+                        </action>
+                        <action id="1" name="Get item" sid="999545138998566" type="LocalStorage">
+                            <param id="0" name="Key">&quot;avg_time&quot;</param>
+                        </action>
+                        <action id="1" name="Get item" sid="498174242017363" type="LocalStorage">
+                            <param id="0" name="Key">&quot;avg_saves&quot;</param>
+                        </action>
+                        <action id="1" name="Get item" sid="534681412859950" type="LocalStorage">
+                            <param id="0" name="Key">&quot;star_death&quot;</param>
+                        </action>
+                        <action id="1" name="Get item" sid="594469702647507" type="LocalStorage">
+                            <param id="0" name="Key">&quot;star_zero&quot;</param>
+                        </action>
+                        <action id="1" name="Get item" sid="341076331056443" type="LocalStorage">
+                            <param id="0" name="Key">&quot;star_one&quot;</param>
+                        </action>
+                        <action id="1" name="Get item" sid="109571783680957" type="LocalStorage">
+                            <param id="0" name="Key">&quot;star_two&quot;</param>
+                        </action>
+                        <action id="1" name="Get item" sid="546458780332387" type="LocalStorage">
+                            <param id="0" name="Key">&quot;star_three&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-block>
     </events>

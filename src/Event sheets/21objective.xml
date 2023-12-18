@@ -111,11 +111,32 @@
                 </action>
             </actions>
             <sub-events>
-                <event-block sid="6172348764972898">
+                <event-block bookmark="1" sid="6172348764972898">
                     <conditions>
                         <condition id="-4" name="Trigger once while true" sid="2330118325688267" type="System" />
                     </conditions>
                     <actions>
+                        <action id="0" name="Set item" sid="684006630534939" type="LocalStorage">
+                            <param id="0" name="Key">&quot;total_rounds&quot;</param>
+                            <param id="1" name="Value">statistics.total_rounds + 1</param>
+                        </action>
+                        <action id="0" name="Set item" sid="521455854586334" type="LocalStorage">
+                            <param id="0" name="Key">&quot;total_units&quot;</param>
+                            <param id="1" name="Value">statistics.total_units + variaveis.unit_count_inicial</param>
+                        </action>
+                        <action id="5" name="Push" sid="390017196399474" type="all_times_array">
+                            <param id="0" name="Where">1</param>
+                            <param id="1" name="Value">variaveis.segundos</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="0" name="Set item" sid="570781631591630" type="LocalStorage">
+                            <param id="0" name="Key">&quot;all_times&quot;</param>
+                            <param id="1" name="Value">all_times_array.AsJSON</param>
+                        </action>
+                        <action id="0" name="Set item" sid="966447927487201" type="LocalStorage">
+                            <param id="0" name="Key">&quot;avg_saves&quot;</param>
+                            <param id="1" name="Value">round((statistics.total_units + variaveis.unit_count_inicial) / (statistics.total_rounds + 1))</param>
+                        </action>
                         <action id="-3" name="Set position" sid="491954031810524" type="hud_star_layout">
                             <param id="0" name="X">hud_star_layout.x</param>
                             <param id="1" name="Y">192</param>
@@ -140,17 +161,25 @@
                             <param id="1" name="Visibility">0</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="592315239278087">
-                    <conditions>
-                        <condition id="-7" name="Compare time" sid="683169568497348" type="System">
-                            <param id="0" name="Comparison">4</param>
-                            <param id="1" name="Time (seconds)">3</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="467750455297428" type="torre" />
-                    </actions>
+                    <sub-events>
+                        <event-block sid="889699066239257">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="915634633945252" type="all_times_array">
+                                    <param id="0" name="Axes">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="212880533734813" type="statistics">
+                                    <param id="0" name="Instance variable">sum_time_avg</param>
+                                    <param id="1" name="Value">all_times_array.CurValue</param>
+                                </action>
+                                <action id="0" name="Set item" sid="530480040616743" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;avg_time&quot;</param>
+                                    <param id="1" name="Value">round(statistics.sum_time_avg / (statistics.total_rounds + 1))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="2654543337256412">
                     <conditions>
@@ -171,14 +200,13 @@
                     <sub-events>
                         <event-block sid="6855047315736616">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="629654058419477" type="System">
-                                    <param id="0" name="Variable">sfx_vol</param>
-                                    <param id="1" name="Comparison">4</param>
-                                    <param id="2" name="Value">-20</param>
-                                </condition>
                                 <condition id="-4" name="Trigger once while true" sid="3530873674093378" type="System" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Set item" sid="358127621362726" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;star_three&quot;</param>
+                                    <param id="1" name="Value">statistics.star_three + 1</param>
+                                </action>
                                 <action id="5" name="Set frame" sid="3255905308326515" type="hud_estrela">
                                     <param id="0" name="Frame number">0</param>
                                 </action>
@@ -295,6 +323,10 @@
                                 <condition id="-4" name="Trigger once while true" sid="7956706280367447" type="System" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Set item" sid="709250974176952" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;star_two&quot;</param>
+                                    <param id="1" name="Value">statistics.star_two + 1</param>
+                                </action>
                                 <action id="5" name="Set frame" sid="7486962780368887" type="hud_estrela">
                                     <param id="0" name="Frame number">0</param>
                                 </action>
@@ -345,15 +377,15 @@
                 </event-block>
                 <event-block sid="630465696280409">
                     <conditions>
-                        <condition id="-8" name="Compare two values" sid="4910046390487302" type="System">
-                            <param id="0" name="First value">variaveis.safe_units</param>
-                            <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Second value">round(variaveis.unit_count_inicial*0.75)</param>
-                        </condition>
                         <condition id="-8" name="Compare two values" sid="7691586876906934" type="System">
                             <param id="0" name="First value">variaveis.safe_units</param>
                             <param id="1" name="Comparison">5</param>
-                            <param id="2" name="Second value">round(variaveis.unit_count_inicial*0.5)</param>
+                            <param id="2" name="Second value">ceil(variaveis.unit_count_inicial*0.25)</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="4910046390487302" type="System">
+                            <param id="0" name="First value">variaveis.safe_units</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">ceil(variaveis.unit_count_inicial*0.5)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -365,40 +397,82 @@
                         </action>
                     </actions>
                     <sub-events>
-                        <event-block sid="7042591746412458">
+                        <event-block sid="394702349521226">
                             <conditions>
-                                <condition id="-4" name="Trigger once while true" sid="3059550001002602" type="System" />
+                                <condition id="-7" name="Compare instance variable" sid="335734394873008" type="variaveis">
+                                    <param id="0" name="Instance variable">segundos</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">60</param>
+                                </condition>
                             </conditions>
-                            <actions>
-                                <action id="5" name="Set frame" sid="633002340957585" type="hud_estrela">
-                                    <param id="0" name="Frame number">0</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="8922203622221038" type="System">
-                                    <param id="0" name="Seconds">1</param>
-                                </action>
-                                <action id="-3" name="Set position" sid="8027729386244148" type="Particles">
-                                    <param id="0" name="X">hud_estrela.ImagePointX(1)</param>
-                                    <param id="1" name="Y">hud_estrela.ImagePointY(1)</param>
-                                </action>
-                                <action id="0" name="Set spraying" sid="9469706848390351" type="Particles">
-                                    <param id="0" name="State">1</param>
-                                </action>
-                                <action id="0" name="Play" sid="6406335771693412" type="Audio">
-                                    <param id="0" name="Audio file">OK - 2</param>
-                                    <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">sfx_vol</param>
-                                    <param id="1" name="Tag (optional)">&quot;ad&quot;</param>
-                                </action>
-                                <action id="5" name="Set frame" sid="7879033157987009" type="hud_estrela">
-                                    <param id="0" name="Frame number">1</param>
-                                </action>
-                                <action id="-16" name="Wait" sid="3795092106961843" type="System">
-                                    <param id="0" name="Seconds">0.5</param>
-                                </action>
-                                <action id="0" name="Set spraying" sid="2746165457064113" type="Particles">
-                                    <param id="0" name="State">0</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="7042591746412458">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="3059550001002602" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set item" sid="129916434666819" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;star_one&quot;</param>
+                                            <param id="1" name="Value">statistics.star_one + 1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="633002340957585" type="hud_estrela">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="975202361235127">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="555571088868715" type="variaveis">
+                                    <param id="0" name="Instance variable">segundos</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">60</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="371336559603330">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="360574580033591" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Set item" sid="240450636487210" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;star_zero&quot;</param>
+                                            <param id="1" name="Value">statistics.star_zero + 1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="608959093929787" type="hud_estrela">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="551703832652245" type="System">
+                                            <param id="0" name="Seconds">1</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="693937104350242" type="Particles">
+                                            <param id="0" name="X">hud_estrela.ImagePointX(1)</param>
+                                            <param id="1" name="Y">hud_estrela.ImagePointY(1)</param>
+                                        </action>
+                                        <action id="0" name="Set spraying" sid="563563589063228" type="Particles">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="155651161621701" type="Audio">
+                                            <param id="0" name="Audio file">OK - 2</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">sfx_vol</param>
+                                            <param id="1" name="Tag (optional)">&quot;ad&quot;</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="910931088340802" type="hud_estrela">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="270336487591323" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action id="0" name="Set spraying" sid="724860863102192" type="Particles">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -407,7 +481,7 @@
                         <condition id="-8" name="Compare two values" sid="7507997045962162" type="System">
                             <param id="0" name="First value">variaveis.safe_units</param>
                             <param id="1" name="Comparison">2</param>
-                            <param id="2" name="Second value">round(variaveis.unit_count_inicial*0.5)</param>
+                            <param id="2" name="Second value">ceil(variaveis.unit_count_inicial*0.25)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -452,25 +526,17 @@
                                     <param id="2" name="Duration">10</param>
                                 </action>
                             </actions>
-                            <sub-events>
-                                <event-block sid="4649255061868544">
-                                    <conditions>
-                                        <condition id="1" name="Is overlapping another object" sid="8834919326942903" type="hud_restart">
-                                            <param id="0" name="Object">hud_background</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Destroy" sid="8184326775185954" type="hud_estrela" />
-                                        <action id="-3" name="Set position" sid="6970136031162859" type="hud_restart">
-                                            <param id="0" name="X">round(OriginalWindowWidth/2)</param>
-                                            <param id="1" name="Y">round(OriginalWindowHeight/2)</param>
-                                        </action>
-                                        <action id="9" name="Set scale" sid="7806922721079292" type="hud_restart">
-                                            <param id="0" name="Scale">2</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
+                        </event-block>
+                        <event-block sid="329757738578347">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="981803887260538" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set item" sid="762530228368895" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;star_death&quot;</param>
+                                    <param id="1" name="Value">statistics.star_death + 1</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>

@@ -99,9 +99,9 @@
                     <param id="0" name="Variable">pause_game</param>
                     <param id="1" name="Value">0</param>
                 </action>
-                <action id="-9" name="Set value" sid="352850916680949" type="System">
-                    <param id="0" name="Variable">show_info</param>
-                    <param id="1" name="Value">0</param>
+                <action id="0" name="Call function" sid="441555578376589" type="funções">
+                    <param id="0" name="Name">&quot;clear_screen&quot;</param>
+                    <param id="1" name="Parameter {n}"></param>
                 </action>
             </actions>
             <sub-events>

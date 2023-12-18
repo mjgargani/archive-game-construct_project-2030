@@ -127,5 +127,72 @@
                 </action>
             </actions>
         </event-block>
+        <comment>stop behavior from info screens on hidden status</comment>
+        <event-block bookmark="1" sid="456844068504049">
+            <conditions>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="157853480688498" type="System">
+                    <param id="0" name="Layer">5</param>
+                </condition>
+                <condition id="-9" inverted="1" name="Layer is visible" sid="399568664695638" type="System">
+                    <param id="0" name="Layer">6</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="205352335809385">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="294834035073697" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="265824938265360" type="info_turret">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="531390694800327" type="stats_hourglass">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="2" name="Stop" sid="680065072983836" type="info_unit" />
+                        <action id="2" name="Stop" sid="479604961239972" type="stats_stars" />
+                        <action behavior="Sine" id="0" name="Set active" sid="428268573930738" type="info_start">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="937852958154720">
+            <conditions>
+                <condition id="-9" name="Layer is visible" sid="636564332475291" type="System">
+                    <param id="0" name="Layer">5</param>
+                </condition>
+                <condition id="-9" name="Layer is visible" sid="326178177412198" type="System">
+                    <param id="0" name="Layer">6</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="864052009834091">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="380057466370504" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="171129683128265" type="info_turret">
+                            <param id="0" name="Speed">180</param>
+                        </action>
+                        <action behavior="Rotate" id="0" name="Set speed" sid="511622142280035" type="stats_hourglass">
+                            <param id="0" name="Speed">180</param>
+                        </action>
+                        <action id="3" name="Start" sid="694975434103812" type="info_unit">
+                            <param id="0" name="From">0</param>
+                        </action>
+                        <action id="3" name="Start" sid="790904612080013" type="stats_stars">
+                            <param id="0" name="From">0</param>
+                        </action>
+                        <action behavior="Sine" id="0" name="Set active" sid="641902852377721" type="info_start">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>
