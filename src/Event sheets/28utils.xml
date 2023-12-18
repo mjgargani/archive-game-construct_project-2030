@@ -192,5 +192,64 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="338131148024624">
+            <conditions>
+                <condition id="0" name="On function" sid="359443525288304" type="funções">
+                    <param id="0" name="Name">&quot;clear_storage&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="359220680028316">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="175553990998271" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Clear storage" sid="111992993871869" type="LocalStorage" />
+                        <action id="0" name="Set item" sid="759382378509188" type="LocalStorage">
+                            <param id="0" name="Key">&quot;total_rounds&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set item" sid="749140162665917" type="LocalStorage">
+                            <param id="0" name="Key">&quot;total_units&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Clear" sid="189738218090877" type="all_times_array" />
+                        <action id="0" name="Set item" sid="163471760588373" type="LocalStorage">
+                            <param id="0" name="Key">&quot;all_times&quot;</param>
+                            <param id="1" name="Value">all_times_array.AsJSON</param>
+                        </action>
+                        <action id="0" name="Set item" sid="366075665153573" type="LocalStorage">
+                            <param id="0" name="Key">&quot;avg_time&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set item" sid="985677132675221" type="LocalStorage">
+                            <param id="0" name="Key">&quot;avg_saves&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set item" sid="801026241339392" type="LocalStorage">
+                            <param id="0" name="Key">&quot;star_death&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set item" sid="670587244919250" type="LocalStorage">
+                            <param id="0" name="Key">&quot;star_zero&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set item" sid="554789341161075" type="LocalStorage">
+                            <param id="0" name="Key">&quot;star_one&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set item" sid="816453513509751" type="LocalStorage">
+                            <param id="0" name="Key">&quot;start_two&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set item" sid="980310845874835" type="LocalStorage">
+                            <param id="0" name="Key">&quot;star_three&quot;</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

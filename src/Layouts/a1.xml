@@ -1070,7 +1070,7 @@
                     <properties>
                         <text>Debug</text>
                         <initial-visibility>Invisible</initial-visibility>
-                        <font>Arial,-21,700,0</font>
+                        <font>Arial,-10.4,700,0</font>
                         <color>0,0,0</color>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
@@ -3019,7 +3019,7 @@
                     <instance-variables>
                         <total_rounds>0</total_rounds>
                         <total_units>0</total_units>
-                        <all_times>[]</all_times>
+                        <all_times>&quot;&quot;</all_times>
                         <avg_time>0</avg_time>
                         <avg_saves>0</avg_saves>
                         <star_death>0</star_death>

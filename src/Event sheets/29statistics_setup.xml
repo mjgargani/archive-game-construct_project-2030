@@ -313,7 +313,10 @@
                                 <action id="0" name="Set text" sid="794216745467520" type="stats_clear">
                                     <param id="0" name="Text">&quot;Resetting...&quot;</param>
                                 </action>
-                                <action id="3" name="Clear storage" sid="380949245304000" type="LocalStorage" />
+                                <action id="0" name="Call function" sid="562513195166589" type="funções">
+                                    <param id="0" name="Name">&quot;clear_storage&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
                                 <action id="0" name="Set text" sid="690914571428260" type="stats_counters">
                                     <param id="0" name="Text">&quot;000&quot;</param>
                                 </action>

@@ -97,6 +97,27 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block disabled="1" sid="185776008070549">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="898706128786108" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set item" sid="517780580014989" type="LocalStorage">
+                            <param id="0" name="Key">&quot;EITA&quot;</param>
+                            <param id="1" name="Value">&quot;CARA&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="480758087607577">
+                    <conditions>
+                        <condition id="5" name="On error" sid="826534968818870" type="LocalStorage" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="477465870583579" type="debug_txt">
+                            <param id="0" name="Text">LocalStorage.ErrorMessage</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <comment>pause game</comment>
                 <event-block sid="934627855371682">
                     <conditions>

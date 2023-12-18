@@ -11,10 +11,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </configurations>
     <open-tabs>
         <layout order="0">a1</layout>
-        <event-sheet order="1">28utils</event-sheet>
-        <event-sheet order="2">30info</event-sheet>
-        <event-sheet order="3">29statistics_setup</event-sheet>
-        <event-sheet active="1" order="4">01global_arrangements</event-sheet>
+        <event-sheet active="1" order="1">01global_arrangements</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -22,15 +19,15 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="0" name="Window Size" />
         <property expanded="1" name="Configuration Settings" />
     </properties>
-    <families-expanded root="1">
+    <families-expanded root="0">
         <family expanded="0" name="balas" />
         <family expanded="0" name="hud_aux" />
         <family expanded="0" name="hud_btns" />
         <family expanded="0" name="stats_counters" />
     </families-expanded>
     <folders-expanded>
-        <folder expanded="0" path="object-folder/" />
-        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="0" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="event-folder/game_motor/" />
         <folder expanded="0" path="file-folder/" />

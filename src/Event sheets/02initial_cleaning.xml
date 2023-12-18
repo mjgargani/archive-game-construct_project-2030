@@ -95,5 +95,26 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="683054709689426">
+            <conditions>
+                <condition id="10" name="On item missing" sid="930044257488785" type="LocalStorage">
+                    <param id="0" name="Key">&quot;total_rounds&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="814199898423623">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="297726736514793" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="698224163958033" type="funções">
+                            <param id="0" name="Name">&quot;clear_storage&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>
