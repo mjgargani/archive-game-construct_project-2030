@@ -3,7 +3,6 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>28utils</name>
     <events>
-        <variable constant="0" name="counter_output" sid="412731377457598" static="0" type="text">000</variable>
         <event-block sid="931681383347934">
             <conditions>
                 <condition id="0" name="On function" sid="401886815229622" type="funções">
@@ -12,22 +11,46 @@
             </conditions>
             <actions />
             <sub-events>
+                <variable constant="0" name="counter_output" sid="412731377457598" static="0" type="text">000</variable>
+                <variable constant="0" name="number" sid="790280435242939" static="0" type="number">0</variable>
                 <event-block sid="355853580020324">
                     <conditions>
                         <condition id="-4" name="Trigger once while true" sid="523340216812129" type="System" />
                     </conditions>
-                    <actions>
-                        <action id="-9" name="Set value" sid="955051334652939" type="System">
-                            <param id="0" name="Variable">counter_output</param>
-                            <param id="1" name="Value">&quot;000&quot;</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
+                        <event-block sid="536562289085168">
+                            <conditions>
+                                <condition id="-37" name="Is number NaN" sid="821339026277216" type="System">
+                                    <param id="0" name="Number">funções.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="699883264718652" type="System">
+                                    <param id="0" name="Variable">number</param>
+                                    <param id="1" name="Value">int(funções.Param(0))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="953295100783120">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="353054007136679" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="584181893965124" type="System">
+                                    <param id="0" name="Variable">number</param>
+                                    <param id="1" name="Value">funções.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="338083368857447">
                             <conditions>
-                                <condition id="1" name="Compare parameter" sid="409612945372166" type="funções">
-                                    <param id="0" name="Index">0</param>
-                                    <param id="1" name="Comparison">4</param>
+                                <condition id="-37" inverted="1" name="Is number NaN" sid="409612945372166" type="System">
+                                    <param id="0" name="Number">number</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="807619306464380" type="System">
+                                    <param id="0" name="Variable">number</param>
+                                    <param id="1" name="Comparison">5</param>
                                     <param id="2" name="Value">0</param>
                                 </condition>
                             </conditions>
@@ -35,8 +58,8 @@
                             <sub-events>
                                 <event-block sid="589189600559609">
                                     <conditions>
-                                        <condition id="1" name="Compare parameter" sid="856161751415447" type="funções">
-                                            <param id="0" name="Index">0</param>
+                                        <condition id="-14" name="Compare variable" sid="156711706037506" type="System">
+                                            <param id="0" name="Variable">number</param>
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Value">10</param>
                                         </condition>
@@ -44,19 +67,19 @@
                                     <actions>
                                         <action id="-9" name="Set value" sid="988350545089926" type="System">
                                             <param id="0" name="Variable">counter_output</param>
-                                            <param id="1" name="Value">&quot;00&quot; &amp; funções.Param(0)</param>
+                                            <param id="1" name="Value">&quot;00&quot; &amp; str(number)</param>
                                         </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="265303324854712">
                                     <conditions>
-                                        <condition id="1" name="Compare parameter" sid="601241451136373" type="funções">
-                                            <param id="0" name="Index">0</param>
+                                        <condition id="-14" name="Compare variable" sid="495401425141513" type="System">
+                                            <param id="0" name="Variable">number</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">10</param>
                                         </condition>
-                                        <condition id="1" name="Compare parameter" sid="867986286949416" type="funções">
-                                            <param id="0" name="Index">0</param>
+                                        <condition id="-14" name="Compare variable" sid="697573023656849" type="System">
+                                            <param id="0" name="Variable">number</param>
                                             <param id="1" name="Comparison">2</param>
                                             <param id="2" name="Value">100</param>
                                         </condition>
@@ -64,14 +87,14 @@
                                     <actions>
                                         <action id="-9" name="Set value" sid="110488286599514" type="System">
                                             <param id="0" name="Variable">counter_output</param>
-                                            <param id="1" name="Value">&quot;0&quot; &amp; funções.Param(0)</param>
+                                            <param id="1" name="Value">&quot;0&quot; &amp; str(number)</param>
                                         </action>
                                     </actions>
                                 </event-block>
                                 <event-block sid="600882398500698">
                                     <conditions>
-                                        <condition id="1" name="Compare parameter" sid="524413468237632" type="funções">
-                                            <param id="0" name="Index">0</param>
+                                        <condition id="-14" name="Compare variable" sid="120638859143904" type="System">
+                                            <param id="0" name="Variable">number</param>
                                             <param id="1" name="Comparison">5</param>
                                             <param id="2" name="Value">100</param>
                                         </condition>
@@ -79,11 +102,22 @@
                                     <actions>
                                         <action id="-9" name="Set value" sid="943945227620336" type="System">
                                             <param id="0" name="Variable">counter_output</param>
-                                            <param id="1" name="Value">str(funções.Param(0))</param>
+                                            <param id="1" name="Value">str(number)</param>
                                         </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                        <event-block sid="234848651496277">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="937101227997587" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="955051334652939" type="System">
+                                    <param id="0" name="Variable">counter_output</param>
+                                    <param id="1" name="Value">&quot;000&quot;</param>
+                                </action>
+                            </actions>
                         </event-block>
                         <event-block sid="187441542345189">
                             <conditions />
@@ -240,7 +274,7 @@
                             <param id="1" name="Value">0</param>
                         </action>
                         <action id="0" name="Set item" sid="816453513509751" type="LocalStorage">
-                            <param id="0" name="Key">&quot;start_two&quot;</param>
+                            <param id="0" name="Key">&quot;star_two&quot;</param>
                             <param id="1" name="Value">0</param>
                         </action>
                         <action id="0" name="Set item" sid="980310845874835" type="LocalStorage">

@@ -61,6 +61,22 @@
                 <event-block bookmark="1" sid="639615434496918">
                     <conditions />
                     <actions>
+                        <action id="4" name="Get all key names" sid="845482830148171" type="LocalStorage" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="863978239792416">
+            <conditions>
+                <condition id="4" name="On all key names loaded" sid="927933966569214" type="LocalStorage" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="564452953911503">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="580183025186440" type="System" />
+                    </conditions>
+                    <actions>
                         <action id="1" name="Get item" sid="548271763972231" type="LocalStorage">
                             <param id="0" name="Key">&quot;total_rounds&quot;</param>
                         </action>
@@ -95,20 +111,18 @@
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block sid="683054709689426">
+        <event-block sid="409351679259601">
             <conditions>
-                <condition id="10" name="On item missing" sid="930044257488785" type="LocalStorage">
-                    <param id="0" name="Key">&quot;total_rounds&quot;</param>
-                </condition>
+                <condition id="5" name="On error" sid="250230676344741" type="LocalStorage" />
             </conditions>
             <actions />
             <sub-events>
-                <event-block sid="814199898423623">
+                <event-block sid="739461361592908">
                     <conditions>
-                        <condition id="-4" name="Trigger once while true" sid="297726736514793" type="System" />
+                        <condition id="-4" name="Trigger once while true" sid="182560990027009" type="System" />
                     </conditions>
                     <actions>
-                        <action id="0" name="Call function" sid="698224163958033" type="funções">
+                        <action id="0" name="Call function" sid="552400641393538" type="funções">
                             <param id="0" name="Name">&quot;clear_storage&quot;</param>
                             <param id="1" name="Parameter {n}"></param>
                         </action>

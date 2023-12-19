@@ -23,6 +23,26 @@
                     <param id="0" name="Text">funções.Call(&quot;counter_format&quot;, LocalStorage.ItemValue)</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block any="1" sid="220096849024150">
+                    <conditions>
+                        <condition id="-8" inverted="1" name="Compare two values" sid="391806257892443" type="System">
+                            <param id="0" name="First value">statistics.total_rounds</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                        <condition id="-37" name="Is number NaN" sid="841311511051903" type="System">
+                            <param id="0" name="Number">statistics.total_rounds</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="706598182985410" type="funções">
+                            <param id="0" name="Name">&quot;clear_storage&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block any="1" sid="222305876852937">
             <conditions>
@@ -316,9 +336,6 @@
                                 <action id="0" name="Call function" sid="562513195166589" type="funções">
                                     <param id="0" name="Name">&quot;clear_storage&quot;</param>
                                     <param id="1" name="Parameter {n}"></param>
-                                </action>
-                                <action id="0" name="Set text" sid="690914571428260" type="stats_counters">
-                                    <param id="0" name="Text">&quot;000&quot;</param>
                                 </action>
                                 <action id="-16" name="Wait" sid="842464457781023" type="System">
                                     <param id="0" name="Seconds">0.5</param>

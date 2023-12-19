@@ -9,10 +9,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         </active>
         <display name="HTML5" />
     </configurations>
-    <open-tabs>
-        <layout order="0">a1</layout>
-        <event-sheet active="1" order="1">01global_arrangements</event-sheet>
-    </open-tabs>
+    <open-tabs />
     <properties>
         <property expanded="1" name="About" />
         <property expanded="1" name="Project settings" />
@@ -26,7 +23,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <family expanded="0" name="stats_counters" />
     </families-expanded>
     <folders-expanded>
-        <folder expanded="1" path="object-folder/" />
+        <folder expanded="0" path="object-folder/" />
         <folder expanded="0" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="1" path="event-folder/game_motor/" />
