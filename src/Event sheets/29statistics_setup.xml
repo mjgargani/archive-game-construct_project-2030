@@ -82,6 +82,95 @@
                 </action>
             </actions>
         </event-block>
+        <event-block any="1" sid="323390130328294">
+            <conditions>
+                <condition id="1" name="On item get" sid="735018039103960" type="LocalStorage">
+                    <param id="0" name="Key">&quot;all_saves&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="343699035795940" type="LocalStorage">
+                    <param id="0" name="Key">&quot;all_saves&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="383822569441864" type="statistics">
+                    <param id="0" name="Instance variable">all_saves</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="11" name="Load" sid="278861100744769" type="all_saves_array">
+                    <param id="0" name="JSON">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="739751833226993">
+            <conditions>
+                <condition id="1" name="On item get" sid="878424501718067" type="LocalStorage">
+                    <param id="0" name="Key">&quot;all_start_units&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="867774471664188" type="LocalStorage">
+                    <param id="0" name="Key">&quot;all_start_units&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="703219985827194" type="statistics">
+                    <param id="0" name="Instance variable">all_start_units</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="11" name="Load" sid="912584665448489" type="all_start_units_array">
+                    <param id="0" name="JSON">LocalStorage.ItemValue</param>
+                </action>
+                <action id="0" name="Set text" sid="279522531516014" type="stats_round_stats_list">
+                    <param id="0" name="Text">&quot;Round Number | Time | Starting units | Saved Units&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="536637793144830">
+                    <conditions>
+                        <condition id="3" name="For each element" sid="508472917557073" type="all_start_units_array">
+                            <param id="0" name="Axes">2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <variable constant="0" name="stats_list_index" sid="173668005910590" static="0" type="number">0</variable>
+                        <variable constant="0" name="stats_list_time" sid="521910373506627" static="0" type="text"></variable>
+                        <variable constant="0" name="stats_list_start_units" sid="275772970731027" static="0" type="text"></variable>
+                        <variable constant="0" name="stats_list_saves" sid="498570678846037" static="0" type="text"></variable>
+                        <event-block sid="924608551100054">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="419247468654243" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="335668024403012" type="System">
+                                    <param id="0" name="Variable">stats_list_index</param>
+                                    <param id="1" name="Value">all_start_units_array.CurX</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="218597910019168" type="System">
+                                    <param id="0" name="Variable">stats_list_time</param>
+                                    <param id="1" name="Value">funções.Call(&quot;counter_format&quot;, all_times_array.At(stats_list_index))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="334579402487096" type="System">
+                                    <param id="0" name="Variable">stats_list_start_units</param>
+                                    <param id="1" name="Value">funções.Call(&quot;counter_format&quot;, all_start_units_array.At(stats_list_index))</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="305891380999415" type="System">
+                                    <param id="0" name="Variable">stats_list_saves</param>
+                                    <param id="1" name="Value">funções.Call(&quot;counter_format&quot;, all_saves_array.At(stats_list_index))</param>
+                                </action>
+                                <action id="0" name="Set text" sid="670613557421315" type="stats_round_stats_list">
+                                    <param id="0" name="Text">stats_round_stats_list.Text &amp; newline &amp; funções.Call(&quot;counter_format&quot;, str(stats_list_index + 1)) &amp; &quot;          | &quot; &amp; stats_list_time &amp; &quot;  | &quot; &amp; stats_list_start_units &amp; &quot;            | &quot; &amp; stats_list_saves</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="245773927355837">
+                    <conditions />
+                    <actions>
+                        <action id="9" name="Scroll to bottom" sid="927591770683385" type="stats_round_stats_list" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
         <event-block any="1" sid="205069024435993">
             <conditions>
                 <condition id="1" name="On item get" sid="154746736112923" type="LocalStorage">

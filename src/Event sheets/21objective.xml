@@ -133,9 +133,23 @@
                             <param id="0" name="Key">&quot;all_times&quot;</param>
                             <param id="1" name="Value">all_times_array.AsJSON</param>
                         </action>
+                        <action id="5" name="Push" sid="826277528073914" type="all_saves_array">
+                            <param id="0" name="Where">1</param>
+                            <param id="1" name="Value">variaveis.safe_units</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
                         <action id="0" name="Set item" sid="966447927487201" type="LocalStorage">
-                            <param id="0" name="Key">&quot;avg_saves&quot;</param>
-                            <param id="1" name="Value">round((statistics.total_units + variaveis.unit_count_inicial) / (statistics.total_rounds + 1))</param>
+                            <param id="0" name="Key">&quot;all_saves&quot;</param>
+                            <param id="1" name="Value">all_saves_array.AsJSON</param>
+                        </action>
+                        <action id="5" name="Push" sid="570958671895888" type="all_start_units_array">
+                            <param id="0" name="Where">1</param>
+                            <param id="1" name="Value">variaveis.unit_count_inicial</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="0" name="Set item" sid="796159705039859" type="LocalStorage">
+                            <param id="0" name="Key">&quot;all_start_units&quot;</param>
+                            <param id="1" name="Value">all_start_units_array.AsJSON</param>
                         </action>
                         <action id="-3" name="Set position" sid="491954031810524" type="hud_star_layout">
                             <param id="0" name="X">hud_star_layout.x</param>
@@ -176,6 +190,40 @@
                                 <action id="0" name="Set item" sid="530480040616743" type="LocalStorage">
                                     <param id="0" name="Key">&quot;avg_time&quot;</param>
                                     <param id="1" name="Value">round(statistics.sum_time_avg / (statistics.total_rounds + 1))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="725104262389467">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="297858826304174" type="all_saves_array">
+                                    <param id="0" name="Axes">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="898164147536479" type="statistics">
+                                    <param id="0" name="Instance variable">sum_saves_avg</param>
+                                    <param id="1" name="Value">all_saves_array.CurValue</param>
+                                </action>
+                                <action id="0" name="Set item" sid="435635928208333" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;avg_saves&quot;</param>
+                                    <param id="1" name="Value">round(statistics.sum_saves_avg / (statistics.total_rounds + 1))</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="567883034294663">
+                            <conditions>
+                                <condition id="3" name="For each element" sid="552554272352705" type="all_start_units_array">
+                                    <param id="0" name="Axes">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="709968311410714" type="statistics">
+                                    <param id="0" name="Instance variable">sum_start_units_avg</param>
+                                    <param id="1" name="Value">all_start_units_array.CurValue</param>
+                                </action>
+                                <action id="0" name="Set item" sid="839728095586502" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;avg_start_units&quot;</param>
+                                    <param id="1" name="Value">round(statistics.sum_start_units_avg / (statistics.total_rounds + 1))</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -413,8 +461,8 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set item" sid="129916434666819" type="LocalStorage">
-                                            <param id="0" name="Key">&quot;star_one&quot;</param>
-                                            <param id="1" name="Value">statistics.star_one + 1</param>
+                                            <param id="0" name="Key">&quot;star_zero&quot;</param>
+                                            <param id="1" name="Value">statistics.star_zero + 1</param>
                                         </action>
                                         <action id="5" name="Set frame" sid="633002340957585" type="hud_estrela">
                                             <param id="0" name="Frame number">0</param>
@@ -439,8 +487,8 @@
                                     </conditions>
                                     <actions>
                                         <action id="0" name="Set item" sid="240450636487210" type="LocalStorage">
-                                            <param id="0" name="Key">&quot;star_zero&quot;</param>
-                                            <param id="1" name="Value">statistics.star_zero + 1</param>
+                                            <param id="0" name="Key">&quot;star_one&quot;</param>
+                                            <param id="1" name="Value">statistics.star_one + 1</param>
                                         </action>
                                         <action id="5" name="Set frame" sid="608959093929787" type="hud_estrela">
                                             <param id="0" name="Frame number">0</param>

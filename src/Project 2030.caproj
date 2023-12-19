@@ -2,7 +2,7 @@
 <c2project>
     <name>Project 2030</name>
     <description>Inverted Tower Defense Concept</description>
-    <version>1.0.0.1</version>
+    <version>1.0.1.0</version>
     <author>Rodrigo G. Oliveira</author>
     <author-email>mjgargani@gmail.com</author-email>
     <author-website>http://gargani.dev</author-website>
@@ -1707,6 +1707,8 @@
                 <instance-variable name="total_rounds" sid="786597957044921" type="number" />
                 <instance-variable name="total_units" sid="447068230688084" type="number" />
                 <instance-variable name="all_times" sid="521266879468983" type="string" />
+                <instance-variable name="all_saves" sid="291498402459610" type="string" />
+                <instance-variable name="all_start_units" sid="150978041750426" type="string" />
                 <instance-variable name="avg_time" sid="479414439008804" type="number" />
                 <instance-variable name="avg_saves" sid="371505995476970" type="number" />
                 <instance-variable name="star_death" sid="707939017193679" type="number" />
@@ -1715,6 +1717,8 @@
                 <instance-variable name="star_two" sid="473235052207865" type="number" />
                 <instance-variable name="star_three" sid="676048680670987" type="number" />
                 <instance-variable name="sum_time_avg" sid="752489070911657" type="number" />
+                <instance-variable name="sum_saves_avg" sid="871977197540004" type="number" />
+                <instance-variable name="sum_start_units_avg" sid="523569988024241" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="606683555368014" speed="5">
@@ -1859,6 +1863,15 @@
                     </frame>
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type global="1" name="all_saves_array" sid="338183637799276">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type global="1" name="all_start_units_array" sid="327351017346407">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="stats_round_stats_list" sid="784149250396256">
+            <plugin id="TextBox" />
         </object-type>
     </object-folder>
     <families>

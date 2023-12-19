@@ -249,9 +249,34 @@
                             <param id="1" name="Value">0</param>
                         </action>
                         <action id="0" name="Clear" sid="189738218090877" type="all_times_array" />
+                        <action id="1" name="Set size" sid="129613121867405" type="all_times_array">
+                            <param id="0" name="Width">1</param>
+                            <param id="1" name="Height">1</param>
+                            <param id="2" name="Depth">1</param>
+                        </action>
                         <action id="0" name="Set item" sid="163471760588373" type="LocalStorage">
                             <param id="0" name="Key">&quot;all_times&quot;</param>
                             <param id="1" name="Value">all_times_array.AsJSON</param>
+                        </action>
+                        <action id="0" name="Clear" sid="189738952202281" type="all_saves_array" />
+                        <action id="1" name="Set size" sid="448738892483131" type="all_saves_array">
+                            <param id="0" name="Width">1</param>
+                            <param id="1" name="Height">1</param>
+                            <param id="2" name="Depth">1</param>
+                        </action>
+                        <action id="0" name="Set item" sid="365336302935265" type="LocalStorage">
+                            <param id="0" name="Key">&quot;all_saves&quot;</param>
+                            <param id="1" name="Value">all_saves_array.AsJSON</param>
+                        </action>
+                        <action id="0" name="Clear" sid="234718435111042" type="all_start_units_array" />
+                        <action id="1" name="Set size" sid="624107046796392" type="all_start_units_array">
+                            <param id="0" name="Width">1</param>
+                            <param id="1" name="Height">1</param>
+                            <param id="2" name="Depth">1</param>
+                        </action>
+                        <action id="0" name="Set item" sid="584059633059657" type="LocalStorage">
+                            <param id="0" name="Key">&quot;all_start_units&quot;</param>
+                            <param id="1" name="Value">all_start_units_array.AsJSON</param>
                         </action>
                         <action id="0" name="Set item" sid="366075665153573" type="LocalStorage">
                             <param id="0" name="Key">&quot;avg_time&quot;</param>
