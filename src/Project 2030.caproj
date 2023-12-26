@@ -1706,9 +1706,11 @@
             <instance-variables>
                 <instance-variable name="total_rounds" sid="786597957044921" type="number" />
                 <instance-variable name="total_units" sid="447068230688084" type="number" />
+                <instance-variable name="all_dates" sid="660806633228875" type="string" />
                 <instance-variable name="all_times" sid="521266879468983" type="string" />
                 <instance-variable name="all_saves" sid="291498402459610" type="string" />
                 <instance-variable name="all_start_units" sid="150978041750426" type="string" />
+                <instance-variable name="all_stars" sid="319309518246013" type="string" />
                 <instance-variable name="avg_time" sid="479414439008804" type="number" />
                 <instance-variable name="avg_saves" sid="371505995476970" type="number" />
                 <instance-variable name="star_death" sid="707939017193679" type="number" />
@@ -1872,6 +1874,12 @@
         </object-type>
         <object-type name="stats_round_stats_list" sid="784149250396256">
             <plugin id="TextBox" />
+        </object-type>
+        <object-type global="1" name="all_stars_array" sid="220644986782701">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type global="1" name="all_dates_array" sid="119202596602862">
+            <plugin id="Arr" />
         </object-type>
     </object-folder>
     <families>

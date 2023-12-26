@@ -124,6 +124,15 @@
                             <param id="0" name="Key">&quot;total_units&quot;</param>
                             <param id="1" name="Value">statistics.total_units + variaveis.unit_count_inicial</param>
                         </action>
+                        <action id="5" name="Push" sid="344225619935723" type="all_dates_array">
+                            <param id="0" name="Where">1</param>
+                            <param id="1" name="Value">Browser.ExecJS(&quot;new Date().toJSON()&quot;)</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="0" name="Set item" sid="699844207057467" type="LocalStorage">
+                            <param id="0" name="Key">&quot;all_dates&quot;</param>
+                            <param id="1" name="Value">all_dates_array.AsJSON</param>
+                        </action>
                         <action id="5" name="Push" sid="390017196399474" type="all_times_array">
                             <param id="0" name="Where">1</param>
                             <param id="1" name="Value">variaveis.segundos</param>
@@ -255,6 +264,15 @@
                                     <param id="0" name="Key">&quot;star_three&quot;</param>
                                     <param id="1" name="Value">statistics.star_three + 1</param>
                                 </action>
+                                <action id="5" name="Push" sid="577195625141884" type="all_stars_array">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Value">3</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="0" name="Set item" sid="172040300243661" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;all_stars&quot;</param>
+                                    <param id="1" name="Value">all_stars_array.AsJSON</param>
+                                </action>
                                 <action id="5" name="Set frame" sid="3255905308326515" type="hud_estrela">
                                     <param id="0" name="Frame number">0</param>
                                 </action>
@@ -375,6 +393,15 @@
                                     <param id="0" name="Key">&quot;star_two&quot;</param>
                                     <param id="1" name="Value">statistics.star_two + 1</param>
                                 </action>
+                                <action id="5" name="Push" sid="273808155091709" type="all_stars_array">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Value">2</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="0" name="Set item" sid="785688600499040" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;all_stars&quot;</param>
+                                    <param id="1" name="Value">all_stars_array.AsJSON</param>
+                                </action>
                                 <action id="5" name="Set frame" sid="7486962780368887" type="hud_estrela">
                                     <param id="0" name="Frame number">0</param>
                                 </action>
@@ -464,6 +491,15 @@
                                             <param id="0" name="Key">&quot;star_zero&quot;</param>
                                             <param id="1" name="Value">statistics.star_zero + 1</param>
                                         </action>
+                                        <action id="5" name="Push" sid="662395814057629" type="all_stars_array">
+                                            <param id="0" name="Where">1</param>
+                                            <param id="1" name="Value">0</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                        <action id="0" name="Set item" sid="203982030584171" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;all_stars&quot;</param>
+                                            <param id="1" name="Value">all_stars_array.AsJSON</param>
+                                        </action>
                                         <action id="5" name="Set frame" sid="633002340957585" type="hud_estrela">
                                             <param id="0" name="Frame number">0</param>
                                         </action>
@@ -489,6 +525,15 @@
                                         <action id="0" name="Set item" sid="240450636487210" type="LocalStorage">
                                             <param id="0" name="Key">&quot;star_one&quot;</param>
                                             <param id="1" name="Value">statistics.star_one + 1</param>
+                                        </action>
+                                        <action id="5" name="Push" sid="314518437021597" type="all_stars_array">
+                                            <param id="0" name="Where">1</param>
+                                            <param id="1" name="Value">1</param>
+                                            <param id="2" name="Axis">0</param>
+                                        </action>
+                                        <action id="0" name="Set item" sid="308683937987466" type="LocalStorage">
+                                            <param id="0" name="Key">&quot;all_stars&quot;</param>
+                                            <param id="1" name="Value">all_stars_array.AsJSON</param>
                                         </action>
                                         <action id="5" name="Set frame" sid="608959093929787" type="hud_estrela">
                                             <param id="0" name="Frame number">0</param>
@@ -583,6 +628,15 @@
                                 <action id="0" name="Set item" sid="762530228368895" type="LocalStorage">
                                     <param id="0" name="Key">&quot;star_death&quot;</param>
                                     <param id="1" name="Value">statistics.star_death + 1</param>
+                                </action>
+                                <action id="5" name="Push" sid="859721266318138" type="all_stars_array">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Value">0</param>
+                                    <param id="2" name="Axis">0</param>
+                                </action>
+                                <action id="0" name="Set item" sid="859330034964692" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;all_stars&quot;</param>
+                                    <param id="1" name="Value">all_stars_array.AsJSON</param>
                                 </action>
                             </actions>
                         </event-block>

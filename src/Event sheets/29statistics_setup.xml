@@ -66,18 +66,37 @@
         <event-block any="1" sid="383618457809426">
             <conditions>
                 <condition id="1" name="On item get" sid="108782508866240" type="LocalStorage">
-                    <param id="0" name="Key">&quot;all_times&quot;</param>
+                    <param id="0" name="Key">&quot;all_dates&quot;</param>
                 </condition>
                 <condition id="0" name="On item set" sid="109385821562803" type="LocalStorage">
-                    <param id="0" name="Key">&quot;all_times&quot;</param>
+                    <param id="0" name="Key">&quot;all_dates&quot;</param>
                 </condition>
             </conditions>
             <actions>
                 <action id="-10" name="Set value" sid="740294238378151" type="statistics">
+                    <param id="0" name="Instance variable">all_dates</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="11" name="Load" sid="957448683553403" type="all_dates_array">
+                    <param id="0" name="JSON">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="469532300918632">
+            <conditions>
+                <condition id="1" name="On item get" sid="526285547451899" type="LocalStorage">
+                    <param id="0" name="Key">&quot;all_times&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="998840684716636" type="LocalStorage">
+                    <param id="0" name="Key">&quot;all_times&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="160736449078494" type="statistics">
                     <param id="0" name="Instance variable">all_times</param>
                     <param id="1" name="Value">LocalStorage.ItemValue</param>
                 </action>
-                <action id="11" name="Load" sid="957448683553403" type="all_times_array">
+                <action id="11" name="Load" sid="717438747579683" type="all_times_array">
                     <param id="0" name="JSON">LocalStorage.ItemValue</param>
                 </action>
             </actions>
@@ -101,6 +120,26 @@
                 </action>
             </actions>
         </event-block>
+        <event-block any="1" sid="787674477178676">
+            <conditions>
+                <condition id="1" name="On item get" sid="237741851465835" type="LocalStorage">
+                    <param id="0" name="Key">&quot;all_stars&quot;</param>
+                </condition>
+                <condition id="0" name="On item set" sid="911420914927545" type="LocalStorage">
+                    <param id="0" name="Key">&quot;all_stars&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="681690644568023" type="statistics">
+                    <param id="0" name="Instance variable">all_stars</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+                <action id="11" name="Load" sid="354548309125250" type="all_stars_array">
+                    <param id="0" name="JSON">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>define round list</comment>
         <event-block any="1" sid="739751833226993">
             <conditions>
                 <condition id="1" name="On item get" sid="878424501718067" type="LocalStorage">
@@ -118,9 +157,6 @@
                 <action id="11" name="Load" sid="912584665448489" type="all_start_units_array">
                     <param id="0" name="JSON">LocalStorage.ItemValue</param>
                 </action>
-                <action id="0" name="Set text" sid="279522531516014" type="stats_round_stats_list">
-                    <param id="0" name="Text">&quot;Round Number | Time | Starting units | Saved Units&quot;</param>
-                </action>
             </actions>
             <sub-events>
                 <event-block sid="536637793144830">
@@ -132,9 +168,11 @@
                     <actions />
                     <sub-events>
                         <variable constant="0" name="stats_list_index" sid="173668005910590" static="0" type="number">0</variable>
+                        <variable constant="0" name="stats_list_date" sid="208476390602910" static="0" type="text"></variable>
                         <variable constant="0" name="stats_list_time" sid="521910373506627" static="0" type="text"></variable>
                         <variable constant="0" name="stats_list_start_units" sid="275772970731027" static="0" type="text"></variable>
                         <variable constant="0" name="stats_list_saves" sid="498570678846037" static="0" type="text"></variable>
+                        <variable constant="0" name="stats_list_stars" sid="531420831191726" static="0" type="text"></variable>
                         <event-block sid="924608551100054">
                             <conditions>
                                 <condition id="-4" name="Trigger once while true" sid="419247468654243" type="System" />
@@ -143,6 +181,10 @@
                                 <action id="-9" name="Set value" sid="335668024403012" type="System">
                                     <param id="0" name="Variable">stats_list_index</param>
                                     <param id="1" name="Value">all_start_units_array.CurX</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="296371461232694" type="System">
+                                    <param id="0" name="Variable">stats_list_date</param>
+                                    <param id="1" name="Value">all_dates_array.At(stats_list_index)</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="218597910019168" type="System">
                                     <param id="0" name="Variable">stats_list_time</param>
@@ -156,17 +198,23 @@
                                     <param id="0" name="Variable">stats_list_saves</param>
                                     <param id="1" name="Value">funções.Call(&quot;counter_format&quot;, all_saves_array.At(stats_list_index))</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="458655577788057" type="System">
+                                    <param id="0" name="Variable">stats_list_stars</param>
+                                    <param id="1" name="Value">funções.Call(&quot;counter_format&quot;, all_stars_array.At(stats_list_index))</param>
+                                </action>
                                 <action id="0" name="Set text" sid="670613557421315" type="stats_round_stats_list">
-                                    <param id="0" name="Text">stats_round_stats_list.Text &amp; newline &amp; funções.Call(&quot;counter_format&quot;, str(stats_list_index + 1)) &amp; &quot;          | &quot; &amp; stats_list_time &amp; &quot;  | &quot; &amp; stats_list_start_units &amp; &quot;            | &quot; &amp; stats_list_saves</param>
+                                    <param id="0" name="Text">stats_list_date &amp; &quot; | &quot; &amp; funções.Call(&quot;counter_format&quot;, str(stats_list_index + 1)) &amp; &quot;          | &quot; &amp; stats_list_time &amp; &quot;  | &quot; &amp; stats_list_start_units &amp; &quot;            | &quot; &amp; stats_list_saves &amp; &quot;         | &quot; &amp; stats_list_stars &amp; newline &amp; stats_round_stats_list.Text</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="245773927355837">
+                <event-block sid="266394769646178">
                     <conditions />
                     <actions>
-                        <action id="9" name="Scroll to bottom" sid="927591770683385" type="stats_round_stats_list" />
+                        <action id="0" name="Set text" sid="279522531516014" type="stats_round_stats_list">
+                            <param id="0" name="Text">&quot;Date and Time            | Round Number | Time | Starting units | Saved Units | Stars&quot; &amp; newline &amp; stats_round_stats_list.Text</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>

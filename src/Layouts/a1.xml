@@ -3019,9 +3019,11 @@
                     <instance-variables>
                         <total_rounds>0</total_rounds>
                         <total_units>0</total_units>
+                        <all_dates></all_dates>
                         <all_times></all_times>
                         <all_saves></all_saves>
                         <all_start_units></all_start_units>
+                        <all_stars></all_stars>
                         <avg_time>0</avg_time>
                         <avg_saves>0</avg_saves>
                         <star_death>0</star_death>
@@ -4170,21 +4172,35 @@
     <nonworld-instances>
         <instance type="all_times_array" uid="124">
             <properties>
-                <width>1</width>
+                <width>0</width>
                 <height>1</height>
                 <depth>1</depth>
             </properties>
         </instance>
         <instance type="all_saves_array" uid="154">
             <properties>
-                <width>1</width>
+                <width>0</width>
                 <height>1</height>
                 <depth>1</depth>
             </properties>
         </instance>
         <instance type="all_start_units_array" uid="155">
             <properties>
-                <width>1</width>
+                <width>0</width>
+                <height>1</height>
+                <depth>1</depth>
+            </properties>
+        </instance>
+        <instance type="all_stars_array" uid="157">
+            <properties>
+                <width>0</width>
+                <height>1</height>
+                <depth>1</depth>
+            </properties>
+        </instance>
+        <instance type="all_dates_array" uid="166">
+            <properties>
+                <width>0</width>
                 <height>1</height>
                 <depth>1</depth>
             </properties>

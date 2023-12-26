@@ -83,6 +83,9 @@
                         <action id="1" name="Get item" sid="518364738578604" type="LocalStorage">
                             <param id="0" name="Key">&quot;total_units&quot;</param>
                         </action>
+                        <action id="1" name="Get item" sid="410862436881127" type="LocalStorage">
+                            <param id="0" name="Key">&quot;all_dates&quot;</param>
+                        </action>
                         <action id="1" name="Get item" sid="290551124190762" type="LocalStorage">
                             <param id="0" name="Key">&quot;all_times&quot;</param>
                         </action>
@@ -91,6 +94,9 @@
                         </action>
                         <action id="1" name="Get item" sid="707067749601651" type="LocalStorage">
                             <param id="0" name="Key">&quot;all_start_units&quot;</param>
+                        </action>
+                        <action id="1" name="Get item" sid="562346759029941" type="LocalStorage">
+                            <param id="0" name="Key">&quot;all_stars&quot;</param>
                         </action>
                         <action id="1" name="Get item" sid="999545138998566" type="LocalStorage">
                             <param id="0" name="Key">&quot;avg_time&quot;</param>

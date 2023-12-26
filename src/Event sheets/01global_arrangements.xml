@@ -402,53 +402,59 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block sid="597465377081775">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="195838803975755" type="System">
+                                    <param id="0" name="Variable">show_info</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="364776262844090">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="412773508402555" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-4" name="Set layer visible" sid="776708287977896" type="System">
+                                            <param id="0" name="Layer">5</param>
+                                            <param id="1" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="631871040614938" type="System">
+                                            <param id="0" name="Variable">show_info</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
                         <event-block sid="626766463702043">
                             <conditions>
                                 <condition id="-4" name="Trigger once while true" sid="965054505447091" type="System" />
                             </conditions>
                             <actions>
                                 <action behavior="Flash" id="1" name="Stop flashing" sid="124108389932596" type="unidade" />
+                                <action behavior="Flash" id="1" name="Stop flashing" sid="297521562569973" type="hud_info" />
+                                <action behavior="Flash" id="0" name="Flash" sid="696129319666630" type="hud_info">
+                                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                    <param id="2" name="Duration">0.5</param>
+                                </action>
+                                <action id="8" name="Set silent" sid="505241669844300" type="Audio">
+                                    <param id="0" name="Mode">0</param>
+                                </action>
+                                <action id="0" name="Call function" sid="147949399101387" type="funções">
+                                    <param id="0" name="Name">&quot;pause_game&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action id="-16" name="Wait" sid="471411532442542" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="8" name="Set silent" sid="973097069937388" type="Audio">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
                             </actions>
-                            <sub-events>
-                                <event-block sid="887371095410406">
-                                    <conditions>
-                                        <condition id="-14" name="Compare variable" sid="280031796591683" type="System">
-                                            <param id="0" name="Variable">show_info</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">1</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action behavior="Flash" id="1" name="Stop flashing" sid="297521562569973" type="hud_info" />
-                                        <action behavior="Flash" id="0" name="Flash" sid="696129319666630" type="hud_info">
-                                            <param id="0" name="&apos;On&apos; time">0.05</param>
-                                            <param id="1" name="&apos;Off&apos; time">0.05</param>
-                                            <param id="2" name="Duration">0.5</param>
-                                        </action>
-                                        <action id="-4" name="Set layer visible" sid="776708287977896" type="System">
-                                            <param id="0" name="Layer">5</param>
-                                            <param id="1" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-9" name="Set value" sid="134720881674580" type="System">
-                                            <param id="0" name="Variable">show_info</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="8" name="Set silent" sid="505241669844300" type="Audio">
-                                            <param id="0" name="Mode">0</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="147949399101387" type="funções">
-                                            <param id="0" name="Name">&quot;pause_game&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="471411532442542" type="System">
-                                            <param id="0" name="Seconds">0.5</param>
-                                        </action>
-                                        <action id="8" name="Set silent" sid="973097069937388" type="Audio">
-                                            <param id="0" name="Mode">1</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>
